@@ -1,0 +1,107 @@
+body {
+	font-family: 'Sarabun', sans-serif;
+}
+
+.col-lg-12 {
+	padding: 0;
+}
+
+.container {
+	padding: 0;
+}
+
+header a {
+	color: #000;
+}
+
+header a:hover {
+	text-decoration: none;
+	color: #f1553b;
+}
+
+div.logo {
+	padding: 10px 0;
+}
+
+.logo a {
+	font-family: 'Coiny', cursive;
+	display: inline-block;
+}
+
+.logo a:hover {
+	color: #f1553b;
+	transition: 1s;
+}
+
+.logo a span {
+	font-size: 24px;
+}
+
+.main-menu ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.main-menu ul li {
+	display: inline-block;
+	margin-left: 15px;
+	text-align: center;
+}
+
+.main-menu ul li a {
+	display: block;
+	color: #363636;
+	padding: 15px;
+}
+
+div.account-cart {
+	text-align: right;
+}
+
+
+
+
+footer span.logo-text {
+	font-size: 23px;
+	font-family: 'Coiny', cursive;
+    letter-spacing: -1px;
+}
+
+.logo-footer span {
+	display: block;
+}
+
+.payment-method span {
+	display: block;
+	font-size: 18px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+}
+
+.payment-method i {
+	font-size: 25px;
+	margin-left: 12px;
+}
+
+div.footer-top {
+	margin-bottom: 30px;
+}
+
+div.footer-bottom {
+	padding-top: 15px;
+	border-top: 2px solid #f4f6f8;
+}
+
+.footer-top, .footer-bottom, .logo-footer, .coppyright {
+	padding: 0;
+}
+
+.footer-bottom a {
+	color: #363636;
+	margin-left: 20px;
+}
+
+div.page-store {
+	text-align: right;
+}
