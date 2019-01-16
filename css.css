@@ -33,7 +33,7 @@ a.logo-header::before {
 	content: '';
 	position: absolute;
 	height: 100%;
-	width: 65%;
+	width: 100%;
 	border-width: 2px 0;
 	border-color: #282828;
 	border-style: solid;
@@ -42,11 +42,14 @@ a.logo-header::before {
 	transform: translate3d(-101%,0,0);
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
+	opacity: 0;
 }
 
 a.logo-header:hover::before {
 	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
+	transition: transform 0.5s;
+	opacity: 1;
 }
 
 a.logo-header span {
@@ -102,7 +105,7 @@ div.navigation-left {
 }
 
 div.navigation-center {
-
+	padding-left: 40px;
 }
 
 .navigation-center a {
@@ -138,6 +141,10 @@ div.navigation-center {
 	font-size: 20px;
 	color: #333745;
 	margin-left: 15px;
+}
+
+.navigation-right a:nth-child(1) {
+	margin-left: 0;
 }
 
 .login-btn {
@@ -416,6 +423,38 @@ div.navigation-center {
 
 
 
+section.benefits {
+	padding: 25px 0;
+}
+
+div.box-benefit {
+	background-color: #f2f2f2;
+	padding: 5px 0;
+	width: 299px;
+	margin-left: 1px;
+}
+div.box-benefit:nth-child(1) {
+	margin-left: 0;
+	width: 300px;
+	margin-left: 0;
+}
+
+div.icon-benefit {
+	text-align: center;
+}
+
+.icon-benefit i {
+	font-size: 30px;
+	line-height: 80px;
+}
+
+div.information-benefit {
+	padding: 0;
+}
+
+div.information-benefit span {
+	font-size: 13px;
+}
 
 section.newsletter {
 	background-color: #f2f2f2;
