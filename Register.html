@@ -22,38 +22,48 @@
 <body>
 	<section class="col-lg-12 register">
 		<div class="center-register">
-			<form class="form-register">
+			<form class="form-register" method="GET" action="#" name="form_data" enctype="multipart/form_data">
 				<div class="title-register">
 					<h2>Create your La_Imperial Account</h2>
 				</div>
 				<div class="form-input-register">
-					<div class="input-register first-name">
-						<input type="text" name="first-name">
+					<div class="input-register r-first-name">
+						<input type="text" id="rfname" required>
 						<label>First name</label>
+						<p id="messagerfname"></p>
 					</div>
-					<div class="input-register last-name">
-						<input type="text" name="last-name">
+					<div class="input-register r-last-name">
+						<input type="text" id="rlname" required>
 						<label>Last name</label>
+						<p id="messagerlname"></p>
 					</div>
-					<div class="input-register username">
-						<input type="text" name="username">
+					<div class="input-register r-email">
+						<input type="email" id="remail" required>
+						<label>Email</label>
+						<p id="messageremail"></p>
+					</div>
+					<div class="input-register r-username">
+						<input type="text" id="rusername" required>
 						<label>Username</label>
+						<p id="messagerusername"></p>
 					</div>
-					<div class="input-register password">
-						<input type="password" name="password">
+					<div class="input-register r-password">
+						<input type="password" id="rpassword" required>
 						<label>Password</label>
+						<p id="messagerpassword"></p>
 					</div>
-					<div class="input-register confirm-password">
-						<input type="password" name="confirm-password">
+					<div class="input-register r-confirm-password">
+						<input type="password" id="rcpassword" required>
 						<label>Confirm</label>
+						<p id="messagercpassword"></p>
 					</div>
 					<div class="accept-terms">
-						<input type="checkbox" id="accept-regulations" name="accept-regulations">
-						<label for="accept-regulations">Agree to La_Imperial's <a href="#">terms</a> to be able to register</label>
+						<input type="checkbox" id="acceptrregulations">
+						<label for="acceptrregulations">Agree to La_Imperial's <a href="#">Terms, Data Policy and Cookie Policy</a></label>
 					</div>
 					<div class="button-register">
 						<a href="#">Back</a>
-						<button name="accept-register">Sign up</button>
+						<button type="submit" onclick="return checkRegister()">Sign up</button>
 					</div>
 				</div>
 			</form>

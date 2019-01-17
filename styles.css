@@ -586,6 +586,27 @@ form.form-register {
   padding: 0 25px;
 }
 
+div.title-register {
+  margin-bottom: 30px;
+}
+
+div.input-register.r-first-name {
+  display: inline-block;
+  width: 48%;
+  margin-right: 13px;
+}
+
+div.input-register.r-last-name {
+  display: inline-block;
+  width: 48%;   
+}
+
+div.input-register p {
+  font-size: 12px;
+  font-style: italic; 
+  color:red;
+}
+
 div.input-register input {
   font-family: Lato;
   width: 100%;
@@ -595,27 +616,27 @@ div.input-register input {
   outline: 0;
 }
 
-div.input-register input:focus {
+div.input-register input:focus { 
   border-color: #f1553c;
   transition: 0.5s;
-  outline: none;
+  outline:none; 
 }
 
 div.input-register label {
-  font-family: Lato;
+ font-family: Lato;
   color: #757575;
   position: relative;
   pointer-events: none;
   font-size: 13px;
-  left: 20px;
+  left: 18px;
   top: -30px;
   transition:0.2s ease all; 
 }
 
-div.input-register input:focus ~ label, input:valid ~ div.input-register label {
+div.input-register input:focus ~ label,div.input-register  input:valid ~ label {
   color: #f1553c;
   font-size: 12px;
-  left: 10px;
+  left: -5px;
   top: -48px;
   padding: 0 5px;
   background-color: white;
