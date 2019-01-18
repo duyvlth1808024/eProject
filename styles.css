@@ -15,7 +15,7 @@ body {
 /*Home*/
 
 header {
-	margin-bottom: 555px;
+	
 }
 
 .navigation-left, .navigation-center, .navigation-right {
@@ -97,11 +97,11 @@ a.logoheader:hover span:nth-child(4) {
 
 /*navigation*/
 div.navigation {
-	position: relative;
 	height: 100px;
 	display: flex;
 	align-items: center;
-	z-index: 1;
+  border-bottom: 1px solid rgba(204, 204, 204, 0.5);
+  padding: 0 89.5px;
 }
 
 div.navigation-left {
@@ -182,7 +182,7 @@ div.navigation-center {
   display: block;
   background: #FFF;
   overflow: hidden;
-  position: absolute;
+  position: relative;
   height: 655px;
   left: 0;
   right: 0;
@@ -545,12 +545,17 @@ div.footer-top {
 }
 
 div.footer-bottom {
-	padding-top: 15px;
-	border-top: 2px solid #f4f6f8;
+	padding-top: 10px;
+	border-top: 1px solid rgba(204, 204, 204, 0.5);
+  height: 20px;
 }
 
 .footer-top, .footer-bottom, .logo-footer, .coppyright {
 	padding: 0;
+}
+
+.footer-bottom span {
+  font-size: 12px;
 }
 
 .footer-bottom a {
