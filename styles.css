@@ -15,7 +15,8 @@ body {
 /*Home*/
 
 header {
-	
+/*	position: fixed;
+  z-index: 9;*/
 }
 
 .navigation-left, .navigation-center, .navigation-right {
@@ -223,6 +224,157 @@ div.navigation-center {
 .navigation-right a:hover {
   transform: scale(1.06);
   border-color: rgb(234, 46, 73);
+}
+
+div.modal-dialog {
+  width: 320px;
+}
+
+div.modal-header {
+  text-align: center;
+}
+
+div.modal-body {
+  padding: 40px 30px 5px 30px;
+}
+
+div.remember-box input {
+  width: 20px;
+  /*margin: 0;*/
+}
+
+div.remember-box input[type=checkbox] + label {
+  cursor: pointer;
+}
+
+div.remember-box input[type=checkbox] {
+  display: none;
+}
+
+div.remember-box input[type=checkbox] + label:before {
+  content: "\2714";
+  border: 1px solid #d4d5d5;
+  border-radius: 2px;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  padding-left: 2px;
+  padding-bottom: 2px;
+  margin-right: 5px;
+  margin-bottom: 3px;
+  vertical-align: bottom;
+  color: transparent;
+  transition: .2s;
+}
+
+div.remember-box input[type=checkbox] + label:active:before {
+  transform: scale(0);
+}
+
+div.remember-box input[type=checkbox]:checked + label:before {
+  background-color: #f1553b;
+  border-color: #f1553b;
+  color: #fff;
+}
+
+div.remember-box input[type=checkbox]:disabled + label:before {
+  transform: scale(1);
+  border-color: #aaa;
+}
+
+div.remember-box input[type=checkbox]:checked:disabled + label:before {
+  transform: scale(1);
+  background-color: #bfb;
+  border-color: #bfb;
+}
+
+div.remember-box label {
+  font-weight: 400;
+  font-size: 12px;
+}
+
+div.modal-footer a {
+  float: left;
+  line-height: 30px;
+  margin-left: 10px;
+}
+
+.form-login input {
+  font-family: Lato;
+  width: 100%;
+  padding: 8px 17px;
+  border: 1px solid #eeeeee;
+  border-radius: 3px;
+  outline: 0;
+}
+
+.form-login input:focus { 
+  border-color: #f1553c;
+  transition: 0.5s;
+  outline:none; 
+}
+
+.form-login label {
+ font-family: Lato;
+  color: #757575;
+  position: relative;
+  pointer-events: none;
+  font-size: 13px;
+  left: 3px;
+  top: -30px;
+  transition:0.2s ease all; 
+}
+
+.form-login input:focus ~ label,.form-login input:valid ~ label {
+  color: #f1553c;
+  font-size: 12px;
+  left: -20px;
+  top: -48px;
+  padding: 0 5px;
+  background-color: white;
+}
+
+.form-login i.fa {
+  color: #c1c1c1;
+  position: relative;
+  bottom: 30px;
+  left: 225px;
+}
+
+div.search-box {
+  height: 0;
+  transition: 0.5s;
+}
+
+div.active-sb {
+  height: 34px;
+  transition: 0.5s;
+}
+
+div.searching-box{
+  background-color: #fff;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(204, 204, 204, 0.5);
+}
+
+div.searching-box i {
+  cursor: pointer;
+  font-size: 18px;
+  display: inline-block;
+  padding: 5px 10px;
+}
+
+div.searching-box input {
+  width: 93%;
+  border: none;
+  outline: none;
+}
+
+div.searching-box button {
+  display: inline-block;
+  border: none;
+  background-color: #fff;
+  padding: 0;
 }
 
 /*Slider*/

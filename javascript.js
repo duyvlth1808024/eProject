@@ -33,6 +33,19 @@ function handleNext() {
 
 }
 
+$(document).ready(function(){
+  $('#cdsearch').click(function(){
+    if($('#ffst').hasClass('far fa-search')){
+      $('#ffst').removeClass('far fa-search').addClass('far fa-times');
+      $('.search-box').addClass('active-sb');
+      return true;
+    }else
+    $('#ffst').removeClass('far fa-times').addClass('far fa-search');
+    $('.search-box').removeClass('active-sb');
+      return true;
+  });
+});
+
 
 //Register
 
