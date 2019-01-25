@@ -312,7 +312,7 @@ div.modal-footer a {
   margin-left: 10px;
 }
 
-.form-login input {
+.login input {
   font-family: Lato;
   width: 100%;
   padding: 8px 17px;
@@ -321,13 +321,13 @@ div.modal-footer a {
   outline: 0;
 }
 
-.form-login input:focus { 
+.login input:focus { 
   border-color: #f1553c;
   transition: 0.5s;
   outline:none; 
 }
 
-.form-login label {
+.login label {
  font-family: Lato;
   color: #757575;
   position: relative;
@@ -338,16 +338,13 @@ div.modal-footer a {
   transition:0.2s ease all; 
 }
 
-.form-login input:focus ~ label,.form-login input:valid ~ label {
-  color: #f1553c;
+.login input:focus ~ label,.form-login input:valid ~ label {
+  color: #282828;
   font-size: 12px;
-  left: -20px;
-  top: -48px;
-  padding: 0 5px;
   background-color: white;
 }
 
-.form-login i.fa {
+.login i.fa {
   color: #c1c1c1;
   position: relative;
   bottom: 30px;
@@ -818,7 +815,7 @@ div.list-location ul li.active-sls {
   border: 1px solid #f1553b;
 }
 
-div.div-map {
+div.div-maps {
   height: 600px;
 }
 
@@ -921,4 +918,73 @@ div.box-select input[type=checkbox]:checked:disabled + label:before {
 div.box-select label {
   font-weight: 400;
   font-size: 12px;
+}
+
+/*Contact*/
+.section-map-contact {
+  padding: 50px 0;
+}
+
+.information-contact {
+  padding: 40px 20px 40px 0;
+}
+
+.information-contact h2 {
+  color: #f1553b;
+  margin-bottom: 25px;
+}
+
+.information-contact span {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.div-map {
+  padding: 20px;
+  background-color: #fff;
+}
+
+.div-map-contact {
+  height: 500px;
+}
+
+.form-message {
+  padding: 30px 0 50px;
+}
+
+.form-message input, textarea {
+  font-family: Lato;
+  width: 100%;
+  padding: 8px 17px;
+  border: 1px solid #eeeeee;
+  border-radius: 3px;
+  outline: 0;
+  margin-bottom: 25px;
+  font-size: 18px;
+}
+
+.form-message button {
+  height: 40px;
+  width: 120px;
+  background-color: #f1553c;
+  border: 1px solid #eeeeee;
+  border-radius: 3px;
+  outline: none;
+  border-radius: 3px;
+  font-size: 15px;
+  color: #fff;
+}
+
+.form-message input:nth-child(1), input:nth-child(2), input:nth-child(3) {
+  width: 31.7%;
+}
+
+.form-message input:nth-child(1), input:nth-child(2) {
+  margin-right: 25px;
+}
+
+.form-message input:focus, textarea:focus {
+  border-color: #f1553c;
+  transition: 0.5s;
+  outline:none;   
 }
