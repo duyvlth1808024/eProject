@@ -1,48 +1,20 @@
 //Home
 
-var TIMEOUT = 7000;
-
-
-var interval = setInterval(handleNext, TIMEOUT);
-
-function handleNext() {
-
-  var $radios = $('input[class*="slide-radio"]');
-  var $activeRadio = $('input[class*="slide-radio"]:checked');
-
-  var currentIndex = $activeRadio.index();
-  var radiosLength = $radios.length;
-
-  $radios
-    .attr('checked', false);
-
-
-  if (currentIndex >= radiosLength - 1) {
-
-    $radios
-      .first()
-      .attr('checked', true);
-
-  } else {
-
-    $activeRadio
-      .next('input[class*="slide-radio"]')
-      .attr('checked', true);
-
-  }
-
-}
-
 $(document).ready(function(){
   $('#cdsearch').click(function(){
     if($('#ffst').hasClass('far fa-search')){
       $('#ffst').removeClass('far fa-search').addClass('far fa-times');
       $('.search-box').addClass('active-sb');
       return true;
-    }else
+    }else{
     $('#ffst').removeClass('far fa-times').addClass('far fa-search');
     $('.search-box').removeClass('active-sb');
       return true;
+    }
+  });
+  $('#ffct').click(function(){
+    $('#ffst').removeClass('far fa-times').addClass('far fa-search');
+    $('.search-box').removeClass('active-sb');
   });
 });
 

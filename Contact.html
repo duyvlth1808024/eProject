@@ -3,7 +3,7 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="utf-8">
-	<title>Product list</title>
+	<title>Contact La_Imperial</title>
 	<!-- fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
@@ -42,8 +42,8 @@
 			</div>
 			<div class="col-lg-8 navigation-center">
 				<a href="#">Home</a>
-			    <a href="#" class="active-navigation">Product List</a>
-			    <a href="#">Contact</a>
+			    <a href="#">Product List</a>
+			    <a href="#" class="active-navigation">Contact</a>
 			    <a href="#">Support</a>
 			    <a href="#"></i> Store Location</a>
 			</div>
@@ -99,55 +99,12 @@
 			
 		</div> -->
 	</header>
-	<section class="col-lg-12 s-product-list">
+	<section class="col-lg-12 map-contact">
 		<div class="container">
-			<div class="col-lg-3">
-				<div class="row">
-					<div class="box-select categories">
-						<h4>Categories</h4>
-						<ul>
-							<li>
-								<input type="checkbox" id="selectprod1">
-								<label for="selectprod1">All</label>
-							</li>
-							<li>
-								<input type="checkbox" id="selectprod2">
-								<label for="selectprod2">Kitchen infrared</label>
-							</li>
-							<li>
-								<input type="checkbox" id="selectprod3">
-								<label for="selectprod3">fan</label>
-							</li>
-						</ul>
-					</div>
-					<div class="box-select manufacturer">
-						<h4>Manufacturer</h4>
-						<ul>
-							<li>
-								<input type="checkbox" id="selectprod4">
-								<label for="selectprod4">Panasony</label>
-							</li>
-							<li>
-								<input type="checkbox" id="selectprod5">
-								<label for="selectprod5">SamSung</label>
-							</li>
-							<li>
-								<input type="checkbox" id="selectprod6">
-								<label for="selectprod6">Sunhouse</label>
-							</li>
-						</ul>
-					</div>
-					<div class="box-select price">
-						<h4>Price</h4>
-						<p>
-							<label for="amount">Price range:</label>
-						    <input type="text" id="amount" readonly>
-						</p>
-						<div id="slider-range"></div>
-					</div>
-				</div>
+			<div class="col-lg-6">
+				
 			</div>
-			<div class="col-lg-9">
+			<div class="col-lg-6" id="map">
 				
 			</div>
 		</div>
@@ -197,19 +154,15 @@
 		</div>
 	</footer>
 	<script>
-		$( function() {
-	    	$( "#slider-range" ).slider({
-		    	range: true,
-		    	min: 0,
-		    	max: 500,
-		    	values: [ 50, 450 ],
-		    	slide: function( event, ui ) {
-		    		$( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
-	        }
-	    	});
-	    $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
-	      " - $" + $( "#slider-range" ).slider( "values", 1 ) );
-	    });
-  </script>
+		function initMap() {
+			var uluru = {lat: 21.0281772, lng: 105.7828902};
+			var map = new google.maps.Map(
+			    document.getElementById('map'), {zoom: 12, center: uluru});
+			var marker = new google.maps.Marker({position: uluru, map: map});
+		}
+    </script>
+    <script async defer
+    	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJDcMtZ6asaHL6zh8kj1arssdWaqqe4ts&callback=initMap">
+    </script>
 </body>
 </html>
