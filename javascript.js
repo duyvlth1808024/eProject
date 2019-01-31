@@ -3,11 +3,11 @@
 $(document).ready(function(){
   $('#cdsearch').click(function(){
     if($('#ffst').hasClass('far fa-search')){
-      $('#ffst').removeClass('far fa-search').addClass('far fa-times');
+      $('#ffst').removeClass('far fa-search').addClass('far fa-times active-rnavigation');
       $('.search-box').addClass('active-sb');
       return true;
     }else{
-    $('#ffst').removeClass('far fa-times').addClass('far fa-search');
+    $('#ffst').removeClass('far fa-times active-rnavigation').addClass('far fa-search');
     $('.search-box').removeClass('active-sb');
       return true;
     }
@@ -16,7 +16,17 @@ $(document).ready(function(){
     $('#ffst').removeClass('far fa-times').addClass('far fa-search');
     $('.search-box').removeClass('active-sb');
   });
+  $('#cdlogin').click(function(){
+    if ($('#ffus').hasClass('active-rnavigation')){
+      $('#ffus').removeClass('active-rnavigation');
+    }else{
+      $('#ffus').addClass('active-rnavigation');
+    }
+      return true;
+  });
 });
+
+
 
 
 //Register
@@ -70,5 +80,8 @@ function checkRegister() {
       return false;
     }alter("Thank you for accompany La_Imperial!");
     return true;
+};
 
-}
+function goBack() {
+  window.history.back();
+};

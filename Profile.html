@@ -3,7 +3,7 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="utf-8">
-	<title>Contact La_Imperial</title>
+	<title>Your Profile</title>
 	<!-- fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
@@ -14,12 +14,10 @@
 	<!-- styles -->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="vendor/jquery-ui/jquery-ui.css">
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<!-- javascipt -->
 	<script type="text/javascript" src="vendor/jquery/jquery.js"></script>
 	<script type="text/javascript" src="vendor/bootstrap/js/bootstrap.js"></script>
-	<script type="text/javascript" src="vendor/jquery-ui/jquery-ui.js"></script>
 	<script type="text/javascript" src="javascript.js"></script>
 </head>
 <body>
@@ -43,13 +41,13 @@
 			<div class="col-lg-8 navigation-center">
 				<a href="Home.html">Home</a>
 			    <a href="Product_list.html">Product List</a>
-			    <a href="Contact.html" class="active-navigation">Contact</a>
+			    <a href="Contact.html">Contact</a>
 			    <a href="#">Support</a>
 			    <a href="Location_store.html"></i> Store Location</a>
 			</div>
 			<div class="col-lg-2 navigation-right">
-				<a id="cdsearch"><i id="ffst" class="far fa-search"></i></a>
-    			<a id="cdlogin" data-toggle="modal" data-target="#exampleModal"><i id="ffus" class="far fa-user"></i></a>
+				<a href="#" id="cdsearch"><i id="ffst" class="far fa-search"></i></a>
+    			<a href="#"data-toggle="modal" data-target="#exampleModal"><i class="far fa-user active-rnavigation"></i></a>
 				<a href="#"><i class="far fa-shopping-cart"></i></a>
 			</div>
 		</div>
@@ -68,8 +66,8 @@
 		        	<div class="modal-header">
 		        		<h4>Login to La_Imperial</h4>
 		        	</div>
-		        	<form class="form-login" id="form-login">
-			        	<div class="modal-body">
+			        <div class="modal-body">
+			        	<form class="form-login" id="form-login">
 							<div class="login user">
 								<input type="text" name="login-user" required>
 								<i class="fa fa-user"></i>
@@ -80,18 +78,18 @@
 								<i class="fa fa-lock"></i>
 								<label>Password</label>
 							</div>
+						</form>
 						<div class="remember-box">
 							<input type="checkbox" name="rememberme" id="rememberme" class="rememberme" value="Remember me">
 							<label for="rememberme">Remember me</label>	
-							<a href="Register.html">Create new account</a>
+							<a href="#">Create new account</a>
 						</div>
-			        	</div>
-				        <div class="modal-footer">
-				        	<a href="#">Forget password</a>
-					        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					        <button type="button" class="btn btn-primary">Login</button>
-				        </div>
-					</form>
+			        </div>
+			        <div class="modal-footer">
+			        	<a href="#">Forget password</a>
+				        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				        <button type="button" class="btn btn-primary">Login</button>
+			        </div>
 		        </div>
 		    </div>
 		</div>
@@ -99,31 +97,64 @@
 			
 		</div> -->
 	</header>
-	<section class="col-lg-12 section-map-contact">
-		<div class="container">
-			<div class="col-lg-4 information-contact">
-				<h2>Contact<h2>
-				<h4>Address</h4>
-				<span>Số 7 Tôn Thất Thuyết, Mỹ Đình, Hà Nội</span>
-				<h4>Email</h4>
-				<span>email123@gmail.com</span>
-				<h4>Phone</h4>
-				<span>+84 123 456 789</span>
+	<section class="col-lg-12 section-profile">
+		<div class="container container-profile">
+			<div class="col-lg-3 imgsmember">
+				<img src="http://cdn.onlinewebfonts.com/svg/img_569204.png" alt="Avatar" class="avatar">
+				<h4>First Last Name</h4>
+				<h4>Member: Normal</h4>
 			</div>
-			<div class="col-lg-8 div-map">
-				<div class="div-map-contact" id="map"></div>
+			<div class="col-lg-9 informationssecurity">
+				<h4>General Settings</h4>
+				<div class="col-lg-12 isp profiler-email">
+					<div class="col-lg-2 insp">
+				 		<b>Email</b>
+					</div>
+					<div class="col-lg-8 inf">
+					 	<span>Test test test test</span>
+					</div>
+					<div class="col-lg-2 change-p">
+						<i class="fas fa-pencil-alt"></i>
+						<a href="#">Chỉnh sửa</a>
+					</div>
+				</div>
+				<div class="col-lg-12 isp profiler-address">
+					<div class="col-lg-2 insp">
+				 		<b>Address</b>
+					</div>
+					<div class="col-lg-8 inf">
+					 	<span>Test test test test</span>
+					</div>
+					<div class="col-lg-2 change-p">
+						<i class="fas fa-pencil-alt"></i>
+						<a href="#">Chỉnh sửa</a>
+					</div>
+				</div>
+				<div class="col-lg-12 isp profiler-numberphone">
+					<div class="col-lg-2 insp">
+				 		<b>Phone</b>
+					</div>
+					<div class="col-lg-8 inf">
+					 	<span>Test test test test</span>
+					</div>
+					<div class="col-lg-2 change-p">
+						<i class="fas fa-pencil-alt"></i>
+						<a href="#">Chỉnh sửa</a>
+					</div>
+				</div>
+				<div class="col-lg-12 isp profile-password">
+					<div class="col-lg-2 insp">
+				 		<b>Password</b>
+					</div>
+					<div class="col-lg-8 inf">
+					 	<span>Test test test test</span>
+					</div>
+					<div class="col-lg-2 change-p">
+						<i class="fas fa-pencil-alt"></i>
+						<a href="#">Chỉnh sửa</a>
+					</div>
+				</div>
 			</div>
-		</div>
-	</section>
-	<section class="col-lg-12">
-		<div class="container">
-			<form class="form-message">
-				<input type="text" name="name-message" placeholder="Name">
-				<input type="email" name="email-message" placeholder="Email">
-				<input type="phone" name="phone-message" placeholder="Phone">
-				<textarea cols="100" rows="15" name="ms-massge" placeholder="Message"></textarea>
-				<button>Send Message</button>
-			</form>
 		</div>
 	</section>
 	<footer class="col-lg-12">
@@ -170,16 +201,5 @@
 			</div>
 		</div>
 	</footer>
-	<script>
-		function initMap() {
-			var uluru = {lat: 21.0281772, lng: 105.7828902};
-			var map = new google.maps.Map(
-			    document.getElementById('map'), {zoom: 12, center: uluru});
-			var marker = new google.maps.Marker({position: uluru, map: map});
-		}
-    </script>
-    <script async defer
-    	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJDcMtZ6asaHL6zh8kj1arssdWaqqe4ts&callback=initMap">
-    </script>
 </body>
 </html>

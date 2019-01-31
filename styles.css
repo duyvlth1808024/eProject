@@ -215,6 +215,10 @@ a.active-navigation:before, .navigation-center a:hover:before, .navigation-cente
  	text-align: right;
 }
 
+.active-rnavigation {
+  color: #f1553b;
+}
+
 .navigation-right a {
 	font-size: 20px;
 	color: #282828;
@@ -224,6 +228,7 @@ a.active-navigation:before, .navigation-center a:hover:before, .navigation-cente
   border: none;
   text-transform: uppercase;
   transition: all .2s;
+  cursor: pointer;
 }
 
 .navigation-right a:nth-child(1) {
@@ -384,6 +389,7 @@ div.searching-box i {
 div.searching-box input {
   width: 93%;
   border: none;
+  margin: 0;
   outline: none;
 }
 
@@ -415,8 +421,26 @@ div.owl-carousel {
 }
 
 div.information-slider {
-  margin: 80px 0;
+  margin-top: 80px;
   padding: 0 50px;
+  text-align: left;
+}
+
+div.information-slider h1 {
+  font-size: 40px;
+}
+
+div.information-slider h2 {
+  margin-bottom: 15px;
+}
+
+div.information-slider span {
+  font-size: 17px;
+  font-weight: lighter;
+}
+
+div.information-slider form {
+  display: inline-block;
 }
 
 div.information-slider button {
@@ -430,8 +454,29 @@ div.information-slider button {
   font-size: 16px;
 }
 
+div.information-slider a {
+  text-decoration: none;
+  color: #242424;
+  display: inline-block;
+  height: 40px;
+  width: 100px;
+  border-radius: 5px;
+  border: 1px solid #242424;
+  font-size: 16px;
+  line-height: 38px;
+  margin-left: 15px;
+  text-align: center;
+}
+
+div.information-slider a:hover {
+  border-color: #f1553b;
+  color: #f1553b;
+  transition: 0.35s;
+}
+
 div.information-slider button:hover {
   background-color: #e84226;
+  transition: 0.5s;
 }
 
 .owl-carousel .owl-item img {
@@ -447,7 +492,7 @@ button.owl-prev, button.owl-next {
 }
 
 .owl-theme .owl-nav [class*='owl-']:hover{
-  background: whitesmoke;
+  background: #fff;
   color: #272727;
 }
 
@@ -457,7 +502,7 @@ button.owl-prev, button.owl-next {
   padding: 0 5px;
   color: #f4f6f8;
   height: 100%;
-  line-height: 260px;
+  line-height: 400px;
 }
 
 .owl-nav span:hover {
@@ -582,6 +627,19 @@ footer span.logo-text {
 
 .logo-footer span {
 	display: block;
+}
+
+.list-footer-top ul {
+  margin-bottom: 8px;
+}
+
+.list-footer-top ul li a {
+  text-decoration: none;
+  color: #242424;
+}
+
+.list-footer-top ul:hover,.list-footer-top ul li a:hover {
+  color: #f1553b;
 }
 
 .payment-method span {
@@ -768,6 +826,7 @@ div.button-register a {
   text-align: center;
   border: 1px solid black;
   padding: 3px 0 1px 0;
+  cursor: pointer;
 }
 
 div.button-register button {
@@ -987,4 +1046,69 @@ div.box-select label {
   border-color: #f1553c;
   transition: 0.5s;
   outline:none;   
+}
+
+
+/*Profile*/
+.section-profile {
+  padding: 50px 0;
+  background-color: #f4f6f8;
+}
+
+.container-profile {
+  height: 500px;
+  background-color: #fff;
+}
+
+div.imgsmember, div.informationssecurity {
+  background-color: #fff;
+  padding: 30px 0;
+  height: 100%;
+}
+
+div.imgsmember {
+  border: 1px solid #ccc;
+  background-color: #fff;
+  text-align: center;
+}
+
+div.informationssecurity {
+  padding: 30px 20px;
+  background-color: #fff;
+}
+
+.isp {
+  text-align: left;
+  padding: 10px 0;
+  border-bottom: 1px solid #f2f4f6;
+}
+
+div.isp:nth-child(2) {
+  border-top: 1px solid #ccc;
+}
+
+div.isp:nth-child(5) {
+  border-bottom: 1px solid #ccc;
+}
+
+.avatar {
+  vertical-align: middle;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.change-p {
+  text-align: right;
+  font-size: 12px;
+}
+
+
+/*view-cart*/
+.view-cart thead {
+  border-bottom: 1px solid #ccc;
+}
+
+.view-cart tbody {
+  border-bottom: 1px solid #ccc;
 }
