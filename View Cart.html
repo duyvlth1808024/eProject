@@ -99,26 +99,50 @@
 	</header>
 	<section class="col-lg-12 view-cart">
 		<div class="container">
-			<form>
-				<table>
-					<thead>
-						<tr>
-							<th>Product</th>
-							<th>Price</th>
-							<th>Quanity</th>
-							<th>Total</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>test 1</td>
-							<td>test 2</td>
-							<td>test 3</td>
-							<td>test 4</td>
-						</tr>
-					</tbody>
-				</table>
-			</form>
+			<div class="cart-body col-lg-12">
+				<div class="cart-header">
+					<h3>You have <b>2 items</b> in your cart</h3>
+				</div>
+				<form class="form-cart col-lg-12">
+					<table class="col-lg-12">
+						<thead>
+							<tr>
+								<th class="col-lg-6">Product</th>
+								<th class="col-lg-2">Price</th>
+								<th class="col-lg-1">Quanity</th>
+								<th class="col-lg-3">Total</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>test 1</td>
+								<td>test 2</td>
+								<td>test 3</td>
+								<td>test 4</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="col-lg-12">
+						<div class="col-lg-6">
+							<div class="discount-code">
+								<p>
+									Discount Code: 
+									<input type="text" id="discountcode" size="6" minlength="6" maxlength="6" required>
+								</p>
+							</div>
+							<div class="delivery-address">
+								<p>
+									Delivery Address: 
+									<input type="text" id="deliveryaddress" required>
+								</p>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							
+						</div>
+					</div>
+				</form>
+			</div>
 		</div>
 	</section>
 	<footer class="col-lg-12">

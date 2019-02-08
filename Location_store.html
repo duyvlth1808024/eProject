@@ -184,35 +184,8 @@
 			</div>
 		</div>
 	</footer>
-	<script>
-		function initMap() {
-			var uluru = {lat: 21.0281772, lng: 105.7828902};
-			var map = new google.maps.Map(
-			    document.getElementById('map'), {zoom: 12, center: uluru});
-			var marker = new google.maps.Marker({position: uluru, map: map});
-		}
-    </script>
     <script async defer
     	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJDcMtZ6asaHL6zh8kj1arssdWaqqe4ts&callback=initMap">
-    </script>
-    <script>
-    	$(document).ready(function(){
-    		$('#ls1').click(function(){
-    			$('#ls2').removeClass('active-sls');
-    			$('#ls3').removeClass('active-sls');
-    			$('#ls1').addClass('active-sls');
-    		})
-    		$('#ls2').click(function(){
-    			$('#ls1').removeClass('active-sls');
-    			$('#ls3').removeClass('active-sls');
-    			$('#ls2').addClass('active-sls');
-    		})
-    		$('#ls3').click(function(){
-    			$('#ls1').removeClass('active-sls');
-    			$('#ls2').removeClass('active-sls');
-    			$('#ls3').addClass('active-sls');
-    		})
-    	});
     </script>
 </body>
 </html>
