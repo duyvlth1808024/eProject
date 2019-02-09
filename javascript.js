@@ -24,6 +24,12 @@ $(document).ready(function(){
     }
       return true;
   });
+  $('#close_modal').click(function(){
+    $('#ffus').removeClass('active-rnavigation');
+  });
+  $(!'.modal-dialog').click(function(){
+    $('#ffus').removeClass('active-rnavigation');
+  });
 });
 
 
