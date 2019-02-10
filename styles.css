@@ -362,6 +362,8 @@ div.modal-footer a {
 div.search-box {
   position: absolute;
   display: none;
+  right: 90px;
+  z-index: 3;
 }
 
 div.active-sb {
@@ -415,7 +417,7 @@ span.badge-item-cart {
 div.cart-navigation {
   width: 260px; 
   background-color: #fff;
-  display: inline-block;
+  /*display: inline-block;*/
   position: absolute;
   right: 90px;
   z-index: 5;
