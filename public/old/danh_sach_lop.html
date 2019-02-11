@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>danh sach lop hoc</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap\css\bootstrap.css">
+	<script type="text/javascript" src ="jquery\jquery.js"></script>
+</head>
+<body>
+	<a href="/them_lop_hoc.html" class="btn btn-primary">them lop hoc</a>
+	<table class="table">
+		<thead>
+			<th>ma lop</th>
+			<th>ten lop</th>
+			<th>phong hoc</th>
+		</thead>
+		<tbody>
+			
+		</tbody>	
+
+	</table>
+<script type="text/javascript">
+		jQuery.ajax({
+			url: '/list_class',
+			method: "GET",
+			success: function(result){
+				var html = '';
+				for (var i = 0; i < result.data.length; i++){
+					html +=		'<tr>';
+					html +=			'<td>'+result.data[i].ma_lop+'</td>';
+					html +=			'<td>'+result.data[i].ten_lop+'</td>';
+					html +=			'<td>'+result.data[i].phong_hoc+'</td>';
+					html +=			'<td><a href = "#" class = "btn btn-primary">Chi Tiết</a><a href = "#" class = "btn btn-danger">Xóa Lớp</a>'
+					html +=		'<tr>';
+				}
+				jQuery("table tbody").append(html);
+			}
+
+		});
+	</script>
+</script>
+</body>
+</html>

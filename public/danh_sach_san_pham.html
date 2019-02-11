@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<title>list product</title>
+	<!-- fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Charm" rel="stylesheet">
+	<!-- icons -->
+	<link rel="stylesheet" type="text/css" href="FontAwesome/css/all.css">
+	<!-- styles -->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<!-- javascipt -->
+	<script src="vendor/jquery/jquery.js"></script>
+	<script type="text/javascript" src="javascript.js"></script>
+</head>
+
+<body>
+	<a href="/them_san_pham.html" class="btn btn-primary">Them san pham</a>
+
+	<section class="section1">
+		<button class="button" onclick="list_product_all()">
+			danh sach san pham
+		</button>
+		<button class="button" type="reset" onclick="list_product_quat()">
+			danh sach san pham quat
+		</button>
+		<table class="table">
+		<thead>
+			<th>mã sản phẩm </th>
+			<th>tên sản phẩm</th>
+			<th>loại sản phẩm</th>
+			<th>giá tiền</th>
+			<th></th>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+	</section>
+	
+<script type="text/javascript">
+	function list_product_all(){
+		jQuery.ajax({
+			url: '/list_product',
+			method: "GET",
+			success: function(result){
+				var html = '';
+				for (var i = 0; i < result.data.length; i++){
+					html +=		'<tr>';
+					html +=			'<td>'+result.data[i].pr_code+'</td>';
+					html +=			'<td>'+result.data[i].pr_name+'</td>';
+					html +=			'<td>'+result.data[i].pr_class+'</td>';
+					html +=			'<td>'+result.data[i].pr_price+'</td>';
+
+					html +=			'<td><a class="btn btn-primary" href="/chi_tiet_san_pham.html?id='+result.data[i]._id+'">Chi tiet</a><a data-id="'+result.data[i]._id+'" class="btn btn-danger" href="#" onclick="xoa_lop(this)">delete product</a><a class="btn btn-primary" href="/sua_san_pham.html?id='+result.data[i]._id+'">Chinh sua</a></td>';
+					html +=		'</tr>';	
+				}
+				jQuery("table tbody").html(html);
+			}
+
+		});
+		}
+
+
+		function list_product_quat(){
+		jQuery.ajax({
+			url: '/list_product_quat',
+			method: "GET",
+			success: function(result){
+				var html = '';
+				for (var i = 0; i < result.data.length; i++){
+					html +=		'<tr>';
+					html +=			'<td>'+result.data[i].pr_code+'</td>';
+					html +=			'<td>'+result.data[i].pr_name+'</td>';
+					html +=			'<td>'+result.data[i].pr_class+'</td>';
+					html +=			'<td>'+result.data[i].pr_price+'</td>';
+
+					html +=			'<td><a class="btn btn-primary" href="/chi_tiet_san_pham.html?id='+result.data[i]._id+'">Detail product</a><a data-id="'+result.data[i]._id+'" class="btn btn-danger" href="#" onclick="delete_product(this)">delete_product</a></td>';
+						html +=		'</tr>';	
+				}
+				jQuery("table tbody").html(html);
+			}
+
+		});
+		}
+
+		function xoa_lop(element){
+			jQuery.ajax({
+				url: '/delete_class',
+				method: "GET",
+				data: {id: jQuery(element).attr("data-id")},
+				success: function(result){
+					if(result.status == 1){
+						alert(result.message);
+					}else{
+						alert("chua xoa duoc");
+					}
+				}
+			});
+		}
+	</script>
+</body>
+</html>

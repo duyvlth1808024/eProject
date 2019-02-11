@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>danh sach sinh vien</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap\css\bootstrap.css">
+	<script type="text/javascript" src ="jquery\jquery.js"></script>
+</head>
+<body>
+	<a href="/them_sinh_viên.html" class="btn btn-primary">Them sinh viên</a>
+	<table class="table">
+		<thead>
+			<th>ma_sinh_vien</th>
+			<th>ho_ten</th>
+			<th>ngay_sinh</th>
+			<th>lop_hoc</th>
+			<th></th>
+		</thead>
+		<tbody>
+			
+		</tbody>
+ 	
+
+
+	</table>
+<script type="text/javascript">
+	function loading_class(){
+		jQuery.ajax({
+			url: '/list_hs',
+			method: "GET",
+			success: function(result){
+				var html = '';
+				for (var i = 0; i < result.data.length; i++){
+					html +=		'<tr>';
+					html +=			'<td>'+result.data[i].ms_sv+'</td>';
+					html +=			'<td>'+result.data[i].ho_ten+'</td>';
+					html +=			'<td>'+result.data[i].ngay_sinh+'</td>';
+					html +=			'<td>'+result.data[i].lop_hoc+'</td>';
+
+					html +=			'<td><a class="btn btn-primary" href="/chi_tiet_sv.html?id='+result.data[i]._id+'">Chi tiet</a><a data-id="'+result.data[i]._id+'" class="btn btn-danger" href="#" onclick="xoa_sv(this)">Xoa sv</a></td>';
+						html +=		'</tr>';	
+				}
+				jQuery("table tbody").append(html);
+			}
+
+		});
+		}
+		loading_class();
+		function xoa_lop(element){
+			jQuery.ajax({
+				url: '/delete_sv',
+				method: "GET",
+				data: {id: jQuery(element).attr("data-id")},
+				success: function(result){
+					if(result.status == 1){
+						alert(result.message);
+						loading_class();
+					}else{
+						alert("chua xoa duoc")
+					}
+				}
+			});
+		}
+	</script>
+</body>
+</html>

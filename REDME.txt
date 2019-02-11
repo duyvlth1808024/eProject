@@ -1,0 +1,3 @@
+run git base here.
+"node server.js".
+server running with post 8080.

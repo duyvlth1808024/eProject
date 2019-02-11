@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EDIT PRODUCT</title>
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.css">
+	<script type="text/javascript" src="vendor/jquery/jquery.js"></script>
+</head>
+<body>
+	<form method="post" action="/edit_product" enctype="multipart/form-data" class="col-lg-8">
+		<input type="hidden" name="_id" />
+			<input type="text" placeholder="ma so san pham" name="pr_code" class="form-control"><br/>
+				<input type="text" placeholder="ten san pham" name="pr_name" class="form-control"><br/>
+				<input type="text" placeholder="loai san pham" name="pr_class" class="form-control"><br/>
+				<input type="text" placeholder="link anh san pham 1" name="pr_images1" class="form-control"><br/>
+				<input type="text" placeholder="link anh san pham 2" name="pr_images2" class="form-control"><br/>
+				<input type="text" placeholder="link anh san pham 3" name="pr_images3" class="form-control"><br/>
+				<input type="text" placeholder="link anh san pham 4" name="pr_images4" class="form-control"><br/>
+				<input type="number" placeholder="gia san pham" name="pr_price" class="form-control"><br/>
+				<input type="text" placeholder="chi tiet san pham" name="pr_detail" class="form-control"><br/>
+				<input type="text" placeholder="thoi gian bao hanh" name="pr_guarantee" class="form-control"><br/>
+		<button type="submit" class="btn btn-warning">Submit</button>
+	</form>
+	<script type="text/javascript">
+		
+			var urlParams = new URLSearchParams(window.location.search);
+			jQuery.ajax({
+				url: '/detail_product',
+				method: "GET",
+				data: {id:urlParams.get("id")},
+				success: function(result){
+					jQuery("input[name=_id]").val(result.data._id);
+					jQuery("input[name=pr_code]").val(result.data.pr_code);
+					jQuery("input[name=pr_name]").val(result.data.pr_name);
+					jQuery("input[name=pr_class]").val(result.data.pr_class);
+					jQuery("input[name=pr_images]").val(result.data.pr_images1);
+					jQuery("input[name=pr_images]").val(result.data.pr_images2);
+					jQuery("input[name=pr_images]").val(result.data.pr_images3);
+					jQuery("input[name=pr_images]").val(result.data.pr_images4);
+					jQuery("input[name=pr_price]").val(result.data.pr_price);
+					jQuery("input[name=pr_detail]").val(result.data.pr_detail);
+					jQuery("input[name=pr_guarantee]").val(result.data.pr_guarantee);
+				}
+			});
+		
+	</script>
+</body>
+</html>
