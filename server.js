@@ -34,7 +34,11 @@ app.set('view engine', 'ejs'); // set up ejs for templating
 // app.use(bodyParser.json());
 // app.use(upload.array());
 // required for passport
-
+app.use(session({
+    secret: 'ilovescotchscotchyscotchscotch', // session secret
+    resave: true,
+    saveUninitialized: true
+}));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
@@ -72,7 +76,9 @@ MongoClient.connect(url, function (err, db) {
     console.log('Connected........', url);
   	// const db = client.db;
     var collection = db.db();
+
 	var more_product = collection.collection("more_product");
+    var account = collection.collection("account");
 
 
       app.get("/list_product",function(req,res){
@@ -96,7 +102,6 @@ MongoClient.connect(url, function (err, db) {
     
         //loc-san-pham-theo-nha-san-xuat
           app.get("/filter_product_manufacturer",function(req,res){
-            
             more_product.find({pr_manufacturer: req.query.pr_manufacturer}).toArray(function (err, result) {
              var json = {
                     status: 0,
@@ -114,10 +119,51 @@ MongoClient.connect(url, function (err, db) {
             });
 
         });
-    
+            //tim-kiem-san-pham
+             app.get("/search_product",function(req,res){
+            more_product.find({
+                $or:[
+                {pr_name: req.query.pr_name},
+                {pr_class: req.query.pr_name},
+                {pr_manufacturer: req.query.pr_name},
+                ]
+            }).toArray(function (err, result) {
+             var json = {
+                    status: 0,
+                    message: "Fail",
+                    data: {}
+                };
+                if(err){
+                    console.log(err);
+                }else{
+                    json.status = 1;
+                    json.message = "Success";
+                    json.data = result;
+                }    
+                res.send(json);
+            });
+        });
+               
+              app.get("/search_product_price",function(req,res){
+            more_product.find({pr_price: {$gt: req.query.pr_price}}).toArray(function (err, result) {
+             var json = {
+                    status: 0,
+                    message: "Fail",
+                    data: {}
+                };
+                if(err){
+                    console.log(err);
+                }else{
+                    json.status = 1;
+                    json.message = "Success";
+                    json.data = result;
+                }    
+                res.send(json);
+            });
+        });
+
           //loc-san-pham
             app.get("/filter_product",function(req,res){
-            
             more_product.find({pr_class: req.query.pr_class}).toArray(function (err, result) {
              var json = {
                     status: 0,
@@ -133,7 +179,6 @@ MongoClient.connect(url, function (err, db) {
                 }    
                 res.send(json);
             });
-
         });
     
           //chi-tiet-san-pham
@@ -180,7 +225,7 @@ MongoClient.connect(url, function (err, db) {
             pr_code: req.body.pr_code,
             pr_name: req.body.pr_name,
             pr_class: req.body.pr_class,
-            manufacturer: req.body.manufacturer,
+            pr_manufacturer: req.body.pr_manufacturer,
             pr_images1: req.body.pr_images1,
             pr_images2: req.body.pr_images2,
             pr_images3: req.body.pr_images3,
@@ -194,6 +239,7 @@ MongoClient.connect(url, function (err, db) {
                 res.send("Fail");
             }else{
                 res.send("da them san pham")
+                res.redirect("/admin_page_ddtl.html");
             }
         });
     });
@@ -206,6 +252,8 @@ MongoClient.connect(url, function (err, db) {
             var product2 = {
             pr_code: req.body.pr_code,
             pr_name: req.body.pr_name,
+            pr_class: req.body.pr_class,
+            pr_manufacturer: req.body.pr_manufacturer,
             pr_images1: req.body.pr_images1,
             pr_images2: req.body.pr_images2,
             pr_images3: req.body.pr_images3,
@@ -235,22 +283,6 @@ MongoClient.connect(url, function (err, db) {
     });
    });
 
-    app.get("/list-sv-class",function(req,res){
-        sinhvien.find({ma_lop: req.query.ma_lop}).toArray(function (err, result) {
-                    var json = {
-                        status: 0,
-                        message: "Fail",
-                        data: []
-                    };
-                    if(err){
-                        //console.log(err);
-                    }else{
-                        json.status = 1;
-                        json.message = "Success";
-                        json.data = result;
-                    }
-                    res.send(json);
-                });
-    });
+   
   }
 });
