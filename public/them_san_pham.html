@@ -45,8 +45,8 @@
 			    <a href="#"><i class="fa fa-map-marker-alt"></i> Store Location</a>
 			</div>
 			<div class="col-lg-2 navigation-right">
-				<a href="#"><i class="fal fa-search"></i></a>
-				<a href="#"><i class="fal fa-shopping-cart"></i></a>
+				
+				<a href="/admin_page_ddtl.html" class="btn btn-primary">all product</a>
 			</div>
 		</div>
 	</header>
@@ -56,10 +56,9 @@
 				<input type="text" placeholder="ten san pham" name="pr_name" class="form-control"><br/>
 				<input type="text" placeholder="loai san pham" name="pr_class" class="form-control"><br/>
 				<input type="text" placeholder="ten hang san xuat" name="manufacturer" class="form-control"><br/>
-				<input type="text" placeholder="link anh san pham 1" name="pr_images1" class="form-control"><br/>
-				<input type="text" placeholder="link anh san pham 2" name="pr_images2" class="form-control"><br/>
-				<input type="text" placeholder="link anh san pham 3" name="pr_images3" class="form-control"><br/>
-				<input type="text" placeholder="link anh san pham 4" name="pr_images4" class="form-control"><br/>
+				<input type="text" id="link" placeholder="link anh san pham 1" name="pr_images1" class="form-control"><br/>
+				<input type="text" id="link2" placeholder="link anh san pham 2" name="pr_images2" class="form-control"><br/>
+				<input type="text" id="link3" placeholder="link anh san pham 3" name="pr_images3" class="form-control"><br/>
 				<input type="number" placeholder="gia san pham" name="pr_price" class="form-control"><br/>
 				<input type="text" placeholder="chi tiet san pham" name="pr_detail" class="form-control"><br/>
 				<input type="text" placeholder="thoi gian bao hanh" name="pr_guarantee" class="form-control"><br/>
@@ -115,5 +114,11 @@
 			</div>
 		</div>
 	</footer>
+	<script type="text/javascript">
+
+		$("#link").val("https://drive.google.com/uc?id=")
+		$("#link2").val("https://drive.google.com/uc?id=")
+		$("#link3").val("https://drive.google.com/uc?id=")
+	</script>
 </body>
 </html>

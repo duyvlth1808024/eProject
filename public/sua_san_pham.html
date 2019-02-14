@@ -11,10 +11,9 @@
 			<input type="text" placeholder="ma so san pham" name="pr_code" class="form-control"><br/>
 				<input type="text" placeholder="ten san pham" name="pr_name" class="form-control"><br/>
 				<input type="text" placeholder="loai san pham" name="pr_class" class="form-control"><br/>
-				<input type="text" placeholder="link anh san pham 1" name="pr_images1" class="form-control"><br/>
-				<input type="text" placeholder="link anh san pham 2" name="pr_images2" class="form-control"><br/>
-				<input type="text" placeholder="link anh san pham 3" name="pr_images3" class="form-control"><br/>
-				<input type="text" placeholder="link anh san pham 4" name="pr_images4" class="form-control"><br/>
+				<input type="text" id="link" placeholder="link anh san pham 1" name="pr_images1" class="form-control"><br/>
+				<input type="text" id="link2" placeholder="link anh san pham 2" name="pr_images2" class="form-control"><br/>
+				<input type="text" id="link3" placeholder="link anh san pham 3" name="pr_images3" class="form-control"><br/>
 				<input type="number" placeholder="gia san pham" name="pr_price" class="form-control"><br/>
 				<input type="text" placeholder="chi tiet san pham" name="pr_detail" class="form-control"><br/>
 				<input type="text" placeholder="thoi gian bao hanh" name="pr_guarantee" class="form-control"><br/>
@@ -41,7 +40,9 @@
 					jQuery("input[name=pr_guarantee]").val(result.data.pr_guarantee);
 				}
 			});
-		
+		$("#link").val("https://drive.google.com/uc?id=")
+		$("#link2").val("https://drive.google.com/uc?id=")
+		$("#link3").val("https://drive.google.com/uc?id=")
 	</script>
 </body>
 </html>

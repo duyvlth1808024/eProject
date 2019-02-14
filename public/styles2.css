@@ -1,0 +1,30 @@
+.categories{
+	height: 200px;
+}
+.categories li{
+	float: left;
+	width: 100%;
+	padding: 5px 0;
+
+}
+.categories li input[type=checkbox]:checked + label
+{
+	color: #ff5912;
+}
+.categories input[type=checkbox]{
+	
+}
+.categories li input[type=radio]:checked + label
+{
+	color: #ff5912;
+}
+.categories input[type=radio]{
+	
+}
+.categories li label{
+	font-size: 14px;
+}
+
+.manufacturer li label{
+	font-size: 14px;
+}

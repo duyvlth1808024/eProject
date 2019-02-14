@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<title>Product list</title>
+	<!-- fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Charm" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<!-- icons -->
+	<link rel="stylesheet" type="text/css" href="FontAwesome/css/all.css">
+	<!-- styles -->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="vendor/jquery-ui/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="stylesheet" type="text/css" href="styles2.css">
+
+	<!-- javascipt -->
+	<script type="text/javascript" src="vendor/jquery/jquery.js"></script>
+	<script type="text/javascript" src="vendor/bootstrap/js/bootstrap.js"></script>
+	<script type="text/javascript" src="vendor/jquery-ui/jquery-ui.js"></script>
+	<script type="text/javascript" src="javascript.js"></script>
+</head>
+<body>
+	<header class="col-lg-12">
+		<div class="navigation">
+			<div class="col-lg-2 navigation-left">
+				<a href="#" class="logo-header">
+					<span>L</span>
+					<span>a</span>
+					<span>_</span>
+					<span>I</span>
+					<span>m</span>
+					<span>p</span>
+					<span>e</span>
+					<span>r</span>
+					<span>i</span>
+					<span>a</span>
+					<span>l</span>					
+				</a>
+			</div>
+			  <div class="col-lg-8 navigation-center">
+            <a href="/" class="active-navigation">Home</a>
+            <a href="/Product_list.html">Product List</a>
+            <a href="Contact.html">Contact</a>
+            <a href="#">Support</a>
+            <a href="/Location_store.html"></i> Store Location</a>
+        </div>
+			<div class="col-lg-2 navigation-right">
+				<a href="#" id="cdsearch"><i id="ffst" class="far fa-search"></i></a>
+    			<a href="#" id="cdlogin" data-toggle="modal" data-target="#exampleModal">
+    				<i id="ffus" class="far fa-user"></i>
+    			</a>
+				<a href="#" id="cdcart">
+					<i class="far fa-shopping-cart" id="ffsc"></i>
+					<span class="badge-item-cart">1</span>
+				</a>
+			</div>
+		</div>
+		<div id="search-box" class="search-box">
+			<div class="container">
+				<div class="searching-box">
+					<i id="ffct" class="fal fa-times"></i>
+					<input type="text" placeholder="Search">
+					<button><i class="far fa-search"></i></button>
+				</div>	
+			</div>
+		</div>
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		    <div class="modal-dialog" role="document">
+		        <div class="modal-content">
+		        	<div class="modal-header">
+		        		<h4>Login to La_Imperial</h4>
+		        	</div>
+		        	<form class="form-login" id="form-login">
+			        	<div class="modal-body">
+							<div class="login user">
+								<input type="text" name="login-user" required>
+								<i class="fa fa-user"></i>
+								<label>Email or Username</label>					
+							</div>
+							<div class="login password">
+								<input type="text" name="login-password" required>
+								<i class="fa fa-lock"></i>
+								<label>Password</label>
+							</div>
+						<div class="remember-box">
+							<input type="checkbox" name="rememberme" id="rememberme" class="rememberme" value="Remember me">
+							<label for="rememberme">Remember me</label>	
+							<a href="Register.html">Create new account</a>
+						</div>
+			        	</div>
+				        <div class="modal-footer">
+				        	<a href="#">Forget password</a>
+					        <button type="button" class="btn btn-secondary" id="close_modal" data-dismiss="modal">Close</button>
+					        <button type="button" class="btn btn-primary">Login</button>
+				        </div>
+					</form>
+		        </div>
+		    </div>
+		</div>
+		<div class="cart-navigation">
+			<div class="quick-cart-item-count">
+				<p>You have 6 items</p>
+			</div>
+			<div class="quick-cart-item-product">
+				<ul>
+					<li class="card-quick-cart">
+						<img src="images/ghe 4.png">
+						<div class="info-quick-cart">
+							<p>Test item quick cart</p>
+							<span>100$</span>
+						</div>
+						<a><i class="fal fa-times"></i></a>
+					</li>
+				</ul>
+			</div>
+			<div class="quick-cart-item-cart">
+				<a href="View_Cart.html">View cart</a>
+			</div>
+		</div>
+	</header>
+	<section class="col-lg-12 s-product-list">
+		<div class="container">
+			<div class="col-lg-3">
+				<!-- <div class="row"> -->
+					<div class="box-select categories">
+						<h4>Categories</h4>
+						<ul>
+						<li>
+						<input id="All" type="radio" name="radio" value="1" class="input-text" />
+						<label for="All" onclick="list_product_all()">All</label>
+						<p></p>
+						<input id="Kitchen" type="radio" name="radio" value="2" class="input-text" />
+						<label for="Kitchen" data-id="light" onclick="filter_product(this)" >light</label>
+						<p></p>
+						<input id="fan" type="radio"name="radio" value="3" class="input-text" />
+						<label for="fan" data-id="ao" onclick="filter_product(this)">ao</label>
+						</li>
+
+						</ul>
+					</div>
+					<div class="box-select manufacturer">
+						<h4>Manufacturer</h4>
+						<ul>
+							<li>
+								<input id="Panasonic" type="radio" name="radio" value="1" id="selectprod4">
+								<label for="Panasonic" data-id="Panasony" onclick="filter_product_manufacturer(this)" >Panasonic</label>
+							</li>
+							<li>
+								<input id="SamSung"type="radio" name="radio" value="2" id="selectprod5">
+								<label for="SamSung" data-id="SamSung" onclick="filter_product_manufacturer(this)" >SamSung</label>
+							</li>
+							<li>
+								<input id="Sunhouse" type="radio" name="radio" value="3" id="selectprod6">
+								<label for="Sunhouse" data-id="Sunhouse" onclick="filter_product_manufacturer(this)" >Sunhouse</label>
+							</li>
+						</ul>
+					</div>
+					<div class="box-select price">
+						<h4>Price</h4>
+						<p>
+							<label for="amount">Price range:</label>
+						    <input type="text" id="amount" readonly>
+						</p>
+						<div id="slider-range"></div>
+					</div>
+				<!-- </div> -->
+			</div>
+			<div class="col-lg-9">
+				<div class="row" id="san_pham">
+					 <span></span>
+
+				<div class="row">
+					<div class="col-lg-3">
+						<div class="amounts">
+							Have <strong>18</strong> products in <strong>2</strong> pages
+						</div>
+					</div>
+					<div class="col-lg-9">
+						<div class="paginate">
+							<ul>
+								<li><a title>1</a></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">Next</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer class="col-lg-12">
+		<div class="col-lg-12 footer-top">
+			<div class="container">
+				<div class="col-lg-3 logo-footer">
+					<span class="logo-text">
+						L a _ I m p e r i a l
+					</span>
+					<span><b>A &ensp;</b> Số 7 Tôn Thất Thuyết, Mỹ Đình, Hà Nội</span>
+					<span><b>T &ensp;</b> +84 123 456 789</span>
+					<span><b>M &ensp;</b> 123456@fpt.edu.vn</span>
+				</div>
+				<div class="col-lg-6 list-footer-top">
+					<div class="col-lg-4 lft-left">
+							<div><ul><li><a href="#">Shipping</a></li></ul></div>
+							<div><ul><li><a href="#">Time Working</a></li></ul></div>
+							<div><ul><li><a href="#">Payment Method</a></li></ul></div>
+					</div>
+					<div class="col-lg-4 lft-center">
+							<div><ul><li><a href="#">Credit Cards</a></li></ul></div>
+							<div><ul><li><a href="#">Returns</a></li></ul></div>
+							<div><ul><li><a href="#">Product List</a></li></ul></div>
+					</div>
+					<div class="col-lg-4 lft-right">
+							<div><ul><li><a href="#">Terms</a></li></ul></div>
+							<div><ul><li><a href="#">Report Problem</a></li></ul></div>
+							<div><ul><li><a href="#">Find Store</a></li></ul></div>
+					</div>
+				</div>
+				<div class="col-lg-3 payment-method">
+					<span>Payment Method</span>
+					<i class="fab fa-cc-mastercard"></i>
+					<i class="fab fa-cc-visa"></i>
+					<i class="fab fa-cc-amazon-pay"></i>
+					<i class="fab fa-cc-stripe"></i>
+					<i class="fab fa-cc-paypal"></i>
+					<i class="fab fa-cc-jcb"></i>
+					<i class="fab fa-cc-discover"></i>
+					<i class="fab fa-cc-diners-club"></i>
+					<i class="fab fa-cc-apple-pay"></i>
+					<i class="fab fa-cc-amex"></i>
+					<i class="fab fa-cc-amazon-pay"></i>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-12 footer-bottom">
+			<div class="container">
+				<div class="col-lg-6 coppyright">
+					<span>Coppyright © 2018 Farost</span>
+				</div>
+				<div class="col-lg-6 page-store">
+					<a href="#"><i class="fab fa-facebook-f"></i></a>
+					<a href="#"><i class="fab fa-twitter"></i></a>
+					<a href="#"><i class="fab fa-google-plus-g"></i></a>
+					<a href="#"><i class="fab fa-instagram"></i></a>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<script>
+		$( function() {
+	    	$( "#slider-range" ).slider({
+		    	range: true,
+		    	min: 0,
+		    	max: 500,
+		    	values: [ 50, 450 ],
+		    	slide: function( event, ui ) {
+		    		$( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+	        }
+	    	});
+	    $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
+	      " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+	    });
+
+	    function list_product_all(){
+    	jQuery.ajax({
+        url: '/list_product',
+        method: "GET",
+        success: function(result, element){
+            var y = '';
+            for (var i = 0; i < result.data.length; i++){
+            y+='	<div class="col-lg-4">';
+			y+='	<div class="card-product">';
+			y+='	<div class="image-product">';
+			y+='	<img src='+result.data[i].pr_images1+'>';
+			y+='	</div>';
+			y+='	<div class="info-card">';
+			y+='	<div class="info-product">';
+			y+='	<a href="/chi_tiet_san_pham.html?id='+result.data[i]._id+'"><h3>'+result.data[i].pr_name+'</h3></a>';
+			y+='	<span>'+result.data[i].pr_price+'</span>';
+			y+='	</div>';
+			y+='	<div class="action-product">';
+			y+='	<form class="act-product">';
+			y+='	<button class="add-to-card">';
+			y+='	<i class="fal fa-cart-plus"></i>';
+			y+='	</button>';
+			y+='	</form>';
+			y+='	</div>';
+			y+='	<div class="detail-product">';
+			y+='	<p>'+result.data[i].pr_class+'</p>';
+			y+='	<span>Use in kitchen</span>';
+			y+='	</div>';
+			y+='	</div>';
+			y+='	</div>';
+			y+='	</div>';
+            }
+            document.getElementById("san_pham").innerHTML = y;
+        }
+    });
+    }
+    // list_product_all();
+    	function filter_product(element){
+    	jQuery.ajax({
+        url: '/filter_product',
+        method: "GET",
+        data: {pr_class: jQuery(element).attr("data-id")},
+        success: function(result, element){
+            var y = '';
+            for (var i = 0; i < result.data.length; i++){
+            y+='	<div class="col-lg-4">';
+			y+='	<div class="card-product">';
+			y+='	<div class="image-product">';
+			y+='	<img src='+result.data[i].pr_images1+'>';
+			y+='	</div>';
+			y+='	<div class="info-card">';
+			y+='	<div class="info-product">';
+			y+='	<a href="/chi_tiet_san_pham.html?id='+result.data[i]._id+'"><h3>'+result.data[i].pr_name+'</h3></a>';
+			y+='	<span>'+result.data[i].pr_price+'</span>';
+			y+='	</div>';
+			y+='	<div class="action-product">';
+			y+='	<form class="act-product">';
+			y+='	<button class="add-to-card">';
+			y+='	<i class="fal fa-cart-plus"></i>';
+			y+='	</button>';
+			y+='	</form>';
+			y+='	</div>';
+			y+='	<div class="detail-product">';
+			y+='	<p>'+result.data[i].pr_class+'</p>';
+			y+='	<span>Use in kitchen</span>';
+			y+='	</div>';
+			y+='	</div>';
+			y+='	</div>';
+			y+='	</div>';
+            }
+            document.getElementById("san_pham").innerHTML = y;
+        }
+    });
+    }
+    function filter_product_manufacturer(elemen){
+    	jQuery.ajax({
+        url: '/filter_product_manufacturer',
+        method: "GET",
+        data: {pr_class: jQuery(element).attr("data-id")},
+        success: function(result, element){
+            var y = '';
+            for (var i = 0; i < result.data.length; i++){
+            y+='	<div class="col-lg-4">';
+			y+='	<div class="card-product">';
+			y+='	<div class="image-product">';
+			y+='	<img src='+result.data[i].pr_images1+'>';
+			y+='	</div>';
+			y+='	<div class="info-card">';
+			y+='	<div class="info-product">';
+			y+='	<a href="/chi_tiet_san_pham.html?id='+result.data[i]._id+'"><h3>'+result.data[i].pr_name+'</h3></a>';
+			y+='	<span>'+result.data[i].pr_price+'</span>';
+			y+='	</div>';
+			y+='	<div class="action-product">';
+			y+='	<form class="act-product">';
+			y+='	<button class="add-to-card">';
+			y+='	<i class="fal fa-cart-plus"></i>';
+			y+='	</button>';
+			y+='	</form>';
+			y+='	</div>';
+			y+='	<div class="detail-product">';
+			y+='	<p>'+result.data[i].pr_class+'</p>';
+			y+='	<span>Use in kitchen</span>';
+			y+='	</div>';
+			y+='	</div>';
+			y+='	</div>';
+			y+='	</div>';
+            }
+            document.getElementById("san_pham").innerHTML = y;
+        }
+    });
+    }
+ //    var urlParams = new URLSearchParams(window.location.search);
+	// filter_product(urlParams.get("id"));
+
+  </script>
+</body>
+</html>

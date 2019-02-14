@@ -24,6 +24,16 @@
     <script type="text/javascript" src="javascript.js"></script>
 </head>
 <body>
+	<div class="container">
+		<div class="col-lg-8 navigation-center">
+            <a href="/" class="active-navigation">Home</a>
+            <a href="/Product_list.html">Product List</a>
+            <a href="Contact.html">Contact</a>
+            <a href="#">Support</a>
+            <a href="/Location_store.html"></i> Store Location</a>
+        </div>
+	</div>
+	  
 	<section class="col-lg-12 select-admin">
 		<a href="/them_san_pham.html" class="btn btn-primary">Add product</a>
 		<button onclick="list_product_all()" class="btn btn-info">Product list></button>
@@ -58,7 +68,7 @@
 					html +=			'<td>'+result.data[i].pr_class+'</td>';
 					html +=			'<td>'+result.data[i].pr_price+'</td>';
 
-					html +=			'<td><a class="btn btn-primary" href="/chi_tiet_san_pham.html?id='+result.data[i]._id+'">Chi tiet</a><a data-id="'+result.data[i]._id+'" class="btn btn-danger" href="#" onclick="xoa_lop(this)">delete product</a><a class="btn btn-primary" href="/sua_san_pham.html?id='+result.data[i]._id+'">Chinh sua</a></td>';
+					html +=			'<td><a class="btn btn-primary" href="/chi_tiet_san_pham.html?id='+result.data[i]._id+'">Chi tiet</a><a data-id="'+result.data[i]._id+'" class="btn btn-danger" href="#" onclick="delete_product(this)">delete product</a><a class="btn btn-primary" href="/sua_san_pham.html?id='+result.data[i]._id+'">Chinh sua</a></td>';
 					html +=		'</tr>';	
 				}
 				jQuery("table tbody").html(html);
@@ -66,47 +76,24 @@
 
 		});
 		}
-
-		// var element = document.getElementById('+result.data[i]._id+');
-  //  		console.log(element);
-  //  		console.log(element.innerHTML);
-
-		function list_product_quat(){
-		jQuery.ajax({
-			url: '/list_product_quat',
-			method: "GET",
-			success: function(result){
-				var html = '';
-				for (var i = 0; i < result.data.length; i++){
-					html +=		'<tr>';
-					html +=			'<td>'+result.data[i].pr_code+'</td>';
-					html +=			'<td>'+result.data[i].pr_name+'</td>';
-					html +=			'<td>'+result.data[i].pr_class+'</td>';
-					html +=			'<td>'+result.data[i].pr_price+'</td>';
-
-					html +=			'<td><a class="btn btn-primary" href="/chi_tiet_san_pham.html?id='+result.data[i]._id+'">Detail product</a><a data-id="'+result.data[i]._id+'" class="btn btn-danger" href="#" onclick="delete_product(this)">delete_product</a></td>';
-						html +=		'</tr>';	
-				}
-				jQuery("table tbody").html(html);
-			}
-
-		});
-		}
-
+		list_product_all();
 		
-		function xoa_lop(element){
+		function delete_product(element){
 			jQuery.ajax({
-				url: '/delete_class',
+				url: '/delete_product',
 				method: "GET",
 				data: {id: jQuery(element).attr("data-id")},
 				success: function(result){
 					if(result.status == 1){
 						alert(result.message);
+						list_product_all();
 					}else{
-						alert("chua xoa duoc");
+						alert("chua xoa duoc")
 					}
 				}
 			});
 		}
+
+		
 	</script>
 </html>

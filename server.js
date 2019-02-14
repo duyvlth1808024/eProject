@@ -1,8 +1,3 @@
-// server.js
-
-// set up ======================================================================
-// get all the tools we need
-
 var express  = require('express');
 var app      = express();
 var port     = process.env.PORT || 8080;
@@ -22,14 +17,14 @@ var url = 'mongodb://duypham9669:69912110a@ds042688.mlab.com:42688/duypham9669';
 mongoose.connect(url);
 // connect to our database
 
-require('./config/passport')(passport); // pass passport for configuration
+require('./config/passport')(passport); 
 
-// set up our express application
+
 app.use(express.static(__dirname + '/public'));
 
-app.use(morgan('dev')); // log every request to the console
-app.use(cookieParser()); // read cookies (needed for auth)
-app.use(bodyParser.json()); // get information from html forms
+app.use(morgan('dev')); 
+app.use(cookieParser()); 
+app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.set('view engine', 'ejs'); // set up ejs for templating
@@ -39,14 +34,10 @@ app.set('view engine', 'ejs'); // set up ejs for templating
 // app.use(bodyParser.json());
 // app.use(upload.array());
 // required for passport
-app.use(session({
-    secret: 'ilovescotchscotchyscotchscotch', // session secret
-    resave: true,
-    saveUninitialized: true
-}));
+
 app.use(passport.initialize());
-app.use(passport.session()); // persistent login sessions
-app.use(flash()); // use connect-flash for flash messages stored in session
+app.use(passport.session());
+app.use(flash());
 
 // routes ======================================================================
 require('./app/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
@@ -69,10 +60,10 @@ app.use(express.static('public'));
 //lets require/import the mongodb native drivers.
 var mongodb = require('mongodb');
 
-//We need to work with "MongoClient" interface in order to connect to a mongodb server.
+
 var MongoClient = mongodb.MongoClient;
 // Connection URL. This is where your mongodb server is running.
-var url = 'mongodb://duypham9669:69912110a@ds042688.mlab.com:42688/duypham9669';
+
 MongoClient.connect(url, function (err, db) {
   if (err) {
     console.log('Unable to connect to the mongoDB server. Error:', err);
@@ -102,10 +93,12 @@ MongoClient.connect(url, function (err, db) {
             });
 
         });
-             //list quat
-          app.get("/list_product_quat",function(req,res){
-            more_product.find({pr_name:'quat'}).toArray(function(err,result){
-                var json = {
+    
+        //loc-san-pham-theo-nha-san-xuat
+          app.get("/filter_product_manufacturer",function(req,res){
+            
+            more_product.find({pr_manufacturer: req.query.pr_manufacturer}).toArray(function (err, result) {
+             var json = {
                     status: 0,
                     message: "Fail",
                     data: {}
@@ -119,23 +112,66 @@ MongoClient.connect(url, function (err, db) {
                 }    
                 res.send(json);
             });
-        });
 
-     
-            app.post("/dang_ky", function(req,res){
-                var user = {
-                    username: req.body.username,
-                    email: req.body.email,
-                    password: req.body.password,
+        });
+    
+          //loc-san-pham
+            app.get("/filter_product",function(req,res){
+            
+            more_product.find({pr_class: req.query.pr_class}).toArray(function (err, result) {
+             var json = {
+                    status: 0,
+                    message: "Fail",
+                    data: {}
                 };
-                account.insert([user],function(err,result){
-                    if(err){
-                        res.send("fail");
-                    }else{
-                        res.send("dang ky thanh cong");
-                    }
-                });
+                if(err){
+                    console.log(err);
+                }else{
+                    json.status = 1;
+                    json.message = "Success";
+                    json.data = result;
+                }    
+                res.send(json);
             });
+
+        });
+    
+          //chi-tiet-san-pham
+      app.get("/detail_product",function(req,res){
+       var id = req.query.id;
+       more_product.find({_id: mongodb.ObjectId(id)}).toArray(function (err, result) {
+      var json = {
+        status: 0,
+        message: "Fail",
+        data: {}
+      };
+        if(err){
+          //console.log(err);
+        }else if(result.length < 1){
+          json.message = 'product not found';
+        }else{
+          json.status = 1;
+          json.message = "Success";
+          json.data = result[0];
+        }
+        res.send(json);
+      });
+         });  
+
+            // app.post("/dang_ky", function(req,res){
+            //     var user = {
+            //         username: req.body.username,
+            //         email: req.body.email,
+            //         password: req.body.password,
+            //     };
+            //     account.insert([user],function(err,result){
+            //         if(err){
+            //             res.send("fail");
+            //         }else{
+            //             res.send("dang ky thanh cong");
+            //         }
+            //     });
+            // });
 
 
     app.post("/them_san_pham", function(req,res)
@@ -162,26 +198,7 @@ MongoClient.connect(url, function (err, db) {
         });
     });
 
-        app.get("/detail_product",function(req,res){
-        var id = req.query.id;
-       more_product.find({_id: mongodb.ObjectId(id)}).toArray(function (err, result) {
-      var json = {
-        status: 0,
-        message: "Fail",
-        data: {}
-      };
-        if(err){
-          //console.log(err);
-        }else if(result.length < 1){
-          json.message = 'product not found';
-        }else{
-          json.status = 1;
-          json.message = "Success";
-          json.data = result[0];
-        }
-        res.send(json);
-      });
- 		 });   
+       
 
      
       //sửa sản phẩm
@@ -206,8 +223,34 @@ MongoClient.connect(url, function (err, db) {
         }
          });
         });
-     //xoa
-    
+      //xoa-san-pham
+    app.get("/delete_product",function(req,res){
+    var id = req.query.id;
+    more_product.deleteOne({_id: mongodb.ObjectId(id)},function(err,result){
+    });
+    res.send({
+      status:1,
+      message:'xoa thanh cong',
+      redirect: '/danh_sach_san_pham.html'
+    });
+   });
 
+    app.get("/list-sv-class",function(req,res){
+        sinhvien.find({ma_lop: req.query.ma_lop}).toArray(function (err, result) {
+                    var json = {
+                        status: 0,
+                        message: "Fail",
+                        data: []
+                    };
+                    if(err){
+                        //console.log(err);
+                    }else{
+                        json.status = 1;
+                        json.message = "Success";
+                        json.data = result;
+                    }
+                    res.send(json);
+                });
+    });
   }
 });
