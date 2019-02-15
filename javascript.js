@@ -113,8 +113,8 @@ function goBack() {
 
 function initMap() {
   var location1 = {lat: 21.0281772, lng: 105.7828902};
-  var location2 = {lat: 21.0273551, lng: 105.826772};
-  var location3 = {lat: 21.0308, lng: 105.8257971};
+  var location2 = {lat: 21.0294772, lng: 105.8350569};
+  var location3 = {lat: 21.0366434, lng: 105.8302789};
   var map = new google.maps.Map(
       document.getElementById('map'), {
                       zoom: 15, 

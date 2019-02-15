@@ -12,6 +12,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 	<!-- icons -->
 	<link rel="stylesheet" type="text/css" href="FontAwesome/css/all.css">
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 	<!-- styles -->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -168,22 +169,34 @@
 			<div class="content-review">
 				<div class="form-review-name">
 					<label>Name</label>
-					<input type="text">
+					<input type="text" placeholder="Enter your name">
 				</div>
 				<div class="form-review-mail">
 					<label>Email</label>
-					<input type="email">
+					<input type="email" placeholder="email123@example.com">
 				</div>
 				<div class="form-review-rate">
 					<label>Rating</label>
+				    <div class="star-rating">
+				    	<input class="star-rate star-rate-1" id="star-rate-1" type="radio" name="star-rate"/>
+					    <label class="star-rate star-rate-1" for="star-rate-1"></label>
+					    <input class="star-rate star-rate-2" id="star-rate-2" type="radio" name="star-rate"/>
+					    <label class="star-rate star-rate-2" for="star-rate-2"></label>
+					    <input class="star-rate star-rate-3" id="star-rate-3" type="radio" name="star-rate"/>
+					    <label class="star-rate star-rate-3" for="star-rate-3"></label>
+					    <input class="star-rate star-rate-4" id="star-rate-4" type="radio" name="star-rate"/>
+					    <label class="star-rate star-rate-4" for="star-rate-4"></label>
+						<input class="star-rate star-rate-5" id="star-rate-5" type="radio" name="star-rate"/>
+					    <label class="star-rate star-rate-5" for="star-rate-5"></label>
+				    </div>
 				</div>
 				<div class="form-review-title">
 					<label>Review Title</label>
-					<input type="text">
+					<input type="text" placeholder="Give your review a title">
 				</div>
 				<div class="form-review-body">
 					<label>Body of Review</label>
-					<textarea></textarea>
+					<textarea rows="10" placeholder="Write your comments here"></textarea>
 				</div>
 				<div class="form-review-submit">
 					<button>SUBMIT REVIEW</button>

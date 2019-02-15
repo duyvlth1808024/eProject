@@ -129,16 +129,12 @@
 					<h4>Categories</h4>
 					<ul>
 						<li>
-							<input type="checkbox" id="selectallcate">
-							<label for="selectallcate">All</label>
-						</li>
-						<li>
-							<input class="selectcate" type="checkbox" id="selectcate1">
-							<label for="selectcate1">Kitchen infrared</label>
-						</li>
-						<li>
-							<input class="selectcate" type="checkbox" id="selectcate2">
-							<label for="selectcate2">Fan</label>
+							<input id="allcate" type="radio" name="cate" value="allcate" checked>
+			                <label for="allcate" data-id="allcate" >All</label>
+			                <input id="light"type="radio" name="cate" value="light">
+			                <label for="light" data-id="light" >Light</label>
+			                <input id="microwave" type="radio" name="cate" value="microwave">
+			                <label for="microwave" data-id="microwave" >Microwave</label>
 						</li>
 					</ul>
 				</div>
@@ -146,20 +142,14 @@
 					<h4>Manufacturer</h4>
 					<ul>
 						<li>
-							<input type="checkbox" id="selectallmanu">
-							<label for="selectallmanu">All</label>
-						</li>
-						<li>
-							<input class="selectmanu" type="checkbox" id="selectmanu1">
-							<label for="selectmanu1">Panasony</label>
-						</li>
-						<li>
-							<input class="selectmanu" type="checkbox" id="selectmanu2">
-							<label for="selectmanu2">SamSung</label>
-						</li>
-						<li>
-							<input class="selectmanu" type="checkbox" id="selectmanu4">
-							<label for="selectmanu4">Sunhouse</label>
+							<input id="allmanu" type="radio" name="manu" value="allmanu" checked>
+			                <label for="allmanu" data-id="allmanu" >All</label>
+							<input id="Panasonic" type="radio" name="manu" value="panasonic">
+			                <label for="Panasonic" data-id="panasonic" >Panasonic</label>
+			                <input id="SamSung"type="radio" name="manu" value="samsung">
+			                <label for="SamSung" data-id="samsung" >Samsung</label>
+			                <input id="Sunhouse" type="radio" name="manu" value="sunhouse">
+			                <label for="Sunhouse" data-id="sunhouse" >Sunhouse</label>
 						</li>
 					</ul>
 				</div>
@@ -258,7 +248,7 @@
 					<span class="logo-text">
 						L a _ I m p e r i a l
 					</span>
-					<span><b>A &ensp;</b> Số 7 Tôn Thất Thuyết, Mỹ Đình, Hà Nội</span>
+					<span><b>A &ensp;</b> Số 8 Tôn Thất Thuyết, Mỹ Đình, Hà Nội</span>
 					<span><b>T &ensp;</b> +84 123 456 789</span>
 					<span><b>M &ensp;</b> 123456@fpt.edu.vn</span>
 				</div>
@@ -322,30 +312,6 @@
 	    	});
 	    $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
 	      " - $" + $( "#slider-range" ).slider( "values", 1 ) );
-	    });
-	    $(document).ready(function() {
-	        $("#selectallcate").click(function() {
-	            $(".selectcate").prop("checked", this.checked);
-	        });
-	        $('.selectcate').click(function() {
-	        if ($('.selectcate:checked').length == $('.selectcate').length) {
-	            $('#selectallcate').prop('checked', true);
-	        } else {
-	            $('#selectallcate').prop('checked', false);
-	        }
-	        });
-	    });
-	    $(document).ready(function() {
-	        $("#selectallmanu").click(function() {
-	            $(".selectmanu").prop("checked", this.checked);
-	        });
-	        $('.selectmanu').click(function() {
-	        if ($('.selectmanu:checked').length == $('.selectmanu').length) {
-	            $('#selectallmanu').prop('checked', true);
-	        } else {
-	            $('#selectallmanu').prop('checked', false);
-	        }
-	        });
 	    });
   </script>
 </body>
