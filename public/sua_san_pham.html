@@ -1,16 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>EDIT PRODUCT</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<title>EDIT PRODUCTS</title>
+	<!-- fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Charm" rel="stylesheet">
+	<!-- icons -->
+	<link rel="stylesheet" type="text/css" href="FontAwesome/css/all.css">
+	<!-- styles -->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.css">
-	<script type="text/javascript" src="vendor/jquery/jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<!-- javascipt -->
+	<script src="vendor/jquery/jquery.js"></script>
+	<script type="text/javascript" src="javascript.js"></script>
 </head>
 <body>
+	<header class="col-lg-12">
+		<div class="navigation">
+			<div class="col-lg-2 navigation-left">
+				<a href="#" class="logo-header">
+					<span>L</span>
+					<span>a</span>
+					<span>_</span>
+					<span>I</span>
+					<span>m</span>
+					<span>p</span>
+					<span>e</span>
+					<span>r</span>
+					<span>i</span>
+					<span>a</span>
+					<span>l</span>					
+				</a>
+			</div>
+			<div class="col-lg-8 navigation-center">
+            <a href="/" class="active-navigation">Home</a>
+            <a href="/Product_list.html">Product List</a>
+            <a href="Contact.html">Contact</a>
+            <a href="#">Support</a>
+            <a href="/Location_store.html"></i> Store Location</a>
+        </div>
+			<div class="col-lg-2 navigation-right">
+				
+				<a href="/admin_page_ddtl.html" class="btn btn-primary">all product</a>
+			</div>
+		</div>
+	</header>
 	<form method="post" action="/edit_product" enctype="multipart/form-data" class="col-lg-8">
 		<input type="hidden" name="_id" />
 			<input type="text" placeholder="ma so san pham" name="pr_code" class="form-control"><br/>
 				<input type="text" placeholder="ten san pham" name="pr_name" class="form-control"><br/>
 				<input type="text" placeholder="loai san pham" name="pr_class" class="form-control"><br/>
+				<input type="text" placeholder="ten hang san xuat" name="pr_manufacturer" class="form-control"><br/>
 				<input type="text" id="link" placeholder="link anh san pham 1" name="pr_images1" class="form-control"><br/>
 				<input type="text" id="link2" placeholder="link anh san pham 2" name="pr_images2" class="form-control"><br/>
 				<input type="text" id="link3" placeholder="link anh san pham 3" name="pr_images3" class="form-control"><br/>
@@ -31,18 +76,18 @@
 					jQuery("input[name=pr_code]").val(result.data.pr_code);
 					jQuery("input[name=pr_name]").val(result.data.pr_name);
 					jQuery("input[name=pr_class]").val(result.data.pr_class);
-					jQuery("input[name=pr_images]").val(result.data.pr_images1);
-					jQuery("input[name=pr_images]").val(result.data.pr_images2);
-					jQuery("input[name=pr_images]").val(result.data.pr_images3);
-					jQuery("input[name=pr_images]").val(result.data.pr_images4);
+					jQuery("input[name=pr_manufacturer]").val(result.data.pr_manufacturer);
+					jQuery("input[name=pr_images1]").val(result.data.pr_images1);
+					jQuery("input[name=pr_images2]").val(result.data.pr_images2);
+					jQuery("input[name=pr_images3]").val(result.data.pr_images3);
 					jQuery("input[name=pr_price]").val(result.data.pr_price);
 					jQuery("input[name=pr_detail]").val(result.data.pr_detail);
 					jQuery("input[name=pr_guarantee]").val(result.data.pr_guarantee);
 				}
 			});
-		$("#link").val("https://drive.google.com/uc?id=")
-		$("#link2").val("https://drive.google.com/uc?id=")
-		$("#link3").val("https://drive.google.com/uc?id=")
+		// $("#link").val("https://drive.google.com/uc?id=")
+		// $("#link2").val("https://drive.google.com/uc?id=")
+		// $("#link3").val("https://drive.google.com/uc?id=")
 	</script>
 </body>
 </html>

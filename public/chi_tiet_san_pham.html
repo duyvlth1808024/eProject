@@ -17,6 +17,7 @@
     <link rel="stylesheet" type="text/css" href="vendor/owlcarousel2/owl.carousel.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="vendor/owlcarousel2/owl.theme.default.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="vendor/style-detail.css">
     <!-- javascript -->
     <script type="text/javascript" src="vendor/jquery/jquery.js"></script>
     <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.js"></script>
@@ -42,12 +43,12 @@
                 </a>
             </div>
             <div class="col-lg-8 navigation-center">
-                <a href="/" class="active-navigation">Home</a>
-                <a href="#">Product List</a>
-                <a href="#">Contact</a>
-                <a href="#">Support</a>
-                <a href="#"></i> Store Location</a>
-            </div>
+            <a href="/" class="active-navigation">Home</a>
+            <a href="/Product_list.html">Product List</a>
+            <a href="Contact.html">Contact</a>
+            <a href="#">Support</a>
+            <a href="/Location_store.html"></i> Store Location</a>
+        </div>
             <div class="col-lg-2 navigation-right">
                 <a href="#" id="cdsearch"><i id="ffst" class="far fa-search"></i></a>
                 <a href="/profile"><i class="far fa-user"></i></a>
@@ -63,24 +64,19 @@
                 </div>  
             </div>
         </div>
-        <!-- <div class="cart-navigation">
-            
-        </div> -->
     </header>
 		
 
- <section class="section1">
-            <div class="container">
-            <div class="col-lg-12 iteam_hot">
-                <h2>chi tiết sản phẩm</h2>
-            </div>
-                
-                <div class="row"  id="san_pham">
+   <section class="col-lg-12">
+    <div class="container">
+        <h2>chi tiết sản phẩm</h2>
+                <div id="san_pham">
                     <span></span>
-
-            </div>
+                
+    </div>
+    </div>
+                
     </section>
-
     <footer class="col-lg-12">
         <div class="col-lg-12 footer-top">
             <div class="container">
@@ -156,13 +152,54 @@
         success: function(result){
             var y = '';
             {
-                y+='    <div class="col-lg-3">';
-                y+='    <div class="item item1">';
-                y+='    <img src='https:/drive.google.com/uc?id=+result.data.pr_images1+'';
-                y+='    <p>'+result.data.pr_name+'</a></p>';
-                y+='    <p><b><font color="#ff5912">'+result.data.pr_price+'</font></b></p>';
-                y+='    </div>';
-                y+='    </div>';
+
+                y= '<div class="card"> ';
+              y+= '<div class="container-fliud"> ';
+              y+= '<div class="wrapper row"> ';
+              y+= '<div class="preview col-md-6"> ';
+              y+= '<div class="preview-pic tab-content"> ';
+              y+= '<div class="tab-pane active" id="pic-1"><img src='+result.data.pr_images1+'>';
+              y+= '</div> ';
+              y+= '<div class="tab-pane" id="pic-2"><img src='+result.data.pr_images2+'>';
+              y+= '</div> '
+              y+= '<div class="tab-pane" id="pic-3"><img src='+result.data.pr_images3+'>';
+              y+= '</div> '
+              
+             
+              
+              
+              y+= '<ul class="preview-thumbnail nav nav-tabs">';
+              y+= '<li class="active"><a data-target="#pic-1" data-toggle="tab"><img src='+result.data.pr_images1+'></a>';
+              y+= '</li> ';
+              y+= '<li><a data-target="#pic-2" data-toggle="tab"><img src='+result.data.pr_images2+'></a>';
+              y+= '</li> ';
+              y+= '<li><a data-target="#pic-3" data-toggle="tab"><img src='+result.data.pr_images3+'></a>';
+              y+= '</li> ';
+              
+              y+= '</ul> ';
+              y+= '</div> ';
+              y+= '</div> ';
+              
+              y+= '<div class="details col-md-6"> ';
+              y+= '<h3 class="product-title">'+result.data.pr_name+'</h3> ';
+              y+= '<div class="rating"> ';
+              y+= '<div class="stars"> <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star"></span> <span class="fa fa-star"></span> ';
+              y+= '</div> <span class="review-no">123 đánh giá</span> ';
+              y+= '</div> ';
+              y+= '<p class="product-description">'+result.data.pr_detail+'</p> ';
+              y+= '<h4 class="price">Giá bán: '+result.data.pr_price+'đ</h4> ';
+              y+= '<p class="vote"><strong>91%</strong> of người mua hài lòng với sản phẩm này <strong>(87 bình chọn)</strong>'
+              y+= '</p> ';
+              y+= '<h5 class="sizes">Kích cỡ: <span class="size" data-toggle="tooltip" title="small">s</span> <span class="size" data-toggle="tooltip" title="medium">m</span> <span class="size" data-toggle="tooltip" title="large">l</span> <span class="size" data-toggle="tooltip" title="xtra large">xl</span>' ;
+              y+= '</h5>' ;
+              y+= '<h5 class="colors">Màu: <span class="color orange not-available" data-toggle="tooltip" title="Not In store"></span> <span class="color green"></span> <span class="color blue"></span>' ;
+              y+= '</h5>';
+              y+= '<div class="action"> <a href="/gio_hang.html" target="_blank">            <button class="add-to-cart btn btn-default" type="button">MUA NGAY</button>            </a> <a href="#" target="_blank">            <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button></a>' ;
+              y+= '</div>'; 
+              y+= '</div>'; 
+              y+= '</div>'; 
+              y+= '</div>';
+
             }
             document.getElementById("san_pham").innerHTML = y;
         }

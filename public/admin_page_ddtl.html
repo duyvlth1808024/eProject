@@ -42,6 +42,7 @@
 			<th>ID product</th>
 			<th>Product name</th>
 			<th>loại sản phẩm</th>
+			<th>hãng sản xuất</th>
 			<th>price</th>
 			<th></th>
 		</thead>
@@ -66,6 +67,7 @@
 					html +=			'<td>'+result.data[i].pr_code+'</td>';
 					html +=			'<td>'+result.data[i].pr_name+'</td>';
 					html +=			'<td>'+result.data[i].pr_class+'</td>';
+					html +=			'<td>'+result.data[i].pr_manufacturer+'</td>';
 					html +=			'<td>'+result.data[i].pr_price+'</td>';
 
 					html +=			'<td><a class="btn btn-primary" href="/chi_tiet_san_pham.html?id='+result.data[i]._id+'">Chi tiet</a><a data-id="'+result.data[i]._id+'" class="btn btn-danger" href="#" onclick="delete_product(this)">delete product</a><a class="btn btn-primary" href="/sua_san_pham.html?id='+result.data[i]._id+'">Chinh sua</a></td>';
