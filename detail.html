@@ -3,21 +3,25 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="utf-8">
-	<title>Your cart - La_Imperial</title>
+	<title>Detail Product</title>
 	<!-- fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Charm" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 	<!-- icons -->
 	<link rel="stylesheet" type="text/css" href="FontAwesome/css/all.css">
 	<!-- styles -->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="vendor/owlcarousel2/owl.carousel.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="vendor/owlcarousel2/owl.theme.default.css">
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<!-- javascipt -->
 	<script type="text/javascript" src="vendor/jquery/jquery.js"></script>
 	<script type="text/javascript" src="vendor/bootstrap/js/bootstrap.js"></script>
+	<script type="text/javascript" src="vendor/owlcarousel2/owl.carousel.js"></script>
 	<script type="text/javascript" src="javascript.js"></script>
 </head>
 <body>
@@ -119,55 +123,71 @@
 			</div>
 		</div>
 	</header>
-	<section class="col-lg-12 view-cart">
+	<section class="col-lg-12 detail-product">
 		<div class="container">
-			<div class="cart-body col-lg-12">
-				<div class="cart-header">
-					<h3>You have <b>2 items</b> in your cart</h3>
-				</div>
-				<form class="form-cart col-lg-12">
-					<table class="col-lg-12">
-						<thead>
-							<tr>
-								<th class="col-lg-1"></th>
-								<th class="col-lg-2"></th>
-								<th class="col-lg-3">Product</th>
-								<th class="col-lg-2">Price</th>
-								<th class="col-lg-1">Quanity</th>
-								<th class="col-lg-3">Total</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td><i class="fal fa-times"></i></td>
-								<td></td>
-								<td>test 1</td>
-								<td>test 2</td>
-								<td>test 3</td>
-								<td>test 4</td>
-							</tr>
-						</tbody>
-					</table>
-					<div class="col-lg-12">
-						<div class="col-lg-6">
-							<div class="discount-code">
-								<p>
-									Discount Code: 
-									<input type="text" id="discountcode" size="6" minlength="6" maxlength="6" required>
-								</p>
-							</div>
-							<div class="delivery-address">
-								<p>
-									Delivery Address: 
-									<input type="text" id="deliveryaddress" required>
-								</p>
-							</div>
-						</div>
-						<div class="col-lg-6">
-							
-						</div>
+			<div class="col-lg-6 single-img-product">
+				<div id="slideshow-img-product" class="owl-carousel owl-theme">
+					<div class="item">
+						<img src="https://cdn.pico.vn/Product/35763/big_300378_gr-b247jds.jpg">
 					</div>
-				</form>
+					<div class="item">
+						<img src="https://cdn.pico.vn/Product/36626/big_278046_may_giat_say_electrolux_eww12853_-_giat_8.0_kg_say_5.0_kg.jpg">
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6 single-info-product">
+				<div class="name-detail-product">
+					<h1>Test 1</h1>
+				</div>
+				<div class="info-detail-product">
+					<div class="manufacturer-detail-product">
+						<span>Manufacture</span>	
+					</div>
+					<div class="price-detail-product">
+						<p>100$</p>
+					</div>
+				</div>
+				<div class="promotion-detail-product">
+					<span>PROMOTION</span>
+					<ul>
+						<li>Free ship</li>
+						<li>1 year warranty</li>
+					</ul>
+				</div>
+				<div class="single-action-product">
+					<button>Add to cart</button>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="col-lg-12 section-review">
+		<div class="container">
+			<div class="top-review">
+				<h1>Write a review</h1>
+			</div>
+			<div class="content-review">
+				<div class="form-review-name">
+					<label>Name</label>
+					<input type="text">
+				</div>
+				<div class="form-review-mail">
+					<label>Email</label>
+					<input type="email">
+				</div>
+				<div class="form-review-rate">
+					<label>Rating</label>
+				</div>
+				<div class="form-review-title">
+					<label>Review Title</label>
+					<input type="text">
+				</div>
+				<div class="form-review-body">
+					<label>Body of Review</label>
+					<textarea></textarea>
+				</div>
+				<div class="form-review-submit">
+					<button>SUBMIT REVIEW</button>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -229,5 +249,17 @@
 			</div>
 		</div>
 	</footer>
+	<script type="text/javascript">
+		var slideshow = $('#slideshow-img-product');
+			slideshow.owlCarousel({
+				items:1,
+				nav:true,
+				dots:false,
+				loop:true,
+			    autoplay:true,
+			    autoplayTimeout:5000,
+			    autoplayHoverPause:false
+			});
+	</script>
 </body>
 </html>

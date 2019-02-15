@@ -125,265 +125,99 @@
 	<section class="col-lg-12 s-product-list">
 		<div class="container">
 			<div class="col-lg-3">
-				<!-- <div class="row"> -->
-					<div class="box-select categories">
-						<h4>Categories</h4>
-						<ul>
-							<li>
-								<input type="checkbox" id="selectprod1">
-								<label for="selectprod1">All</label>
-							</li>
-							<li>
-								<input type="checkbox" id="selectprod2">
-								<label for="selectprod2">Kitchen infrared</label>
-							</li>
-							<li>
-								<input type="checkbox" id="selectprod3">
-								<label for="selectprod3">fan</label>
-							</li>
-						</ul>
-					</div>
-					<div class="box-select manufacturer">
-						<h4>Manufacturer</h4>
-						<ul>
-							<li>
-								<input type="checkbox" id="selectprod4">
-								<label for="selectprod4">Panasony</label>
-							</li>
-							<li>
-								<input type="checkbox" id="selectprod5">
-								<label for="selectprod5">SamSung</label>
-							</li>
-							<li>
-								<input type="checkbox" id="selectprod6">
-								<label for="selectprod6">Sunhouse</label>
-							</li>
-						</ul>
-					</div>
-					<div class="box-select price">
-						<h4>Price</h4>
-						<p>
-							<label for="amount">Price range:</label>
-						    <input type="text" id="amount" readonly>
-						</p>
-						<div id="slider-range"></div>
-					</div>
-				<!-- </div> -->
+				<div class="box-select categories">
+					<h4>Categories</h4>
+					<ul>
+						<li>
+							<input type="checkbox" id="selectallcate">
+							<label for="selectallcate">All</label>
+						</li>
+						<li>
+							<input class="selectcate" type="checkbox" id="selectcate1">
+							<label for="selectcate1">Kitchen infrared</label>
+						</li>
+						<li>
+							<input class="selectcate" type="checkbox" id="selectcate2">
+							<label for="selectcate2">Fan</label>
+						</li>
+					</ul>
+				</div>
+				<div class="box-select manufacturer">
+					<h4>Manufacturer</h4>
+					<ul>
+						<li>
+							<input type="checkbox" id="selectallmanu">
+							<label for="selectallmanu">All</label>
+						</li>
+						<li>
+							<input class="selectmanu" type="checkbox" id="selectmanu1">
+							<label for="selectmanu1">Panasony</label>
+						</li>
+						<li>
+							<input class="selectmanu" type="checkbox" id="selectmanu2">
+							<label for="selectmanu2">SamSung</label>
+						</li>
+						<li>
+							<input class="selectmanu" type="checkbox" id="selectmanu4">
+							<label for="selectmanu4">Sunhouse</label>
+						</li>
+					</ul>
+				</div>
+				<div class="box-select price">
+					<h4>Price</h4>
+					<p>
+						<label for="amount">Price range:</label>
+					    <input type="text" id="amount" readonly>
+					</p>
+					<div id="slider-range"></div>
+				</div>
+				<div class="box-select sort-product">
+					<h4>Sort</h4>
+					<select>
+						<option>Alphabetically, A-Z</option>
+						<option>Alphabetically, Z-A</option>
+						<option>Price, high to low</option>
+						<option>Price, low to high</option>
+					</select>
+				</div>
+				<div class="submit-filter">
+					<button>Filter</button>
+				</div>
 			</div>
 			<div class="col-lg-9">
 				<div class="row">
 					<div class="col-lg-4">
 						<div class="card-product">
-							<div class="image-product">
-								<img src="images/den-chum.png">
+							<div class="top-card">
+								<div class="img-card-product">
+									<img src="images/ghe 4.png">
+								</div>
 							</div>
-							<div class="info-card">
-								<div class="info-product">
-									<a href="#"><h3>Product 1</h3></a>
-									<span>70$</span>
+							<div class="bottom-card">
+								<div class="info-card-product">
+									<a href="#"><h3>Test product</h3></a>
+									<p>100$</p>
 								</div>
-								<div class="action-product">
-									<form class="act-product">
-										<button class="add-to-card">
-											<i class="fal fa-cart-plus"></i>
-										</button>
-									</form>
-								</div>
-								<div class="detail-product">
-									<p>Sunhouse</p>
-									<span>Use in kitchen</span>
+								<div class="action-card">
+									<button>ADD TO CART</button>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-4">
 						<div class="card-product">
-							<div class="image-product">
-								<img src="images/den-chum.png">
-							</div>
-							<div class="info-card">
-								<div class="info-product">
-									<a href="#"><h3>Product 1</h3></a>
-									<span>70$</span>
-								</div>
-								<div class="action-product">
-									<form class="act-product">
-										<button class="add-to-card">
-											<i class="fal fa-cart-plus"></i>
-										</button>
-									</form>
-								</div>
-								<div class="detail-product">
-									<p>Sunhouse</p>
-									<span>Use in kitchen</span>
+							<div class="top-card">
+								<div class="img-card-product">
+									<img src="images/den-chum.png">
 								</div>
 							</div>
-						</div>
-					</div>
-					<div class="col-lg-4">
-						<div class="card-product">
-							<div class="image-product">
-								<img src="images/den-chum.png">
-							</div>
-							<div class="info-card">
-								<div class="info-product">
-									<a href="#"><h3>Product 1</h3></a>
-									<span>70$</span>
+							<div class="bottom-card">
+								<div class="info-card-product">
+									<a href="#"><h3>Test product</h3></a>
+									<p>100$</p>
 								</div>
-								<div class="action-product">
-									<form class="act-product">
-										<button class="add-to-card">
-											<i class="fal fa-cart-plus"></i>
-										</button>
-									</form>
-								</div>
-								<div class="detail-product">
-									<p>Sunhouse</p>
-									<span>Use in kitchen</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4">
-						<div class="card-product">
-							<div class="image-product">
-								<img src="images/den-chum.png">
-							</div>
-							<div class="info-card">
-								<div class="info-product">
-									<a href="#"><h3>Product 1</h3></a>
-									<span>70$</span>
-								</div>
-								<div class="action-product">
-									<form class="act-product">
-										<button class="add-to-card">
-											<i class="fal fa-cart-plus"></i>
-										</button>
-									</form>
-								</div>
-								<div class="detail-product">
-									<p>Sunhouse</p>
-									<span>Use in kitchen</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4">
-						<div class="card-product">
-							<div class="image-product">
-								<img src="images/den-chum.png">
-							</div>
-							<div class="info-card">
-								<div class="info-product">
-									<a href="#"><h3>Product 1</h3></a>
-									<span>70$</span>
-								</div>
-								<div class="action-product">
-									<form class="act-product">
-										<button class="add-to-card">
-											<i class="fal fa-cart-plus"></i>
-										</button>
-									</form>
-								</div>
-								<div class="detail-product">
-									<p>Sunhouse</p>
-									<span>Use in kitchen</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4">
-						<div class="card-product">
-							<div class="image-product">
-								<img src="images/den-chum.png">
-							</div>
-							<div class="info-card">
-								<div class="info-product">
-									<a href="#"><h3>Product 1</h3></a>
-									<span>70$</span>
-								</div>
-								<div class="action-product">
-									<form class="act-product">
-										<button class="add-to-card">
-											<i class="fal fa-cart-plus"></i>
-										</button>
-									</form>
-								</div>
-								<div class="detail-product">
-									<p>Sunhouse</p>
-									<span>Use in kitchen</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4">
-						<div class="card-product">
-							<div class="image-product">
-								<img src="images/den-chum.png">
-							</div>
-							<div class="info-card">
-								<div class="info-product">
-									<a href="#"><h3>Product 1</h3></a>
-									<span>70$</span>
-								</div>
-								<div class="action-product">
-									<form class="act-product">
-										<button class="add-to-card">
-											<i class="fal fa-cart-plus"></i>
-										</button>
-									</form>
-								</div>
-								<div class="detail-product">
-									<p>Sunhouse</p>
-									<span>Use in kitchen</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4">
-						<div class="card-product">
-							<div class="image-product">
-								<img src="images/den-chum.png">
-							</div>
-							<div class="info-card">
-								<div class="info-product">
-									<a href="#"><h3>Product 1</h3></a>
-									<span>70$</span>
-								</div>
-								<div class="action-product">
-									<form class="act-product">
-										<button class="add-to-card">
-											<i class="fal fa-cart-plus"></i>
-										</button>
-									</form>
-								</div>
-								<div class="detail-product">
-									<p>Sunhouse</p>
-									<span>Use in kitchen</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4">
-						<div class="card-product">
-							<div class="image-product">
-								<img src="images/den-chum.png">
-							</div>
-							<div class="info-card">
-								<div class="info-product">
-									<a href="#"><h3>Product 1</h3></a>
-									<span>70$</span>
-								</div>
-								<div class="action-product">
-									<form class="act-product">
-										<button class="add-to-card">
-											<i class="fal fa-cart-plus"></i>
-										</button>
-									</form>
-								</div>
-								<div class="detail-product">
-									<p>Sunhouse</p>
-									<span>Use in kitchen</span>
+								<div class="action-card">
+									<button>ADD TO CART</button>
 								</div>
 							</div>
 						</div>
@@ -398,7 +232,7 @@
 					<div class="col-lg-9">
 						<div class="paginate">
 							<ul>
-								<li><a title>1</a></li>
+								<li><a class="active-paginate" title>1</a></li>
 								<li><a href="#">2</a></li>
 								<li><a href="#">Next</a></li>
 							</ul>
@@ -408,6 +242,15 @@
 			</div>
 		</div>
 	</section>
+	<div class="col-lg-9">
+						<div class="paginate">
+							<ul>
+								<li><a title>1</a></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">Next</a></li>
+							</ul>
+						</div>
+					</div>
 	<footer class="col-lg-12">
 		<div class="col-lg-12 footer-top">
 			<div class="container">
@@ -479,6 +322,30 @@
 	    	});
 	    $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
 	      " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+	    });
+	    $(document).ready(function() {
+	        $("#selectallcate").click(function() {
+	            $(".selectcate").prop("checked", this.checked);
+	        });
+	        $('.selectcate').click(function() {
+	        if ($('.selectcate:checked').length == $('.selectcate').length) {
+	            $('#selectallcate').prop('checked', true);
+	        } else {
+	            $('#selectallcate').prop('checked', false);
+	        }
+	        });
+	    });
+	    $(document).ready(function() {
+	        $("#selectallmanu").click(function() {
+	            $(".selectmanu").prop("checked", this.checked);
+	        });
+	        $('.selectmanu').click(function() {
+	        if ($('.selectmanu:checked').length == $('.selectmanu').length) {
+	            $('#selectallmanu').prop('checked', true);
+	        } else {
+	            $('#selectallmanu').prop('checked', false);
+	        }
+	        });
 	    });
   </script>
 </body>
