@@ -664,16 +664,23 @@ button.owl-prev, button.owl-next {
 }
 
 .slider-new-product {
-  /*height: 340px;*/
+  height: 150px;
+}
+
+#second-slider .owl-item {
+  height: 150px;
 }
 
 .card-slider-new {
   background-color: #fff;
+  position: absolute;
+  bottom: 0;
+  transition: all 0.3s;
 }
 
 .card-slider-new:hover {
   box-shadow: box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.25);
-  transition: 0.5s;
+  bottom: 5px;
 }
 
 .right-card-sn {
@@ -697,6 +704,16 @@ button.owl-prev, button.owl-next {
   background-color: #fff;
   color: #f1553b;
   float: right;
+}
+
+.section-hot-product {
+
+}
+
+
+
+.section-bestsales-product {
+
 }
 
 section.benefits {
@@ -1240,7 +1257,7 @@ div.ui-slider-range {
 }
 
 .card-product:hover {
-  box-shadow: 5px 20px 30px rgba(0,0,0,.25);
+  box-shadow: 5px 5px 30px rgba(0,0,0,.25);
   transition: 0.5s;
   transform: scale(1.05);
 }
