@@ -196,6 +196,52 @@
 			</div>
 		</div>
 	</section>
+	<section class="col-lg-12">
+		<div class="container">
+			<span> so sánh sản phẩm</span>
+			<button type="button" class="btn1" id="btn1" value="Ẩn">ẩn</button>
+        	<button type="button" class="btn2" id="btn2" value="Hiển Thị">hiển thị</button>
+        	<div class="col-lg-12 so_sanh" id="so_sanh_product">
+        	<button class="btn btn-sm btn-success" id="button_clear">Clear</button>
+        	<div class="col-lg-12">
+        		 <div class="container-fluid">
+            <h4>So Sánh</h4>
+            <div class="wrapper-compare">
+                <div class="wrapper-head-compare">
+                    <div class="wrapper-condition-head fleft col-lg-2">
+                        <h5>Condition</h5>
+                    </div>
+                    <div class="wrapper-product-head fleft col-lg-10">
+                        <h5>Product</h5>
+                    </div>
+                </div>
+                <div class="wrapper-content-compare">
+                    <div class="wrapper-condition-content fleft col-lg-2">
+                        <div>Code</div>
+                        <div>Name</div>
+                        <div>Manufacturer</div>
+                        <div>Price</div>
+                        <div>Puarantee</div>
+                    </div>
+                    <div class="wrapper-product-content fleft col-lg-10">
+                        <div class="wrapper-product-first col-lg-6 ">
+
+                        </div>
+                        <div class="wrapper-product-second col-lg-6">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        	</div>
+        	</div> <!-- so sánh -->
+		</div>
+	</section>
+
+
+
+	
 	<footer class="col-lg-12">
 		<div class="col-lg-12 footer-top">
 			<div class="container">
@@ -255,6 +301,14 @@
 		</div>
 	</footer>
 	<script>
+				 document.getElementById("btn1").onclick = function () {
+                document.getElementById("so_sanh_product").style.display = 'none';
+            };
+
+            document.getElementById("btn2").onclick = function () {
+                document.getElementById("so_sanh_product").style.display = 'block';
+            };
+
 		var slider = document.getElementById("myRange");
 		var output = document.getElementById("demo");
 		output.innerHTML = slider.value;
@@ -277,7 +331,7 @@
 			y+='	</div>';
 			y+='	<div class="info-card">';
 			y+='	<div class="info-product">';
-			y+='	<a href="/chi_tiet_san_pham.html?id='+result.data[i]._id+'"><h3>'+result.data[i].pr_name+'</h3></a>';
+			y+='	<a target="_blank" href="/chi_tiet_san_pham.html?id='+result.data[i]._id+'"><h3>'+result.data[i].pr_name+'</h3></a>';
 			y+='	<span>'+result.data[i].pr_price+'</span>';
 			y+='	</div>';
 			y+='	<div class="action-product">';
@@ -290,6 +344,7 @@
 			y+='	<div class="detail-product">';
 			y+='	<p>'+result.data[i].pr_class+'</p>';
 			y+='	<span>Use in kitchen</span>';
+			y +='   <a data_id="'+result.data[i]._id+'" class="btn so_sanh" id="so_sanh" onclick="so_sanh(this)">so sanh</a>';
 			y+='	</div>';
 			y+='	</div>';
 			y+='	</div>';
@@ -308,14 +363,14 @@
         success: function(result, element){
             var y = '';
             for (var i = 0; i < result.data.length; i++){
-            y+='	<div class="col-lg-4">';
+             y+='	<div class="col-lg-4">';
 			y+='	<div class="card-product">';
 			y+='	<div class="image-product">';
 			y+='	<img src='+result.data[i].pr_images1+'>';
 			y+='	</div>';
 			y+='	<div class="info-card">';
 			y+='	<div class="info-product">';
-			y+='	<a href="/chi_tiet_san_pham.html?id='+result.data[i]._id+'"><h3>'+result.data[i].pr_name+'</h3></a>';
+			y+='	<a target="_blank" href="/chi_tiet_san_pham.html?id='+result.data[i]._id+'"><h3>'+result.data[i].pr_name+'</h3></a>';
 			y+='	<span>'+result.data[i].pr_price+'</span>';
 			y+='	</div>';
 			y+='	<div class="action-product">';
@@ -328,6 +383,7 @@
 			y+='	<div class="detail-product">';
 			y+='	<p>'+result.data[i].pr_class+'</p>';
 			y+='	<span>Use in kitchen</span>';
+			y +='   <a data_id="'+result.data[i]._id+'" class="btn so_sanh" id="so_sanh" onclick="so_sanh(this)">so sanh</a>';
 			y+='	</div>';
 			y+='	</div>';
 			y+='	</div>';
@@ -352,7 +408,7 @@
 			y+='	</div>';
 			y+='	<div class="info-card">';
 			y+='	<div class="info-product">';
-			y+='	<a href="/chi_tiet_san_pham.html?id='+result.data[i]._id+'"><h3>'+result.data[i].pr_name+'</h3></a>';
+			y+='	<a target="_blank" href="/chi_tiet_san_pham.html?id='+result.data[i]._id+'"><h3>'+result.data[i].pr_name+'</h3></a>';
 			y+='	<span>'+result.data[i].pr_price+'</span>';
 			y+='	</div>';
 			y+='	<div class="action-product">';
@@ -365,6 +421,7 @@
 			y+='	<div class="detail-product">';
 			y+='	<p>'+result.data[i].pr_class+'</p>';
 			y+='	<span>Use in kitchen</span>';
+			y +='   <a data_id="'+result.data[i]._id+'" class="btn so_sanh" id="so_sanh" onclick="so_sanh(this)">so sanh</a>';
 			y+='	</div>';
 			y+='	</div>';
 			y+='	</div>';
@@ -393,7 +450,7 @@
 			y+='	</div>';
 			y+='	<div class="info-card">';
 			y+='	<div class="info-product">';
-			y+='	<a href="/chi_tiet_san_pham.html?id='+result.data[i]._id+'"><h3>'+result.data[i].pr_name+'</h3></a>';
+			y+='	<a target="_blank" href="/chi_tiet_san_pham.html?id='+result.data[i]._id+'"><h3>'+result.data[i].pr_name+'</h3></a>';
 			y+='	<span>'+result.data[i].pr_price+'</span>';
 			y+='	</div>';
 			y+='	<div class="action-product">';
@@ -406,6 +463,7 @@
 			y+='	<div class="detail-product">';
 			y+='	<p>'+result.data[i].pr_class+'</p>';
 			y+='	<span>Use in kitchen</span>';
+			y +='   <a data_id="'+result.data[i]._id+'" class="btn so_sanh" id="so_sanh" onclick="so_sanh(this)">so sanh</a>';
 			y+='	</div>';
 			y+='	</div>';
 			y+='	</div>';
@@ -431,7 +489,7 @@
 			y+='	</div>';
 			y+='	<div class="info-card">';
 			y+='	<div class="info-product">';
-			y+='	<a href="/chi_tiet_san_pham.html?id='+result.data[i]._id+'"><h3>'+result.data[i].pr_name+'</h3></a>';
+			y+='	<a target="_blank" href="/chi_tiet_san_pham.html?id='+result.data[i]._id+'"><h3>'+result.data[i].pr_name+'</h3></a>';
 			y+='	<span>'+result.data[i].pr_price+'</span>';
 			y+='	</div>';
 			y+='	<div class="action-product">';
@@ -444,18 +502,64 @@
 			y+='	<div class="detail-product">';
 			y+='	<p>'+result.data[i].pr_class+'</p>';
 			y+='	<span>Use in kitchen</span>';
+			y +='   <a data_id="'+result.data[i]._id+'" class="btn so_sanh" id="so_sanh" onclick="so_sanh(this)">so sanh</a>';
 			y+='	</div>';
 			y+='	</div>';
 			y+='	</div>';
 			y+='	</div>';
-            }
+	         }
             document.getElementById("san_pham").innerHTML = y;
         }
     });
     }
  //    var urlParams = new URLSearchParams(window.location.search);
 	// filter_product(urlParams.get("id"));
+	
+	$(".so_sanh").bind('click',function (){
+        
+        var a = $(this);
+        console.log(a) 
+        var id = a.attr("data-id"); 
+        var name = a.attr("data-name"); 
+        var price = a.attr("data-price"); 
 
+        });
+
+
+
+
+		var chose = true;
+		function so_sanh(id){
+    	jQuery.ajax({
+        url: '/detail_product',
+        method: "GET",
+        data: {id: jQuery(id).attr("data_id")},
+        success: function(result, element){
+            var y ='';{
+            		y+='	<div>' + result.data.pr_code + '</div>';
+                    y+='   <div>'+ result.data.pr_name + '</div>';
+                    y+='    <div>'+ result.data.pr_price +'<div>';
+                    y+='   <div>'+ result.data.pr_manufacturer + '</div>';
+                    y+='    <div>'+ result.data.pr_guarantee +'<div>';
+                    }
+          	if (chose === true) {
+                    $('.wrapper-product-first').append(y);
+                    chose = false;
+                }else{
+                    $('.wrapper-product-second').append(y);
+                    chose = true;
+                }
+                console.log(chose);
+           
+		         }
+    });
+    }
+		     $("#button_clear").click(function () {
+            
+                $(".wrapper-product-first").html("");
+                $(".wrapper-product-second").html("");
+                
+            });
   </script>
 </body>
 </html>
