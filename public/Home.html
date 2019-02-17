@@ -263,23 +263,8 @@
                 <h2>BESTSALES PRODUCT</h2>
             </div>
             <div class="div-bestsales-product">
-                <div class="col-lg-3">
-                    <div class="card-product">
-                        <div class="top-card">
-                            <div class="img-card-product">
-                                <img src="images/ghe 4.png">
-                            </div>
-                        </div>
-                        <div class="bottom-card">
-                            <div class="info-card-product">
-                                <a href="#"><h3>Test product</h3></a>
-                                <p>100$</p>
-                            </div>
-                            <div class="action-card">
-                                <button>ADD TO CART</button>
-                            </div>
-                        </div>
-                    </div>
+                <div class="row"  id="san_pham_sale">
+                    <span></span>
                 </div>
                 
             </div>
@@ -308,7 +293,7 @@
                     <span class="logo-text">
                         L a _ I m p e r i a l
                     </span>
-                    <span><b>A &ensp;</b> Số 7 Tôn Thất Thuyết, Mỹ Đình, Hà Nội</span>
+                    <span><b>A &ensp;</b> Số 8 Tôn Thất Thuyết, Mỹ Đình, Hà Nội</span>
                     <span><b>T &ensp;</b> +84 123 456 789</span>
                     <span><b>M &ensp;</b> 123456@fpt.edu.vn</span>
                 </div>
@@ -378,7 +363,12 @@
         method: "GET",
         success: function(result, element){
             var y = '';
-            for (var i = 0; i < 8; i++){
+            var max = result.data.length;
+            // console.log(max);
+            
+            for (var i = (max-12) ; i < (max-4); i++)
+                
+            {
                 y+='<div class="col-lg-3 card-hot-product">';
                 y+='        <div class="top-card-hp">';
                 y+='            <div class="img-card-hp">';
@@ -414,7 +404,7 @@
         success: function(result, element){
             var y = '';
             var max = result.data.length;
-            console.log(max);
+            // console.log(max);
             for (var i = (max-4) ; i < max ; i++){
                     y+='   <div class="col-lg-3">';
                     y+='    <div class="card-product">';
@@ -443,6 +433,45 @@
     });
     }
     list_product_new();
+
+     
+      function list_product_sale(){
+    jQuery.ajax({
+        url: '/list_product',
+        method: "GET",
+        success: function(result, element){
+            var y = '';
+            var max = result.data.length;
+            // console.log(max);
+            for (var i = (max-4) ; i < max ; i++){
+                    y+='   <div class="col-lg-3">';
+                    y+='    <div class="card-product">';
+                    y+='        <div class="top-card">';
+                    y+='            <div class="img-card-product">';
+                    y+='                 <img src='+result.data[i].pr_images1+' ';
+                    y+='            </div>';
+                    y+='        </div>';
+                    y+='        <div class="bottom-card">';
+                    y+='            <div class="info-card-product">';
+                    y+='                 <a href="/chi_tiet_san_pham.html?id='+result.data[i]._id+'" title='+result.data[i].pr_name+'><h3>'+result.data[i].pr_name+'</h3></a>';
+                    y+='                 <p>'+result.data[i].pr_price+'</p>';
+                    y+='            </div>';
+                    y+='            <div class="action-card">';
+                    y+='                 <button>ADD TO CART</button>';
+                    y+='            </div>';
+                    y+='        </div>';
+                    y+='    </div>';
+                    y+='</div>';
+                    y+='</div>';
+                    // ===============
+
+                     }
+            document.getElementById("san_pham_sale").innerHTML = y;
+        }
+    });
+    }
+    list_product_sale();
+
 
     </script>
 </body>
