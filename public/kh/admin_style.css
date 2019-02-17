@@ -1,0 +1,9 @@
+
+/*add_product*/
+.form-input-product input  {
+	margin-bottom: 15px;
+}
+
+.form-input-product button.btn-warning {
+	float: right;
+}

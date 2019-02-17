@@ -25,104 +25,105 @@
 	<script type="text/javascript" src="javascript.js"></script>
 </head>
 <body>
-	<header class="col-lg-12">
-		<div class="navigation">
-			<div class="col-lg-2 navigation-left">
-				<a href="#" class="logo-header">
-					<span>L</span>
-					<span>a</span>
-					<span>_</span>
-					<span>I</span>
-					<span>m</span>
-					<span>p</span>
-					<span>e</span>
-					<span>r</span>
-					<span>i</span>
-					<span>a</span>
-					<span>l</span>					
-				</a>
-			</div>
-			<div class="col-lg-8 navigation-center">
-				<a href="Home.html">Home</a>
-			    <a href="Product_list.html" class="active-navigation">Product List</a>
-			    <a href="Contact.html">Contact</a>
-			    <a href="#">Support</a>
-			    <a href="Location_store.html"></i> Store Location</a>
-			</div>
-			<div class="col-lg-2 navigation-right">
-				<a href="#" id="cdsearch"><i id="ffst" class="far fa-search"></i></a>
-    			<a href="#" id="cdlogin" data-toggle="modal" data-target="#exampleModal">
-    				<i id="ffus" class="far fa-user"></i>
-    			</a>
-				<a href="#" id="cdcart">
-					<i class="far fa-shopping-cart" id="ffsc"></i>
-					<span class="badge-item-cart">1</span>
-				</a>
-			</div>
-		</div>
-		<div id="search-box" class="search-box">
-			<div class="container">
-				<div class="searching-box">
-					<i id="ffct" class="fal fa-times"></i>
-					<input id="inputtext" type="text" placeholder="Search">
-					<button onclick="search_product()"><i class="far fa-search"></i></button>
-				</div>	
-			</div>
-		</div>
-		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		    <div class="modal-dialog" role="document">
-		        <div class="modal-content">
-		        	<div class="modal-header">
-		        		<h4>Login to La_Imperial</h4>
-		        	</div>
-		        	<form class="form-login" id="form-login">
-			        	<div class="modal-body">
-							<div class="login user">
-								<input type="text" name="login-user" required>
-								<i class="fa fa-user"></i>
-								<label>Email or Username</label>					
-							</div>
-							<div class="login password">
-								<input type="text" name="login-password" required>
-								<i class="fa fa-lock"></i>
-								<label>Password</label>
-							</div>
-						<div class="remember-box">
-							<input type="checkbox" name="rememberme" id="rememberme" class="rememberme" value="Remember me">
-							<label for="rememberme">Remember me</label>	
-							<a href="Register.html">Create new account</a>
-						</div>
-			        	</div>
-				        <div class="modal-footer">
-				        	<a href="#">Forget password</a>
-					        <button type="button" class="btn btn-secondary" id="close_modal" data-dismiss="modal">Close</button>
-					        <button type="button" class="btn btn-primary">Login</button>
-				        </div>
-					</form>
-		        </div>
-		    </div>
-		</div>
-		<div class="cart-navigation">
-			<div class="quick-cart-item-count">
-				<p>You have 6 items</p>
-			</div>
-			<div class="quick-cart-item-product">
-				<ul>
-					<li class="card-quick-cart">
-						<img src="images/ghe 4.png">
-						<div class="info-quick-cart">
-							<p>Test item quick cart</p>
-							<span>100$</span>
-						</div>
-						<a><i class="fal fa-times"></i></a>
-					</li>
-				</ul>
-			</div>
-			<div class="quick-cart-item-cart">
-				<a href="View_Cart.html">View cart</a>
-			</div>
-		</div>
-	</header>
+	 <header class="col-lg-12">
+        <div class="navigation">
+            <div class="col-lg-2 navigation-left">
+                <a href="#" class="logo-header">
+                    <span>L</span>
+                    <span>a</span>
+                    <span>_</span>
+                    <span>I</span>
+                    <span>m</span>
+                    <span>p</span>
+                    <span>e</span>
+                    <span>r</span>
+                    <span>i</span>
+                    <span>a</span>
+                    <span>l</span>                  
+                </a>
+            </div>
+            <div class="col-lg-8 navigation-center">
+                <a href="home.html" class="active-navigation">Home</a>
+                <a href="product_list.html">Product List</a>
+                <a href="contact.html">Contact</a>
+                <a href="#">Support</a>
+                <a href="location_store.html"></i> Store Location</a>
+            </div>
+            <div class="col-lg-2 navigation-right">
+                <a href="#" id="cdsearch"><i id="ffst" class="far fa-search"></i></a>
+                <a href="#" id="cdlogin" data-toggle="modal" data-target="#exampleModal">
+                    <i id="ffus" class="far fa-user"></i>
+                </a>
+                <a href="#" id="cdcart">
+                    <i class="far fa-shopping-cart" id="ffsc"></i>
+                    <span class="badge-item-cart">1</span>
+                </a>
+            </div>
+        </div>
+        <div id="search-box" class="search-box">
+            <div class="container">
+                <div class="searching-box">
+                    <i id="ffct" class="fal fa-times"></i>
+                    <input type="text" placeholder="Search">
+                    <button><i class="far fa-search"></i></button>
+                </div>  
+            </div>
+        </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4>Login to La_Imperial</h4>
+                    </div>
+                    <form class="form-login" id="form-login" id="form-login" action="/dang_nhap" method="get" name="form_data" enctype="multipart/form_data">
+                        <div class="modal-body">
+                            <div class="login user">
+                                <input type="text" name="email" required>
+                                <i class="fa fa-user"></i>
+                                <label>Email or Username</label>                    
+                            </div>
+                            <div class="login password">
+                                <input type="password" name="password" required>
+                                <i class="fa fa-lock"></i>
+                                <label>Password</label>
+                            </div>
+                        <div class="remember-box">
+                            <input type="checkbox" name="rememberme" id="rememberme" class="rememberme" value="Remember me">
+                            <label for="rememberme">Remember me</label> 
+                            <a href="signup.html">Create new account</a>
+                        </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#">Forget password</a>
+                            <button type="button" class="btn btn-secondary" id="close_modal" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="cart-navigation">
+            <div class="quick-cart-item-count">
+                <p>You have 1 items</p>
+            </div>
+            <div class="quick-cart-item-product">
+                <ul>
+                    <li class="card-quick-cart">
+                        <img src="images/ghe 4.png">
+                        <div class="info-quick-cart">
+                            <p>Test item quick cart</p>
+                            <span>100$</span>
+                        </div>
+                        <a><i class="fal fa-times"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="quick-cart-item-cart">
+                <a href="gio_hang.html">View cart</a>
+            </div>
+        </div>
+    </header>
+    
 	<section class="col-lg-12 s-product-list">
 		<div class="container">
 			<div class="col-lg-3">
