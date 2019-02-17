@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<title>Product list</title>
+	<!-- fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Charm" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<!-- icons -->
+	<link rel="stylesheet" type="text/css" href="../FontAwesome/css/all.css">
+	<!-- styles -->
+	<link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../vendor/jquery-ui/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="../styles.css">
+	<link rel="stylesheet" type="text/css" href="../styles2.css">
+	<!-- javascipt -->
+	<script type="text/javascript" src="../vendor/jquery/jquery.js"></script>
+	<script type="text/javascript" src="../vendor/bootstrap/js/bootstrap.js"></script>
+	<script type="text/javascript" src="../vendor/jquery-ui/jquery-ui.js"></script>
+	<script type="text/javascript" src="../javascript.js"></script>
+</head>
+<body>
+	<header class="col-lg-12">
+		<div class="navigation">
+			<div class="col-lg-2 navigation-left">
+				<a href="#" class="logo-header">
+					<span>L</span>
+					<span>a</span>
+					<span>_</span>
+					<span>I</span>
+					<span>m</span>
+					<span>p</span>
+					<span>e</span>
+					<span>r</span>
+					<span>i</span>
+					<span>a</span>
+					<span>l</span>					
+				</a>
+			</div>
+			<div class="col-lg-8 navigation-center">
+                <div class="col-lg-11">
+                <a href="/kh/home.html" class="active-navigation">Home</a>
+                <a href="/kh/Product_list.html">Product List</a>
+                <a href="/kh/Contact.html">Contact</a>
+                <a href="#">Support</a>
+                <a href="/kh/Location_store.html"></i> Store Location</a>
+                </div>
+                <div class="col-lg-1 welcom">
+                    <span>Welcom Duy</span>
+                </div>
+                
+            </div>
+            
+            <div class="col-lg-2 navigation-right">
+                 <div class="col-lg-4"> 
+                <a href="#" id="cdsearch"><i id="ffst" class="far fa-search"></i></a>
+                </div>
+                <div class="col-lg-4">
+                    <a href="#" id="cdcart">
+                    <i class="far fa-shopping-cart" id="ffsc"></i>
+                    <span class="badge-item-cart">1</span>
+                </a>
+                </div>
+                <div class="col-lg-4">
+                	
+                	<a href="/home.html"><input type="button" class="btn btn-secondary" value="logout" class="button"></a>
+                		
+                	
+                    
+            </div>
+            
+        </div>
+		<div id="search-box" class="search-box">
+			<div class="container">
+				<div class="searching-box">
+					<i id="ffct" class="fal fa-times"></i>
+					<input id="inputtext" type="text" placeholder="Search">
+					<button onclick="search_product()"><i class="far fa-search"></i></button>
+				</div>	
+			</div>
+		</div>
+
+		<div class="cart-navigation">
+			<div class="quick-cart-item-count">
+				<p>You have 6 items</p>
+			</div>
+			<div class="quick-cart-item-product">
+				<ul>
+					<li class="card-quick-cart">
+						<img src="images/ghe 4.png">
+						<div class="info-quick-cart">
+							<p>Test item quick cart</p>
+							<span>100$</span>
+						</div>
+						<a><i class="fal fa-times"></i></a>
+					</li>
+				</ul>
+			</div>
+			<div class="quick-cart-item-cart">
+				<a href="View_Cart.html">View cart</a>
+			</div>
+		</div>
+	</header>
+	<section class="col-lg-12 s-product-list">
+		<div class="container">
+			<div class="col-lg-3">
+				<div class="box-select categories">
+					<h4>Categories</h4>
+					<ul>
+						<li>
+							<input id="allcate" type="radio" name="cate" value="allcate" checked>
+			                <label for="allcate" data-id="allcate" onclick="list_product_all()">All</label>
+			                <input id="fan"type="radio" name="cate" value="fan">
+			                <label for="fan" data-id="fan" onclick="filter_product(this)">Fan</label>
+			                <input id="iron"type="radio" name="cate" value="iron">
+			                <label for="iron" data-id="iron" onclick="filter_product(this)">Iron</label>
+			                <input id="regulator"type="radio" name="cate" value="regulator">
+			                <label for="regulator" data-id="regulator" onclick="filter_product(this)">Regulator</label>
+			                <input id="microwave" type="radio" name="cate" value="microwave">
+			                <label for="microwave" data-id="washing_machine" onclick="filter_product(this)">Microwave</label>
+			                <input id="washing_machine" type="radio" name="cate" value="washing_machine">
+			                <label for="washing_machine" data-id="washing machine" onclick="filter_product(this)">Washing Machine</label>
+						</li>
+					</ul>
+				</div>
+				<div class="box-select manufacturer">
+					<h4>Manufacturer</h4>
+					<ul>
+						<li>
+							<input id="daikin" type="radio" name="manu" value="daikin">
+			                <label for="daikin" data-id="daikin" onclick="filter_product_manufacturer(this)">Daikin</label>
+							<input id="electrolux" type="radio" name="manu" value="electrolux">
+			                <label for="electrolux" data-id="electrolux" onclick="filter_product_manufacturer(this)">Elextrolux</label>
+							<input id="hitachi" type="radio" name="manu" value="hitachi">
+			                <label for="hitachi" data-id="hitachi" onclick="filter_product_manufacturer(this)">Hitachi</label>
+							<input id="lge" type="radio" name="manu" value="lge">
+			                <label for="lge" data-id="lge" onclick="filter_product_manufacturer(this)">LG</label>
+							<input id="panasonic" type="radio" name="manu" value="panasonic">
+			                <label for="panasonic" data-id="panasonic" onclick="filter_product_manufacturer(this)">Panasonic</label>
+							<input id="philips" type="radio" name="manu" value="philips">
+			                <label for="philips" data-id="philips" onclick="filter_product_manufacturer(this)">Philips</label>
+			                <input id="samSung"type="radio" name="manu" value="samsung">
+			                <label for="samSung" data-id="samsung" onclick="filter_product_manufacturer(this)">Samsung</label>
+			                <input id="sunhouse" type="radio" name="manu" value="sunhouse">
+			                <label for="sunhouse" data-id="sunhouse" onclick="filter_product_manufacturer(this)">Sunhouse</label>
+			                <input id="toshiba" type="radio" name="manu" value="toshiba">
+			                <label for="toshiba" data-id="toshiba" onclick="filter_product_manufacturer(this)">Toshiba</label>
+						</li>
+					</ul>
+				</div>
+				<div class="box-select price">
+						<h4>Price</h4>
+							<input type="range" min="100" max="1000" value="100" class="rangeprice" id="myRange">
+							<p>
+								From: <span>10$</span>
+							  	To: <span id="priceto"></span>$
+							</p>
+							<div class="submit-filter">
+								<button onclick="search_product_price()">Filter</button>
+							</div>
+					</div>
+				<div class="box-select sort-product">
+					<h4>Sort</h4>
+					<select>
+						<option>Alphabetically, A-Z</option>
+						<option>Alphabetically, Z-A</option>
+						<option>Price, high to low</option>
+						<option>Price, low to high</option>
+					</select>
+				</div>
+				
+			</div>
+			<div class="col-lg-9">
+				<div class="row" id="san_pham">
+					 <span></span>
+				</div>
+				<div class="row">
+					<div class="col-lg-9">
+						<div class="paginate">
+							<ul>
+								<li><a class="active-paginate" title>1</a></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">Next</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="col-lg-12"> <!-- so sanh -->
+		<div class="container">
+			<span> so sánh sản phẩm</span>
+			<button type="button" class="btn1" id="btn1" value="Ẩn">ẩn</button>
+        	<button type="button" class="btn2" id="btn2" value="Hiển Thị">hiển thị</button>
+        	<div class="col-lg-12 so_sanh" id="so_sanh_product">
+        	<button class="btn btn-sm btn-success" id="button_clear">Clear</button>
+        	<div class="col-lg-12">
+        		 <div class="container-fluid">
+            <h4>So Sánh</h4>
+            <div class="wrapper-compare">
+                <div class="wrapper-head-compare">
+                    <div class="wrapper-condition-head fleft col-lg-2">
+                        <h5>Condition</h5>
+                    </div>
+                    <div class="wrapper-product-head fleft col-lg-10">
+                        <h5>Product</h5>
+                    </div>
+                </div>
+                <div class="wrapper-content-compare">
+                    <div class="wrapper-condition-content fleft col-lg-2">
+                        <div>Code</div>
+                        <div>Name</div>
+                        <div>Price</div>
+                        <div>Manufacturer</div>
+                        <div>Guarantee</div>
+                    </div>
+                    <div class="wrapper-product-content fleft col-lg-10">
+                        <div class="wrapper-product-first col-lg-6 ">
+
+                        </div>
+                        <div class="wrapper-product-second col-lg-6">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        	</div>
+        	</div> <!-- so sánh -->
+		</div>
+	</section>
+	<footer class="col-lg-12">
+		<div class="col-lg-12 footer-top">
+			<div class="container">
+				<div class="col-lg-3 logo-footer">
+					<span class="logo-text">
+						L a _ I m p e r i a l
+					</span>
+					<span><b>A &ensp;</b> Số 8 Tôn Thất Thuyết, Mỹ Đình, Hà Nội</span>
+					<span><b>T &ensp;</b> +84 123 456 789</span>
+					<span><b>M &ensp;</b> 123456@fpt.edu.vn</span>
+				</div>
+				<div class="col-lg-6 list-footer-top">
+					<div class="col-lg-4 lft-left">
+							<div><ul><li><a href="#">Shipping</a></li></ul></div>
+							<div><ul><li><a href="#">Time Working</a></li></ul></div>
+							<div><ul><li><a href="#">Payment Method</a></li></ul></div>
+					</div>
+					<div class="col-lg-4 lft-center">
+							<div><ul><li><a href="#">Credit Cards</a></li></ul></div>
+							<div><ul><li><a href="#">Returns</a></li></ul></div>
+							<div><ul><li><a href="#">Product List</a></li></ul></div>
+					</div>
+					<div class="col-lg-4 lft-right">
+							<div><ul><li><a href="#">Terms</a></li></ul></div>
+							<div><ul><li><a href="#">Report Problem</a></li></ul></div>
+							<div><ul><li><a href="#">Find Store</a></li></ul></div>
+					</div>
+				</div>
+				<div class="col-lg-3 payment-method">
+					<span>Payment Method</span>
+					<i class="fab fa-cc-mastercard"></i>
+					<i class="fab fa-cc-visa"></i>
+					<i class="fab fa-cc-amazon-pay"></i>
+					<i class="fab fa-cc-stripe"></i>
+					<i class="fab fa-cc-paypal"></i>
+					<i class="fab fa-cc-jcb"></i>
+					<i class="fab fa-cc-discover"></i>
+					<i class="fab fa-cc-diners-club"></i>
+					<i class="fab fa-cc-apple-pay"></i>
+					<i class="fab fa-cc-amex"></i>
+					<i class="fab fa-cc-amazon-pay"></i>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-12 footer-bottom">
+			<div class="container">
+				<div class="col-lg-6 coppyright">
+					<span>Coppyright © 2018 Farost</span>
+				</div>
+				<div class="col-lg-6 page-store">
+					<a href="#"><i class="fab fa-facebook-f"></i></a>
+					<a href="#"><i class="fab fa-twitter"></i></a>
+					<a href="#"><i class="fab fa-google-plus-g"></i></a>
+					<a href="#"><i class="fab fa-instagram"></i></a>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<script>
+		list_product_all();
+		// $( function() {
+	 //    	$( "#slider-range" ).slider({
+		//     	range: true,
+		//     	min: 0,
+		//     	max: 500,
+		//     	values: [ 50, 450 ],
+		//     	slide: function( event, ui ) {
+		//     		$( "#amount1" ).val( "$" + ui.values[ 0 ]);
+		//     		$( "#amount2" ).val( "$" + ui.values[ 1 ] );
+	 //        }
+	 //    	});
+	 //    var amount1 = $( "#amount1" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ));
+	 //    var amount2 =  $( "#amount2" ).val( "$" + $( "#slider-range" ).slider( "values", 1 ) );
+	 //    });
+
+	   var slider = document.getElementById("myRange");
+		var output = document.getElementById("priceto");
+		output.innerHTML = slider.value;
+
+		slider.oninput = function() {
+		  output.innerHTML = this.value;
+		}
+		console.log(document.getElementById("priceto"));
+	    function list_product_all(){
+    	jQuery.ajax({
+        url: '/list_product',
+        method: "GET",
+        success: function(result, element){
+            var y = '';
+            
+            for (var i = 0; i < result.data.length; i++){
+            y+='<div class="col-lg-4">';
+			y+='			<div class="card-product">';
+			y+='				<div class="top-card">';
+			y+='					<div class="img-card-product">';
+			y+='						<img src='+result.data[i].pr_images1+'>';
+			y+='					</div>';
+			y+='				</div>';
+			y+='				<div class="bottom-card">';
+			y+='					<div class="info-card-product">';
+			y+='						<a href="/kh/chi_tiet_san_pham.html?id='+result.data[i]._id+'"><h3>'+result.data[i].pr_name+'</h3></a>';
+			y+='						<p>'+result.data[i].pr_price+'</p>';
+			y+='					</div>';
+			y+='					<div class="action-card">';
+			y +='   <a data_id="'+result.data[i]._id+'" class="btn so_sanh" id="so_sanh" onclick="so_sanh(this)">so sanh</a>';
+			y+='						<button>ADD TO CART</button>';
+			y+='					</div>';
+			y+='				</div>';
+			y+='			</div>';
+				y+='	</div>';
+            }
+            document.getElementById("san_pham").innerHTML = y;
+        }
+    });
+    }
+    
+    	function filter_product(element){
+    	jQuery.ajax({
+        url: '/filter_product',
+        method: "GET",
+        data: {pr_class: jQuery(element).attr("data-id")},
+        success: function(result, element){
+            var y = '';
+            for (var i = 0; i < result.data.length; i++){
+            y+='<div class="col-lg-4">';
+			y+='			<div class="card-product">';
+			y+='				<div class="top-card">';
+			y+='					<div class="img-card-product">';
+			y+='						<img src='+result.data[i].pr_images1+'>';
+			y+='					</div>';
+			y+='				</div>';
+			y+='				<div class="bottom-card">';
+			y+='					<div class="info-card-product">';
+			y+='						<a href="/kh/chi_tiet_san_pham.html?id='+result.data[i]._id+'"><h3>'+result.data[i].pr_name+'</h3></a>';
+			y+='						<p>'+result.data[i].pr_price+'</p>';
+			y+='					</div>';
+			y+='					<div class="action-card">';
+			y +='   <a data_id="'+result.data[i]._id+'" class="btn so_sanh" id="so_sanh" onclick="so_sanh(this)">so sanh</a>';
+			y+='						<button>ADD TO CART</button>';
+			y+='					</div>';
+			y+='				</div>';
+			y+='			</div>';
+				y+='	</div>';
+            }
+            // $(document.getElementById("san_pham")).append(s);
+            document.getElementById("san_pham").innerHTML = y;
+        }
+    });
+    }
+    function filter_product_manufacturer(element){
+    	jQuery.ajax({
+        url: '/filter_product_manufacturer',
+        method: "GET",
+        data: {pr_manufacturer: jQuery(element).attr("data-id")},
+        success: function(result, element){
+            var y = '';
+            for (var i = 0; i < result.data.length; i++){
+            y+='<div class="col-lg-4">';
+			y+='			<div class="card-product">';
+			y+='				<div class="top-card">';
+			y+='					<div class="img-card-product">';
+			y+='						<img src='+result.data[i].pr_images1+'>';
+			y+='					</div>';
+			y+='				</div>';
+			y+='				<div class="bottom-card">';
+			y+='					<div class="info-card-product">';
+			y+='						<a href="/kh/chi_tiet_san_pham.html?id='+result.data[i]._id+'"><h3>'+result.data[i].pr_name+'</h3></a>';
+			y+='						<p>'+result.data[i].pr_price+'</p>';
+			y+='					</div>';
+			y+='					<div class="action-card">';
+			y +='   <a data_id="'+result.data[i]._id+'" class="btn so_sanh" id="so_sanh" onclick="so_sanh(this)">so sanh</a>';
+			y+='						<button>ADD TO CART</button>';
+			y+='					</div>';
+			y+='				</div>';
+			y+='			</div>';
+				y+='	</div>';
+            }
+            document.getElementById("san_pham").innerHTML = y;
+        }
+    });
+    }
+    	  // ====================
+
+
+    // ====================
+      function search_product(element){
+    	jQuery.ajax({
+        url: '/search_product',
+        method: "GET",
+        data: {pr_name: document.getElementById("inputtext").value},
+        success: function(result, element){
+            var y = '';
+            for (var i = 0; i < result.data.length; i++){
+            y+='<div class="col-lg-4">';
+			y+='			<div class="card-product">';
+			y+='				<div class="top-card">';
+			y+='					<div class="img-card-product">';
+			y+='						<img src='+result.data[i].pr_images1+'>';
+			y+='					</div>';
+			y+='				</div>';
+			y+='				<div class="bottom-card">';
+			y+='					<div class="info-card-product">';
+			y+='						<a href="/kh/chi_tiet_san_pham.html?id='+result.data[i]._id+'"><h3>'+result.data[i].pr_name+'</h3></a>';
+			y+='						<p>'+result.data[i].pr_price+'</p>';
+			y+='					</div>';
+			y+='					<div class="action-card">';
+			y +='   <a data_id="'+result.data[i]._id+'" class="btn so_sanh" id="so_sanh" onclick="so_sanh(this)">so sanh</a>';
+			y+='						<button>ADD TO CART</button>';
+			y+='					</div>';
+			y+='				</div>';
+			y+='			</div>';
+				y+='	</div>';
+            }
+            document.getElementById("san_pham").innerHTML = y;
+        }
+    });
+    }
+
+    function search_product_price(element){
+    	jQuery.ajax({
+        url: '/search_product_price',
+        method: "GET",
+        data: {pr_price: slider.value},
+        success: function(result, element){
+            var y = '';
+            for (var i = 0; i < result.data.length; i++){
+            y+='<div class="col-lg-4">';
+			y+='			<div class="card-product">';
+			y+='				<div class="top-card">';
+			y+='					<div class="img-card-product">';
+			y+='						<img src='+result.data[i].pr_images1+'>';
+			y+='					</div>';
+			y+='				</div>';
+			y+='				<div class="bottom-card">';
+			y+='					<div class="info-card-product">';
+			y+='						<a href="/kh/chi_tiet_san_pham.html?id='+result.data[i]._id+'"><h3>'+result.data[i].pr_name+'</h3></a>';
+			y+='						<p>'+result.data[i].pr_price+'</p>';
+			y+='					</div>';
+			y+='					<div class="action-card">';
+			y +='   <a data_id="'+result.data[i]._id+'" class="btn so_sanh" id="so_sanh" onclick="so_sanh(this)">so sanh</a>';
+			y+='						<button>ADD TO CART</button>';
+			y+='					</div>';
+			y+='				</div>';
+			y+='			</div>';
+				y+='	</div>';
+            }
+            document.getElementById("san_pham").innerHTML = y;
+        }
+    });
+    }
+    // so sánh sản phẩm========================================
+     document.getElementById("btn1").onclick = function () {
+                document.getElementById("so_sanh_product").style.display = 'none';
+            };
+
+            document.getElementById("btn2").onclick = function () {
+                document.getElementById("so_sanh_product").style.display = 'block';
+            };
+      var chose = true;
+		function so_sanh(id){
+    	jQuery.ajax({
+        url: '/detail_product',
+        method: "GET",
+        data: {id: jQuery(id).attr("data_id")},
+        success: function(result, element){
+            var y ='';{
+            		y+='	<div>' + result.data.pr_code + '</div>';
+                    y+='   <div>'+ result.data.pr_name + '</div>';
+                    y+='    <div>'+ result.data.pr_price +'</div>';
+                    y+='   <div>'+ result.data.pr_manufacturer + '</div>';
+                    y+='    <div>'+ result.data.pr_guarantee +'<div>';
+                    }
+          	if (chose === true) {
+                    $('.wrapper-product-first').html(y);
+                    chose = false;
+                }else{
+                    $('.wrapper-product-second').html(y);
+                    chose = true;
+                }
+                console.log(chose);
+           
+		         }
+    });
+    }
+		     $("#button_clear").bind('click',function () {
+            
+                $(".wrapper-product-first").html("");
+                $(".wrapper-product-second").html("");
+                
+            });
+  </script>
+</body>
+</html>
