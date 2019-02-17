@@ -232,7 +232,7 @@ MongoClient.connect(url, function (err, db) {
                   res.send("không tìm thấy tài khoản");
                 }else{
                   
-                  res.redirect("/home.html");
+                  res.redirect("/kh/home.html");
                 }
                 
               }); 
