@@ -5,24 +5,23 @@
 	<meta charset="utf-8">
 	<title>Product list</title>
 	<!-- fonts -->
+		<!-- fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Charm" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 	<!-- icons -->
 	<link rel="stylesheet" type="text/css" href="FontAwesome/css/all.css">
 	<!-- styles -->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="vendor/jquery-ui/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="vendor/owlcarousel2/owl.carousel.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="vendor/owlcarousel2/owl.theme.default.css">
 	<link rel="stylesheet" type="text/css" href="styles.css">
-	<link rel="stylesheet" type="text/css" href="styles2.css">
-
-	<!-- javascipt -->
+	<!-- javascript -->
 	<script type="text/javascript" src="vendor/jquery/jquery.js"></script>
 	<script type="text/javascript" src="vendor/bootstrap/js/bootstrap.js"></script>
-	<script type="text/javascript" src="vendor/jquery-ui/jquery-ui.js"></script>
+	<script type="text/javascript" src="vendor/owlcarousel2/owl.carousel.js"></script>
 	<script type="text/javascript" src="javascript.js"></script>
 </head>
 <body>
@@ -44,7 +43,7 @@
 				</a>
 			</div>
 			  <div class="col-lg-8 navigation-center">
-            <a href="/" class="active-navigation">Home</a>
+            <a href="/home.html" class="active-navigation">Home</a>
             <a href="/Product_list.html">Product List</a>
             <a href="Contact.html">Contact</a>
             <a href="#">Support</a>
@@ -219,9 +218,9 @@
                     <div class="wrapper-condition-content fleft col-lg-2">
                         <div>Code</div>
                         <div>Name</div>
-                        <div>Manufacturer</div>
                         <div>Price</div>
-                        <div>Puarantee</div>
+                        <div>Manufacturer</div>
+                        <div>Guarantee</div>
                     </div>
                     <div class="wrapper-product-content fleft col-lg-10">
                         <div class="wrapper-product-first col-lg-6 ">
@@ -238,6 +237,7 @@
         	</div> <!-- so sánh -->
 		</div>
 	</section>
+
 
 
 	
@@ -542,10 +542,10 @@
                     y+='    <div>'+ result.data.pr_guarantee +'<div>';
                     }
           	if (chose === true) {
-                    $('.wrapper-product-first').append(y);
+                    $('.wrapper-product-first').html(y);
                     chose = false;
                 }else{
-                    $('.wrapper-product-second').append(y);
+                    $('.wrapper-product-second').html(y);
                     chose = true;
                 }
                 console.log(chose);

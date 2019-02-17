@@ -17,7 +17,7 @@ var url = 'mongodb://duypham9669:69912110a@ds042688.mlab.com:42688/duypham9669';
 mongoose.connect(url);
 // connect to our database
 
-require('./config/passport')(passport); 
+
 
 
 app.use(express.static(__dirname + '/public'));
@@ -35,7 +35,7 @@ app.set('view engine', 'ejs'); // set up ejs for templating
 // app.use(upload.array());
 // required for passport
 app.use(session({
-    secret: 'duypham9669', // session secret
+    secret: 'ilovescotchscotchyscotchscotch', // session secret
     resave: true,
     saveUninitialized: true
 }));
@@ -44,7 +44,7 @@ app.use(passport.session());
 app.use(flash());
 
 // routes ======================================================================
-require('./app/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
+
 
 // launch ======================================================================
 app.listen(port);
@@ -79,6 +79,7 @@ MongoClient.connect(url, function (err, db) {
 
 	var more_product = collection.collection("more_product");
     var account = collection.collection("account");
+
 
 
       app.get("/list_product",function(req,res){
@@ -202,22 +203,43 @@ MongoClient.connect(url, function (err, db) {
         res.send(json);
       });
          });  
+        //đăng-ký
+            app.post("/dang_ky", function(req,res){
+                var user = {
+                    username: req.body.username,
+                    email: req.body.email,
+                    password: req.body.password,
+                };
+                account.insert([user],function(err,result){
+                    if(err){
+                        res.send("fail");
+                    }else{
+                        res.send("dang ky thanh cong");
+                    }
+                });
+            });
 
-            // app.post("/dang_ky", function(req,res){
-            //     var user = {
-            //         username: req.body.username,
-            //         email: req.body.email,
-            //         password: req.body.password,
-            //     };
-            //     account.insert([user],function(err,result){
-            //         if(err){
-            //             res.send("fail");
-            //         }else{
-            //             res.send("dang ky thanh cong");
-            //         }
-            //     });
-            // });
+            //đăng-nhập
+            app.get("/dang_nhap", function(req,res){
+                if (req.query.email == "admin" & req.query.password == "admin") {
+                    res.redirect("/admin_page_ddtl.html");
+                }else{
+                    account.find({email: req.query.email, password: req.query.password}).toArray(function (err, result) {
+         
+                if(err){
+                  //console.log(err);
+                }else if(result.length < 1){
+                  res.send("không tìm thấy tài khoản");
+                }else{
+                  
+                  res.redirect("/home.html");
+                }
+                
+              }); 
+                }
 
+                
+                 });  
 
     app.post("/them_san_pham", function(req,res)
     {
@@ -239,7 +261,7 @@ MongoClient.connect(url, function (err, db) {
                 res.send("Fail");
             }else{
                 res.send("da them san pham")
-                res.redirect("/admin_page_ddtl.html");
+                
             }
         });
     });
@@ -267,7 +289,7 @@ MongoClient.connect(url, function (err, db) {
           if(err){
         res.send("Fail");
        }else{
-        res.redirect("/index_admin");
+        res.redirect("/admin_page_ddtl.html");
         }
          });
         });

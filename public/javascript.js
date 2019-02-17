@@ -5,16 +5,16 @@ $(document).ready(function(){
     if($('#ffst').hasClass('far fa-search')){
       $('#ffst').removeClass('far fa-search').addClass('far fa-times active-rnavigation');
       $('.search-box').slideDown(100).addClass('active-sb');
-      return true;
+      return;
     }else{
     $('#ffst').removeClass('far fa-times active-rnavigation').addClass('far fa-search');
-    $('.search-box').slideUp(100).removeClass('active-sb');
-      return true;
+    $('#search-box').slideUp(100).removeClass('active-sb');
+      return;
     }
   });
   $('#ffct').click(function(){
-    $('#ffst').removeClass('far fa-times').addClass('far fa-search');
-    $('.search-box').removeClass('active-sb');
+    $('#ffst').removeClass('far fa-times active-rnavigation').addClass('far fa-search');
+    $('#search-box').slideUp(100).removeClass('active-sb');
   });
   $('#cdlogin').click(function(){
     if ($('#ffus').hasClass('active-rnavigation')){
@@ -41,7 +41,10 @@ $(document).ready(function(){
   $(!'.modal-dialog').click(function(){
     $('#ffus').removeClass('active-rnavigation');
   });
-  return true;
+  $('#exampleModal').click(function(){
+    $('#ffus').removeClass('active-rnavigation');
+  });
+  return;
 });
 
 
@@ -49,7 +52,7 @@ $(document).ready(function(){
 
 //Register
 
-var activeregister 
+// var activeregister 
 
 function checkRegister() {
   var result = true;
@@ -105,46 +108,53 @@ function goBack() {
 };
 
 
+
 // Store location
 
 function initMap() {
-      var location1 = {lat: 21.0281772, lng: 105.7828902};
-      var location2 = {lat: 21.0273551, lng: 105.826772};
-      var location3 = {lat: 21.0308, lng: 105.8257971};
-      var map = new google.maps.Map(
-          document.getElementById('map'), {
-                          zoom: 15, 
-                          center: location1
-                          });
-      var marker = new google.maps.Marker({
-                        position: location1, 
-                        map: map,
-                        title:"Store 1"
-                        });
-      $(document).ready(function(){
-          $('#ls1').click(function(){
-            $('#ls2').removeClass('active-sls');
-            $('#ls3').removeClass('active-sls');
-            $('#ls1').addClass('active-sls');
-            map.setCenter(location1);
-            marker.setPosition(location1);
-            marker.setTitle("Store 1");
-          })
-          $('#ls2').click(function(){
-            $('#ls1').removeClass('active-sls');
-            $('#ls3').removeClass('active-sls');
-            $('#ls2').addClass('active-sls');
-            map.setCenter(location2);
-            marker.setPosition(location2);
-            marker.setTitle("Store 2");
-          })
-          $('#ls3').click(function(){
-            $('#ls1').removeClass('active-sls');
-            $('#ls2').removeClass('active-sls');
-            $('#ls3').addClass('active-sls');
-            map.setCenter(location3);
-            marker.setPosition(location3);
-            marker.setTitle("Store 3");
-          })
-        });
-    }
+  var location1 = {lat: 21.0281772, lng: 105.7828902};
+  var location2 = {lat: 21.0294772, lng: 105.8350569};
+  var location3 = {lat: 21.0366434, lng: 105.8302789};
+  var map = new google.maps.Map(
+      document.getElementById('map'), {
+                      zoom: 15, 
+                      center: location1
+                      });
+  var marker = new google.maps.Marker({
+                    position: location1, 
+                    map: map,
+                    title:"Store 1"
+                    });
+  $(document).ready(function(){
+      $('#ls1').click(function(){
+        $('#ls2').removeClass('active-sls');
+        $('#ls3').removeClass('active-sls');
+        $('#ls1').addClass('active-sls');
+        map.setCenter(location1);
+        marker.setPosition(location1);
+        marker.setTitle("Store 1");
+      });
+      $('#ls2').click(function(){
+        $('#ls1').removeClass('active-sls');
+        $('#ls3').removeClass('active-sls');
+        $('#ls2').addClass('active-sls');
+        map.setCenter(location2);
+        marker.setPosition(location2);
+        marker.setTitle("Store 2");
+      });
+      $('#ls3').click(function(){
+        $('#ls1').removeClass('active-sls');
+        $('#ls2').removeClass('active-sls');
+        $('#ls3').addClass('active-sls');
+        map.setCenter(location3);
+        marker.setPosition(location3);
+        marker.setTitle("Store 3");
+      });
+    });
+};
+
+
+
+// Product list
+
+

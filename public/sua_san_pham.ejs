@@ -3,7 +3,7 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="utf-8">
-	<title>MORE PRODUCTS</title>
+	<title>EDIT PRODUCTS</title>
 	<!-- fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
@@ -38,7 +38,7 @@
 				</a>
 			</div>
 			<div class="col-lg-8 navigation-center">
-            <a href="/home.html" class="active-navigation">Home</a>
+            <a href="/" class="active-navigation">Home</a>
             <a href="/Product_list.html">Product List</a>
             <a href="Contact.html">Contact</a>
             <a href="#">Support</a>
@@ -50,9 +50,9 @@
 			</div>
 		</div>
 	</header>
-	<section class="col-lg-12">
-			<form class="form-register" method="post" action="/them_san_pham" "enctype="mltipart/from-data">
-				<input type="text" placeholder="ma so san pham" name="pr_code" class="form-control"><br/>
+	<form method="post" action="/edit_product" enctype="multipart/form-data" class="col-lg-8">
+		<input type="hidden" name="_id" />
+			<input type="text" placeholder="ma so san pham" name="pr_code" class="form-control"><br/>
 				<input type="text" placeholder="ten san pham" name="pr_name" class="form-control"><br/>
 				<input type="text" placeholder="loai san pham" name="pr_class" class="form-control"><br/>
 				<input type="text" placeholder="ten hang san xuat" name="pr_manufacturer" class="form-control"><br/>
@@ -62,63 +62,32 @@
 				<input type="number" placeholder="gia san pham" name="pr_price" class="form-control"><br/>
 				<input type="text" placeholder="chi tiet san pham" name="pr_detail" class="form-control"><br/>
 				<input type="text" placeholder="thoi gian bao hanh" name="pr_guarantee" class="form-control"><br/>
-				<button type="submit" class=""btn btn-warning>Submit</button>
-
-
-
+		<button type="submit" class="btn btn-warning">Submit</button>
 	</form>
-	</section>
-
-
-	<footer class="col-lg-12">
-		<div class="col-lg-12 footer-top">
-			<div class="container">
-				<div class="col-lg-3 logo-footer">
-					<span class="logo-text">
-						L a _ I m p e r i a l
-					</span>
-					<span><b>A &ensp;</b> Số 7 Tôn Thất Thuyết, Mỹ Đình, Hà Nội</span>
-					<span><b>T &ensp;</b> +84 123 456 789</span>
-					<span><b>M &ensp;</b> 123456@fpt.edu.vn</span>
-				</div>
-				<div class="col-lg-6">
-					
-				</div>
-				<div class="col-lg-3 payment-method">
-					<span>Payment Method</span>
-					<i class="fab fa-cc-mastercard"></i>
-					<i class="fab fa-cc-visa"></i>
-					<i class="fab fa-cc-amazon-pay"></i>
-					<i class="fab fa-cc-stripe"></i>
-					<i class="fab fa-cc-paypal"></i>
-					<i class="fab fa-cc-jcb"></i>
-					<i class="fab fa-cc-discover"></i>
-					<i class="fab fa-cc-diners-club"></i>
-					<i class="fab fa-cc-apple-pay"></i>
-					<i class="fab fa-cc-amex"></i>
-					<i class="fab fa-cc-amazon-pay"></i>
-				</div>
-			</div>
-		</div>
-		<div class="col-lg-12 footer-bottom">
-			<div class="container">
-				<div class="col-lg-6 coppyright">
-					<span>Coppyright © 2018 Farost</span>
-				</div>
-				<div class="col-lg-6 page-store">
-					<a href="#"><i class="fab fa-facebook-f"></i></a>
-					<a href="#"><i class="fab fa-twitter"></i></a>
-					<a href="#"><i class="fab fa-google-plus-g"></i></a>
-					<a href="#"><i class="fab fa-instagram"></i></a>
-				</div>
-			</div>
-		</div>
-	</footer>
 	<script type="text/javascript">
-
-		$("#link").val("https://drive.google.com/uc?id=")
-		$("#link2").val("https://drive.google.com/uc?id=")
-		$("#link3").val("https://drive.google.com/uc?id=")
+		
+			var urlParams = new URLSearchParams(window.location.search);
+			jQuery.ajax({
+				url: '/detail_product',
+				method: "GET",
+				data: {id:urlParams.get("id")},
+				success: function(result){
+					jQuery("input[name=_id]").val(result.data._id);
+					jQuery("input[name=pr_code]").val(result.data.pr_code);
+					jQuery("input[name=pr_name]").val(result.data.pr_name);
+					jQuery("input[name=pr_class]").val(result.data.pr_class);
+					jQuery("input[name=pr_manufacturer]").val(result.data.pr_manufacturer);
+					jQuery("input[name=pr_images1]").val(result.data.pr_images1);
+					jQuery("input[name=pr_images2]").val(result.data.pr_images2);
+					jQuery("input[name=pr_images3]").val(result.data.pr_images3);
+					jQuery("input[name=pr_price]").val(result.data.pr_price);
+					jQuery("input[name=pr_detail]").val(result.data.pr_detail);
+					jQuery("input[name=pr_guarantee]").val(result.data.pr_guarantee);
+				}
+			});
+		// $("#link").val("https://drive.google.com/uc?id=")
+		// $("#link2").val("https://drive.google.com/uc?id=")
+		// $("#link3").val("https://drive.google.com/uc?id=")
 	</script>
 </body>
 </html>
