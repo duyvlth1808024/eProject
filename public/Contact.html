@@ -41,16 +41,21 @@
 				</a>
 			</div>
 			<div class="col-lg-8 navigation-center">
-            <a href="/home.html" class="active-navigation">Home</a>
-            <a href="/Product_list.html">Product List</a>
-            <a href="Contact.html">Contact</a>
-            <a href="#">Support</a>
-            <a href="/Location_store.html"></i> Store Location</a>
-        </div>
+				<a href="Home.html">Home</a>
+			    <a href="Product_list.html">Product List</a>
+			    <a href="Contact.html" class="active-navigation">Contact</a>
+			    <a href="#">Support</a>
+			    <a href="Location_store.html"></i> Store Location</a>
+			</div>
 			<div class="col-lg-2 navigation-right">
 				<a href="#" id="cdsearch"><i id="ffst" class="far fa-search"></i></a>
-    			<a href="#"data-toggle="modal" data-target="#exampleModal"><i class="far fa-user"></i></a>
-				<a href="#"><i class="far fa-shopping-cart"></i></a>
+    			<a href="#" id="cdlogin" data-toggle="modal" data-target="#exampleModal">
+    				<i id="ffus" class="far fa-user"></i>
+    			</a>
+				<a href="#" id="cdcart">
+					<i class="far fa-shopping-cart" id="ffsc"></i>
+					<span class="badge-item-cart">1</span>
+				</a>
 			</div>
 		</div>
 		<div id="search-box" class="search-box">
@@ -68,8 +73,8 @@
 		        	<div class="modal-header">
 		        		<h4>Login to La_Imperial</h4>
 		        	</div>
-			        <div class="modal-body">
-			        	<form class="form-login" id="form-login">
+		        	<form class="form-login" id="form-login">
+			        	<div class="modal-body">
 							<div class="login user">
 								<input type="text" name="login-user" required>
 								<i class="fa fa-user"></i>
@@ -80,33 +85,67 @@
 								<i class="fa fa-lock"></i>
 								<label>Password</label>
 							</div>
-						</form>
 						<div class="remember-box">
 							<input type="checkbox" name="rememberme" id="rememberme" class="rememberme" value="Remember me">
 							<label for="rememberme">Remember me</label>	
-							<a href="#">Create new account</a>
+							<a href="Register.html">Create new account</a>
 						</div>
-			        </div>
-			        <div class="modal-footer">
-			        	<a href="#">Forget password</a>
-				        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-				        <button type="button" class="btn btn-primary">Login</button>
-			        </div>
+			        	</div>
+				        <div class="modal-footer">
+				        	<a href="#">Forget password</a>
+					        <button type="button" class="btn btn-secondary" id="close_modal" data-dismiss="modal">Close</button>
+					        <button type="button" class="btn btn-primary">Login</button>
+				        </div>
+					</form>
 		        </div>
 		    </div>
 		</div>
-		<!-- <div class="cart-navigation">
-			
-		</div> -->
+		<div class="cart-navigation">
+			<div class="quick-cart-item-count">
+				<p>You have 6 items</p>
+			</div>
+			<div class="quick-cart-item-product">
+				<ul>
+					<li class="card-quick-cart">
+						<img src="images/ghe 4.png">
+						<div class="info-quick-cart">
+							<p>Test item quick cart</p>
+							<span>100$</span>
+						</div>
+						<a><i class="fal fa-times"></i></a>
+					</li>
+				</ul>
+			</div>
+			<div class="quick-cart-item-cart">
+				<a href="View_Cart.html">View cart</a>
+			</div>
+		</div>
 	</header>
-	<section class="col-lg-12 map-contact">
+	<section class="col-lg-12 section-map-contact">
 		<div class="container">
-			<div class="col-lg-6">
-				
+			<div class="col-lg-4 information-contact">
+				<h2>Contact<h2>
+				<h4>Address</h4>
+				<span>Số 7 Tôn Thất Thuyết, Mỹ Đình, Hà Nội</span>
+				<h4>Email</h4>
+				<span>email123@gmail.com</span>
+				<h4>Phone</h4>
+				<span>+84 123 456 789</span>
 			</div>
-			<div class="col-lg-6" id="map">
-				
+			<div class="col-lg-8 div-map">
+				<div class="div-map-contact" id="map"></div>
 			</div>
+		</div>
+	</section>
+	<section class="col-lg-12">
+		<div class="container">
+			<form class="form-message">
+				<input type="text" name="name-message" placeholder="Name">
+				<input type="email" name="email-message" placeholder="Email">
+				<input type="phone" name="phone-message" placeholder="Phone">
+				<textarea cols="100" rows="15" name="ms-massge" placeholder="Message"></textarea>
+				<button>Send Message</button>
+			</form>
 		</div>
 	</section>
 	<footer class="col-lg-12">
@@ -120,8 +159,22 @@
 					<span><b>T &ensp;</b> +84 123 456 789</span>
 					<span><b>M &ensp;</b> 123456@fpt.edu.vn</span>
 				</div>
-				<div class="col-lg-6">
-					
+				<div class="col-lg-6 list-footer-top">
+					<div class="col-lg-4 lft-left">
+							<div><ul><li><a href="#">Shipping</a></li></ul></div>
+							<div><ul><li><a href="#">Time Working</a></li></ul></div>
+							<div><ul><li><a href="#">Payment Method</a></li></ul></div>
+					</div>
+					<div class="col-lg-4 lft-center">
+							<div><ul><li><a href="#">Credit Cards</a></li></ul></div>
+							<div><ul><li><a href="#">Returns</a></li></ul></div>
+							<div><ul><li><a href="#">Product List</a></li></ul></div>
+					</div>
+					<div class="col-lg-4 lft-right">
+							<div><ul><li><a href="#">Terms</a></li></ul></div>
+							<div><ul><li><a href="#">Report Problem</a></li></ul></div>
+							<div><ul><li><a href="#">Find Store</a></li></ul></div>
+					</div>
 				</div>
 				<div class="col-lg-3 payment-method">
 					<span>Payment Method</span>

@@ -192,24 +192,9 @@
                     <h2>NEW PRODUCT</h2>
                 </div>
                 <div class="col-lg-12 new-product">
-                    <div class="col-lg-3">
-                        <div class="card-product">
-                            <div class="top-card">
-                                <div class="img-card-product">
-                                    <img src="images/ghe 4.png">
-                                </div>
-                            </div>
-                            <div class="bottom-card">
-                                <div class="info-card-product">
-                                    <a href="#"><h3>Test product</h3></a>
-                                    <p>100$</p>
-                                </div>
-                                <div class="action-card">
-                                    <button>ADD TO CART</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                     <div class="row"  id="san_pham_new">
+                    <span></span>
+
                 </div>
             </div>
         </div>
@@ -393,7 +378,7 @@
         method: "GET",
         success: function(result, element){
             var y = '';
-            for (var i = 0; i < result.data.length; i++){
+            for (var i = 0; i < 8; i++){
                 y+='<div class="col-lg-3 card-hot-product">';
                 y+='        <div class="top-card-hp">';
                 y+='            <div class="img-card-hp">';
@@ -422,6 +407,39 @@
     });
     }
     list_product_all();
+     function list_product_new(){
+    jQuery.ajax({
+        url: '/list_product',
+        method: "GET",
+        success: function(result, element){
+            var y = '';
+            for (var i = result.data.length ; i > 4 ; i++){
+                    y+='   <div class="col-lg-3">';
+                    y+='    <div class="card-product">';
+                    y+='        <div class="top-card">';
+                    y+='            <div class="img-card-product">';
+                    y+='                 <img src='+result.data[i].pr_images1+' ';
+                    y+='            </div>';
+                    y+='        </div>';
+                    y+='        <div class="bottom-card">';
+                    y+='            <div class="info-card-product">';
+                    y+='                 <a href="/chi_tiet_san_pham.html?id='+result.data[i]._id+'" title='+result.data[i].pr_name+'><h3>'+result.data[i].pr_name+'</h3></a>';
+                    y+='                 <p>'+result.data[i].pr_price+'</p>';
+                    y+='            </div>';
+                    y+='            <div class="action-card">';
+                    y+='                 <button>ADD TO CART</button>';
+                    y+='            </div>';
+                    y+='        </div>';
+                    y+='    </div>';
+                    y+='</div>';
+                    y+='</div>';
+                     }
+            document.getElementById("san_pham_new").innerHTML = y;
+        }
+    });
+    }
+    list_product_new();
+
     </script>
 </body>
 </html>

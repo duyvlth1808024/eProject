@@ -5,23 +5,22 @@
 	<meta charset="utf-8">
 	<title>Product list</title>
 	<!-- fonts -->
-		<!-- fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Charm" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 	<!-- icons -->
 	<link rel="stylesheet" type="text/css" href="FontAwesome/css/all.css">
 	<!-- styles -->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="vendor/owlcarousel2/owl.carousel.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="vendor/owlcarousel2/owl.theme.default.css">
+	<link rel="stylesheet" type="text/css" href="vendor/jquery-ui/jquery-ui.css">
 	<link rel="stylesheet" type="text/css" href="styles.css">
-	<!-- javascript -->
+	<!-- javascipt -->
 	<script type="text/javascript" src="vendor/jquery/jquery.js"></script>
 	<script type="text/javascript" src="vendor/bootstrap/js/bootstrap.js"></script>
-	<script type="text/javascript" src="vendor/owlcarousel2/owl.carousel.js"></script>
+	<script type="text/javascript" src="vendor/jquery-ui/jquery-ui.js"></script>
 	<script type="text/javascript" src="javascript.js"></script>
 </head>
 <body>
@@ -42,13 +41,13 @@
 					<span>l</span>					
 				</a>
 			</div>
-			  <div class="col-lg-8 navigation-center">
-            <a href="/home.html" class="active-navigation">Home</a>
-            <a href="/Product_list.html">Product List</a>
-            <a href="Contact.html">Contact</a>
-            <a href="#">Support</a>
-            <a href="/Location_store.html"></i> Store Location</a>
-        </div>
+			<div class="col-lg-8 navigation-center">
+				<a href="Home.html">Home</a>
+			    <a href="Product_list.html" class="active-navigation">Product List</a>
+			    <a href="Contact.html">Contact</a>
+			    <a href="#">Support</a>
+			    <a href="Location_store.html"></i> Store Location</a>
+			</div>
 			<div class="col-lg-2 navigation-right">
 				<a href="#" id="cdsearch"><i id="ffst" class="far fa-search"></i></a>
     			<a href="#" id="cdlogin" data-toggle="modal" data-target="#exampleModal">
@@ -60,18 +59,15 @@
 				</a>
 			</div>
 		</div>
- <div id="search-box" class="search-box">
-        <div class="container">
-           
-                <div class="searching-box">
-                <i id="ffct" class="fal fa-times"></i>
-                <input id="inputtext" type="text" placeholder="Search" name="form_search" class="form-control">
-                <button onclick="search_product()"><i class="far fa-search"></i></button>
-            </div>  
-          
-            
-        </div>
-    </div>
+		<div id="search-box" class="search-box">
+			<div class="container">
+				<div class="searching-box">
+					<i id="ffct" class="fal fa-times"></i>
+					<input id="inputtext" type="text" placeholder="Search">
+					<button onclick="search_product()"><i class="far fa-search"></i></button>
+				</div>	
+			</div>
+		</div>
 		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		    <div class="modal-dialog" role="document">
 		        <div class="modal-content">
@@ -86,7 +82,7 @@
 								<label>Email or Username</label>					
 							</div>
 							<div class="login password">
-								<input type="password" name="login-password" required>
+								<input type="text" name="login-password" required>
 								<i class="fa fa-lock"></i>
 								<label>Password</label>
 							</div>
@@ -129,63 +125,83 @@
 	<section class="col-lg-12 s-product-list">
 		<div class="container">
 			<div class="col-lg-3">
-				<!-- <div class="row"> -->
-					<div class="box-select categories">
-						<h4>Categories</h4>
-						<ul>
+				<div class="box-select categories">
+					<h4>Categories</h4>
+					<ul>
 						<li>
-						<input id="All" type="radio" name="radio" value="1" class="input-text" />
-						<label for="All" onclick="list_product_all()">All</label>
-						<p></p>
-						<input id="Kitchen" type="radio" name="radio" value="2" class="input-text" />
-						<label for="Kitchen" data-id="light" onclick="filter_product(this)" >light</label>
-						<p></p>
-						<input id="fan" type="radio"name="radio" value="3" class="input-text" />
-						<label for="fan" data-id="ao" onclick="filter_product(this)">ao</label>
+							<input id="allcate" type="radio" name="cate" value="allcate" checked>
+			                <label for="allcate" data-id="allcate" onclick="list_product_all()">All</label>
+			                <input id="fan"type="radio" name="cate" value="fan">
+			                <label for="fan" data-id="fan" onclick="filter_product(this)">Fan</label>
+			                <input id="iron"type="radio" name="cate" value="iron">
+			                <label for="iron" data-id="iron" onclick="filter_product(this)">Iron</label>
+			                <input id="regulator"type="radio" name="cate" value="regulator">
+			                <label for="regulator" data-id="regulator" onclick="filter_product(this)">Regulator</label>
+			                <input id="microwave" type="radio" name="cate" value="microwave">
+			                <label for="microwave" data-id="washing_machine" onclick="filter_product(this)">Microwave</label>
+			                <input id="washing_machine" type="radio" name="cate" value="washing_machine">
+			                <label for="washing_machine" data-id="washing machine" onclick="filter_product(this)">Washing Machine</label>
 						</li>
-
-						</ul>
-					</div>
-					<div class="box-select manufacturer">
-						<h4>Manufacturer</h4>
-						<ul>
-							<li>
-								<input id="Panasonic" type="radio" name="radio" value="1" id="selectprod4">
-								<label for="Panasonic" data-id="panasonic" onclick="filter_product_manufacturer(this)" >Panasonic</label>
-								<p></p>
-								<input id="SamSung"type="radio" name="radio" value="2" id="selectprod5">
-								<label for="SamSung" data-id="samsung" onclick="filter_product_manufacturer(this)" >Samsung</label>
-								<p></p>
-								<input id="Sunhouse" type="radio" name="radio" value="3" id="selectprod6">
-								<label for="Sunhouse" data-id="sunhouse" onclick="filter_product_manufacturer(this)" >Sunhouse</label>
-							</li>
-						</ul>
-					</div>
-					<div class="box-select price">
-						<h4>Price</h4>
-						<div class="slidecontainer">
-							  <input type="range" min="100" max="1000" value="100" class="slider" id="myRange">
-							  <p>Value: <span id="demo"></span></p>
-							  <button onclick="search_product_price()"><i class="far fa-search"></i></button>
-							</div>
-						
-					</div>
-				<!-- </div> -->
+					</ul>
+				</div>
+				<div class="box-select manufacturer">
+					<h4>Manufacturer</h4>
+					<ul>
+						<li>
+							<input id="daikin" type="radio" name="manu" value="daikin">
+			                <label for="daikin" data-id="daikin" onclick="filter_product_manufacturer(this)">Daikin</label>
+							<input id="electrolux" type="radio" name="manu" value="electrolux">
+			                <label for="electrolux" data-id="electrolux" onclick="filter_product_manufacturer(this)">Elextrolux</label>
+							<input id="hitachi" type="radio" name="manu" value="hitachi">
+			                <label for="hitachi" data-id="hitachi" onclick="filter_product_manufacturer(this)">Hitachi</label>
+							<input id="lge" type="radio" name="manu" value="lge">
+			                <label for="lge" data-id="lge" onclick="filter_product_manufacturer(this)">LG</label>
+							<input id="panasonic" type="radio" name="manu" value="panasonic">
+			                <label for="panasonic" data-id="panasonic" onclick="filter_product_manufacturer(this)">Panasonic</label>
+							<input id="philips" type="radio" name="manu" value="philips">
+			                <label for="philips" data-id="philips" onclick="filter_product_manufacturer(this)">Philips</label>
+			                <input id="samSung"type="radio" name="manu" value="samsung">
+			                <label for="samSung" data-id="samsung" onclick="filter_product_manufacturer(this)">Samsung</label>
+			                <input id="sunhouse" type="radio" name="manu" value="sunhouse">
+			                <label for="sunhouse" data-id="sunhouse" onclick="filter_product_manufacturer(this)">Sunhouse</label>
+			                <input id="toshiba" type="radio" name="manu" value="toshiba">
+			                <label for="toshiba" data-id="toshiba" onclick="filter_product_manufacturer(this)">Toshiba</label>
+						</li>
+					</ul>
+				</div>
+				<div class="box-select price">
+					<h4>Price</h4>
+					<p>
+						<label for="amount1">From:</label>
+					    <input type="text" id="amount1" readonly>
+					    <label for="amount2">To:</label>
+					    <input type="text" id="amount2" readonly>
+					</p>
+					<div id="slider-range"></div>
+					<button onclick="search_product_price()">Submit</button>
+				</div>
+				<div class="box-select sort-product">
+					<h4>Sort</h4>
+					<select>
+						<option>Alphabetically, A-Z</option>
+						<option>Alphabetically, Z-A</option>
+						<option>Price, high to low</option>
+						<option>Price, low to high</option>
+					</select>
+				</div>
+				<div class="submit-filter">
+					<button>Filter</button>
+				</div>
 			</div>
 			<div class="col-lg-9">
 				<div class="row" id="san_pham">
 					 <span></span>
-
+				</div>
 				<div class="row">
-					<div class="col-lg-3">
-						<div class="amounts">
-							Have <strong>18</strong> products in <strong>2</strong> pages
-						</div>
-					</div>
 					<div class="col-lg-9">
 						<div class="paginate">
 							<ul>
-								<li><a title>1</a></li>
+								<li><a class="active-paginate" title>1</a></li>
 								<li><a href="#">2</a></li>
 								<li><a href="#">Next</a></li>
 							</ul>
@@ -195,52 +211,6 @@
 			</div>
 		</div>
 	</section>
-	<section class="col-lg-12">
-		<div class="container">
-			<span> so sánh sản phẩm</span>
-			<button type="button" class="btn1" id="btn1" value="Ẩn">ẩn</button>
-        	<button type="button" class="btn2" id="btn2" value="Hiển Thị">hiển thị</button>
-        	<div class="col-lg-12 so_sanh" id="so_sanh_product">
-        	<button class="btn btn-sm btn-success" id="button_clear">Clear</button>
-        	<div class="col-lg-12">
-        		 <div class="container-fluid">
-            <h4>So Sánh</h4>
-            <div class="wrapper-compare">
-                <div class="wrapper-head-compare">
-                    <div class="wrapper-condition-head fleft col-lg-2">
-                        <h5>Condition</h5>
-                    </div>
-                    <div class="wrapper-product-head fleft col-lg-10">
-                        <h5>Product</h5>
-                    </div>
-                </div>
-                <div class="wrapper-content-compare">
-                    <div class="wrapper-condition-content fleft col-lg-2">
-                        <div>Code</div>
-                        <div>Name</div>
-                        <div>Price</div>
-                        <div>Manufacturer</div>
-                        <div>Guarantee</div>
-                    </div>
-                    <div class="wrapper-product-content fleft col-lg-10">
-                        <div class="wrapper-product-first col-lg-6 ">
-
-                        </div>
-                        <div class="wrapper-product-second col-lg-6">
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        	</div>
-        	</div> <!-- so sánh -->
-		</div>
-	</section>
-
-
-
-	
 	<footer class="col-lg-12">
 		<div class="col-lg-12 footer-top">
 			<div class="container">
@@ -248,7 +218,7 @@
 					<span class="logo-text">
 						L a _ I m p e r i a l
 					</span>
-					<span><b>A &ensp;</b> Số 7 Tôn Thất Thuyết, Mỹ Đình, Hà Nội</span>
+					<span><b>A &ensp;</b> Số 8 Tôn Thất Thuyết, Mỹ Đình, Hà Nội</span>
 					<span><b>T &ensp;</b> +84 123 456 789</span>
 					<span><b>M &ensp;</b> 123456@fpt.edu.vn</span>
 				</div>
@@ -300,15 +270,23 @@
 		</div>
 	</footer>
 	<script>
-				 document.getElementById("btn1").onclick = function () {
-                document.getElementById("so_sanh_product").style.display = 'none';
-            };
+		list_product_all();
+		// $( function() {
+	 //    	$( "#slider-range" ).slider({
+		//     	range: true,
+		//     	min: 0,
+		//     	max: 500,
+		//     	values: [ 50, 450 ],
+		//     	slide: function( event, ui ) {
+		//     		$( "#amount1" ).val( "$" + ui.values[ 0 ]);
+		//     		$( "#amount2" ).val( "$" + ui.values[ 1 ] );
+	 //        }
+	 //    	});
+	 //    var amount1 = $( "#amount1" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ));
+	 //    var amount2 =  $( "#amount2" ).val( "$" + $( "#slider-range" ).slider( "values", 1 ) );
+	 //    });
 
-            document.getElementById("btn2").onclick = function () {
-                document.getElementById("so_sanh_product").style.display = 'block';
-            };
-
-		var slider = document.getElementById("myRange");
+	   var slider = document.getElementById("myRange");
 		var output = document.getElementById("demo");
 		output.innerHTML = slider.value;
 
@@ -323,37 +301,30 @@
         success: function(result, element){
             var y = '';
             for (var i = 0; i < result.data.length; i++){
-            y+='	<div class="col-lg-4">';
-			y+='	<div class="card-product">';
-			y+='	<div class="image-product">';
-			y+='	<img src='+result.data[i].pr_images1+'>';
-			y+='	</div>';
-			y+='	<div class="info-card">';
-			y+='	<div class="info-product">';
-			y+='	<a target="_blank" href="/chi_tiet_san_pham.html?id='+result.data[i]._id+'"><h3>'+result.data[i].pr_name+'</h3></a>';
-			y+='	<span>'+result.data[i].pr_price+'</span>';
-			y+='	</div>';
-			y+='	<div class="action-product">';
-			y+='	<form class="act-product">';
-			y+='	<button class="add-to-card">';
-			y+='	<i class="fal fa-cart-plus"></i>';
-			y+='	</button>';
-			y+='	</form>';
-			y+='	</div>';
-			y+='	<div class="detail-product">';
-			y+='	<p>'+result.data[i].pr_class+'</p>';
-			y+='	<span>Use in kitchen</span>';
-			y +='   <a data_id="'+result.data[i]._id+'" class="btn so_sanh" id="so_sanh" onclick="so_sanh(this)">so sanh</a>';
-			y+='	</div>';
-			y+='	</div>';
-			y+='	</div>';
-			y+='	</div>';
+            y+='<div class="col-lg-4">';
+			y+='			<div class="card-product">';
+			y+='				<div class="top-card">';
+			y+='					<div class="img-card-product">';
+			y+='						<img src='+result.data[i].pr_images1+'>';
+			y+='					</div>';
+			y+='				</div>';
+			y+='				<div class="bottom-card">';
+			y+='					<div class="info-card-product">';
+			y+='						<a href="/chi_tiet_san_pham.html?id='+result.data[i]._id+'"><h3>'+result.data[i].pr_name+'</h3></a>';
+			y+='						<p>'+result.data[i].pr_price+'</p>';
+			y+='					</div>';
+			y+='					<div class="action-card">';
+			y+='						<button>ADD TO CART</button>';
+			y+='					</div>';
+			y+='				</div>';
+			y+='			</div>';
+				y+='	</div>';
             }
             document.getElementById("san_pham").innerHTML = y;
         }
     });
     }
-    list_product_all();
+    
     	function filter_product(element){
     	jQuery.ajax({
         url: '/filter_product',
@@ -362,32 +333,26 @@
         success: function(result, element){
             var y = '';
             for (var i = 0; i < result.data.length; i++){
-             y+='	<div class="col-lg-4">';
-			y+='	<div class="card-product">';
-			y+='	<div class="image-product">';
-			y+='	<img src='+result.data[i].pr_images1+'>';
-			y+='	</div>';
-			y+='	<div class="info-card">';
-			y+='	<div class="info-product">';
-			y+='	<a target="_blank" href="/chi_tiet_san_pham.html?id='+result.data[i]._id+'"><h3>'+result.data[i].pr_name+'</h3></a>';
-			y+='	<span>'+result.data[i].pr_price+'</span>';
-			y+='	</div>';
-			y+='	<div class="action-product">';
-			y+='	<form class="act-product">';
-			y+='	<button class="add-to-card">';
-			y+='	<i class="fal fa-cart-plus"></i>';
-			y+='	</button>';
-			y+='	</form>';
-			y+='	</div>';
-			y+='	<div class="detail-product">';
-			y+='	<p>'+result.data[i].pr_class+'</p>';
-			y+='	<span>Use in kitchen</span>';
-			y +='   <a data_id="'+result.data[i]._id+'" class="btn so_sanh" id="so_sanh" onclick="so_sanh(this)">so sanh</a>';
-			y+='	</div>';
-			y+='	</div>';
-			y+='	</div>';
-			y+='	</div>';
+            y+='<div class="col-lg-4">';
+			y+='			<div class="card-product">';
+			y+='				<div class="top-card">';
+			y+='					<div class="img-card-product">';
+			y+='						<img src='+result.data[i].pr_images1+'>';
+			y+='					</div>';
+			y+='				</div>';
+			y+='				<div class="bottom-card">';
+			y+='					<div class="info-card-product">';
+			y+='						<a href="/chi_tiet_san_pham.html?id='+result.data[i]._id+'"><h3>'+result.data[i].pr_name+'</h3></a>';
+			y+='						<p>'+result.data[i].pr_price+'</p>';
+			y+='					</div>';
+			y+='					<div class="action-card">';
+			y+='						<button>ADD TO CART</button>';
+			y+='					</div>';
+			y+='				</div>';
+			y+='			</div>';
+				y+='	</div>';
             }
+            // $(document.getElementById("san_pham")).append(s);
             document.getElementById("san_pham").innerHTML = y;
         }
     });
@@ -400,31 +365,24 @@
         success: function(result, element){
             var y = '';
             for (var i = 0; i < result.data.length; i++){
-            y+='	<div class="col-lg-4">';
-			y+='	<div class="card-product">';
-			y+='	<div class="image-product">';
-			y+='	<img src='+result.data[i].pr_images1+'>';
-			y+='	</div>';
-			y+='	<div class="info-card">';
-			y+='	<div class="info-product">';
-			y+='	<a target="_blank" href="/chi_tiet_san_pham.html?id='+result.data[i]._id+'"><h3>'+result.data[i].pr_name+'</h3></a>';
-			y+='	<span>'+result.data[i].pr_price+'</span>';
-			y+='	</div>';
-			y+='	<div class="action-product">';
-			y+='	<form class="act-product">';
-			y+='	<button class="add-to-card">';
-			y+='	<i class="fal fa-cart-plus"></i>';
-			y+='	</button>';
-			y+='	</form>';
-			y+='	</div>';
-			y+='	<div class="detail-product">';
-			y+='	<p>'+result.data[i].pr_class+'</p>';
-			y+='	<span>Use in kitchen</span>';
-			y +='   <a data_id="'+result.data[i]._id+'" class="btn so_sanh" id="so_sanh" onclick="so_sanh(this)">so sanh</a>';
-			y+='	</div>';
-			y+='	</div>';
-			y+='	</div>';
-			y+='	</div>';
+            y+='<div class="col-lg-4">';
+			y+='			<div class="card-product">';
+			y+='				<div class="top-card">';
+			y+='					<div class="img-card-product">';
+			y+='						<img src='+result.data[i].pr_images1+'>';
+			y+='					</div>';
+			y+='				</div>';
+			y+='				<div class="bottom-card">';
+			y+='					<div class="info-card-product">';
+			y+='						<a href="/chi_tiet_san_pham.html?id='+result.data[i]._id+'"><h3>'+result.data[i].pr_name+'</h3></a>';
+			y+='						<p>'+result.data[i].pr_price+'</p>';
+			y+='					</div>';
+			y+='					<div class="action-card">';
+			y+='						<button>ADD TO CART</button>';
+			y+='					</div>';
+			y+='				</div>';
+			y+='			</div>';
+				y+='	</div>';
             }
             document.getElementById("san_pham").innerHTML = y;
         }
@@ -442,31 +400,24 @@
         success: function(result, element){
             var y = '';
             for (var i = 0; i < result.data.length; i++){
-            y+='	<div class="col-lg-4">';
-			y+='	<div class="card-product">';
-			y+='	<div class="image-product">';
-			y+='	<img src='+result.data[i].pr_images1+'>';
-			y+='	</div>';
-			y+='	<div class="info-card">';
-			y+='	<div class="info-product">';
-			y+='	<a target="_blank" href="/chi_tiet_san_pham.html?id='+result.data[i]._id+'"><h3>'+result.data[i].pr_name+'</h3></a>';
-			y+='	<span>'+result.data[i].pr_price+'</span>';
-			y+='	</div>';
-			y+='	<div class="action-product">';
-			y+='	<form class="act-product">';
-			y+='	<button class="add-to-card">';
-			y+='	<i class="fal fa-cart-plus"></i>';
-			y+='	</button>';
-			y+='	</form>';
-			y+='	</div>';
-			y+='	<div class="detail-product">';
-			y+='	<p>'+result.data[i].pr_class+'</p>';
-			y+='	<span>Use in kitchen</span>';
-			y +='   <a data_id="'+result.data[i]._id+'" class="btn so_sanh" id="so_sanh" onclick="so_sanh(this)">so sanh</a>';
-			y+='	</div>';
-			y+='	</div>';
-			y+='	</div>';
-			y+='	</div>';
+            y+='<div class="col-lg-4">';
+			y+='			<div class="card-product">';
+			y+='				<div class="top-card">';
+			y+='					<div class="img-card-product">';
+			y+='						<img src='+result.data[i].pr_images1+'>';
+			y+='					</div>';
+			y+='				</div>';
+			y+='				<div class="bottom-card">';
+			y+='					<div class="info-card-product">';
+			y+='						<a href="/chi_tiet_san_pham.html?id='+result.data[i]._id+'"><h3>'+result.data[i].pr_name+'</h3></a>';
+			y+='						<p>'+result.data[i].pr_price+'</p>';
+			y+='					</div>';
+			y+='					<div class="action-card">';
+			y+='						<button>ADD TO CART</button>';
+			y+='					</div>';
+			y+='				</div>';
+			y+='			</div>';
+				y+='	</div>';
             }
             document.getElementById("san_pham").innerHTML = y;
         }
@@ -481,84 +432,29 @@
         success: function(result, element){
             var y = '';
             for (var i = 0; i < result.data.length; i++){
-            y+='	<div class="col-lg-4">';
-			y+='	<div class="card-product">';
-			y+='	<div class="image-product">';
-			y+='	<img src='+result.data[i].pr_images1+'>';
-			y+='	</div>';
-			y+='	<div class="info-card">';
-			y+='	<div class="info-product">';
-			y+='	<a target="_blank" href="/chi_tiet_san_pham.html?id='+result.data[i]._id+'"><h3>'+result.data[i].pr_name+'</h3></a>';
-			y+='	<span>'+result.data[i].pr_price+'</span>';
-			y+='	</div>';
-			y+='	<div class="action-product">';
-			y+='	<form class="act-product">';
-			y+='	<button class="add-to-card">';
-			y+='	<i class="fal fa-cart-plus"></i>';
-			y+='	</button>';
-			y+='	</form>';
-			y+='	</div>';
-			y+='	<div class="detail-product">';
-			y+='	<p>'+result.data[i].pr_class+'</p>';
-			y+='	<span>Use in kitchen</span>';
-			y +='   <a data_id="'+result.data[i]._id+'" class="btn so_sanh" id="so_sanh" onclick="so_sanh(this)">so sanh</a>';
-			y+='	</div>';
-			y+='	</div>';
-			y+='	</div>';
-			y+='	</div>';
-	         }
+            y+='<div class="col-lg-4">';
+			y+='			<div class="card-product">';
+			y+='				<div class="top-card">';
+			y+='					<div class="img-card-product">';
+			y+='						<img src='+result.data[i].pr_images1+'>';
+			y+='					</div>';
+			y+='				</div>';
+			y+='				<div class="bottom-card">';
+			y+='					<div class="info-card-product">';
+			y+='						<a href="/chi_tiet_san_pham.html?id='+result.data[i]._id+'"><h3>'+result.data[i].pr_name+'</h3></a>';
+			y+='						<p>'+result.data[i].pr_price+'</p>';
+			y+='					</div>';
+			y+='					<div class="action-card">';
+			y+='						<button>ADD TO CART</button>';
+			y+='					</div>';
+			y+='				</div>';
+			y+='			</div>';
+				y+='	</div>';
+            }
             document.getElementById("san_pham").innerHTML = y;
         }
     });
     }
- //    var urlParams = new URLSearchParams(window.location.search);
-	// filter_product(urlParams.get("id"));
-	
-	$(".so_sanh").bind('click',function (){
-        
-        var a = $(this);
-        console.log(a) 
-        var id = a.attr("data-id"); 
-        var name = a.attr("data-name"); 
-        var price = a.attr("data-price"); 
-
-        });
-
-
-
-
-		var chose = true;
-		function so_sanh(id){
-    	jQuery.ajax({
-        url: '/detail_product',
-        method: "GET",
-        data: {id: jQuery(id).attr("data_id")},
-        success: function(result, element){
-            var y ='';{
-            		y+='	<div>' + result.data.pr_code + '</div>';
-                    y+='   <div>'+ result.data.pr_name + '</div>';
-                    y+='    <div>'+ result.data.pr_price +'</div>';
-                    y+='   <div>'+ result.data.pr_manufacturer + '</div>';
-                    y+='    <div>'+ result.data.pr_guarantee +'<div>';
-                    }
-          	if (chose === true) {
-                    $('.wrapper-product-first').html(y);
-                    chose = false;
-                }else{
-                    $('.wrapper-product-second').html(y);
-                    chose = true;
-                }
-                console.log(chose);
-           
-		         }
-    });
-    }
-		     $("#button_clear").click(function () {
-            
-                $(".wrapper-product-first").html("");
-                $(".wrapper-product-second").html("");
-                
-            });
   </script>
 </body>
 </html>
