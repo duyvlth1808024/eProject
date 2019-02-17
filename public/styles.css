@@ -1450,11 +1450,17 @@ input.rangeprice {
 #button_clear {
   position: absolute;
   left: 0;
+  top: -35px;
   background-color: #f1553b;
   outline: none;
   padding: 6px 15px;
   border: none;
   z-index: 2;
+}
+
+.div-compare {
+  background-color: #fff;
+  padding: 25px;
 }
 
 #so_sanh {
@@ -1468,7 +1474,7 @@ input.rangeprice {
 }
 
 #so_sanh_product {
-  margin-top: 20px;
+  margin-top: 45px;
 }
 
 .fleft{
@@ -1482,7 +1488,7 @@ input.rangeprice {
     font-weight: bold;  
 }
 .wrapper-header,.wrapper-contents,.wrapper-content-compare{
-    border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 .wrapper-contents{
     border-top: 0;
@@ -1499,7 +1505,7 @@ input.rangeprice {
     font-weight: bold;
 }
 .wrapper-contents .wrapper-item{
-    border-bottom: 1px solid black;
+    /*border-bottom: 1px solid black;*/
 }
 .wrapper-contents .wrapper-item:last-child{
     border-bottom: 0;
@@ -1508,50 +1514,33 @@ input.rangeprice {
     border: 0;
 }
 .wrapper-head-compare{
-    border: 1px solid black;
-}
-.wrapper-head-compare > div > h5{
-    text-align: center;
-}
-.wrapper-head-compare > div:first-child{
-    border-right: 1px solid black
+    /*border: 1px solid black;*/
 }
 
-.wrapper-condition-head > h5,.wrapper-product-head > h5{
-    font-weight: bold;
+.wrapper-head-compare {
+  text-align: center;
+  border-top: 1.2px solid #242424;
+  border-bottom: 1.2px solid #242424;
 }
-.wrapper-content-compare{
-    border-top: 0;
-}
+
 .wrapper-condition-content{
-    border-right: 1px solid black;
+  padding: 0;
 }
-.wrapper-product-content > div:first-child{
-    border-right: 1px solid black;
-}
+
 .wrapper-condition-content > div{
-    border-bottom: 1px solid black;
-    text-align: center;
-    padding: 10px 0px;
-}
-.wrapper-condition-content{
-    padding: 0;
-}
-.wrapper-condition-content > div:last-child{
-    border-bottom: 0;
+  text-align: left;
+  padding: 10px 15px;
+  border-bottom: 1.1px solid #cfcfcf;
 }
 
-.wrapper-product-content > div > div{
-    padding: 10px 0px;
-    text-align: center;
-    border-bottom: 1px solid black;
+.wrapper-product-content, .wrapper-product-first, .wrapper-product-second {
+  padding: 0;
+}
 
-}
-.wrapper-product-content > div > div:last-child{
-    border-bottom: 0;
-}
-.wrapper-product-content,.wrapper-product-content > div{
-    padding: 0;
+.wrapper-product-first div, .wrapper-product-second div {
+  text-align: left;
+  padding: 10px 15px;
+  border-bottom: 1.1px solid #cfcfcf;
 }
 
 
