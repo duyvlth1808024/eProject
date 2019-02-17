@@ -231,7 +231,7 @@ MongoClient.connect(url, function (err, db) {
                 }else if(result.length < 1){
                   res.send("không tìm thấy tài khoản");
                 }else{
-                  	
+                  
                   res.redirect("/home.html");
                 }
                 
@@ -261,7 +261,7 @@ MongoClient.connect(url, function (err, db) {
                 res.send("Fail");
             }else{
                 res.send("da them san pham")
-                res.redirect("/admin_page_ddtl.html");
+                
             }
         });
     });

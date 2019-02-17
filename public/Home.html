@@ -413,7 +413,9 @@
         method: "GET",
         success: function(result, element){
             var y = '';
-            for (var i = result.data.length ; i > 4 ; i++){
+            var max = result.data.length;
+            console.log(max);
+            for (var i = (max-4) ; i < max ; i++){
                     y+='   <div class="col-lg-3">';
                     y+='    <div class="card-product">';
                     y+='        <div class="top-card">';
@@ -433,6 +435,8 @@
                     y+='    </div>';
                     y+='</div>';
                     y+='</div>';
+                    // ===============
+
                      }
             document.getElementById("san_pham_new").innerHTML = y;
         }
