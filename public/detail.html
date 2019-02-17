@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<title>Detail Product</title>
+	<!-- fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Charm" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<!-- icons -->
+	<link rel="stylesheet" type="text/css" href="FontAwesome/css/all.css">
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+	<!-- styles -->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="vendor/owlcarousel2/owl.carousel.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="vendor/owlcarousel2/owl.theme.default.css">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<!-- javascipt -->
+	<script type="text/javascript" src="vendor/jquery/jquery.js"></script>
+	<script type="text/javascript" src="vendor/bootstrap/js/bootstrap.js"></script>
+	<script type="text/javascript" src="vendor/owlcarousel2/owl.carousel.js"></script>
+	<script type="text/javascript" src="javascript.js"></script>
+</head>
+<body>
+	<header class="col-lg-12">
+		<div class="navigation">
+			<div class="col-lg-2 navigation-left">
+				<a href="#" class="logo-header">
+					<span>L</span>
+					<span>a</span>
+					<span>_</span>
+					<span>I</span>
+					<span>m</span>
+					<span>p</span>
+					<span>e</span>
+					<span>r</span>
+					<span>i</span>
+					<span>a</span>
+					<span>l</span>					
+				</a>
+			</div>
+			<div class="col-lg-8 navigation-center">
+				<a href="Home.html">Home</a>
+			    <a href="Product_list.html">Product List</a>
+			    <a href="Contact.html">Contact</a>
+			    <a href="#">Support</a>
+			    <a href="Location_store.html"></i> Store Location</a>
+			</div>
+			<div class="col-lg-2 navigation-right">
+				<a href="#" id="cdsearch"><i id="ffst" class="far fa-search"></i></a>
+    			<a href="#" id="cdlogin" data-toggle="modal" data-target="#exampleModal">
+    				<i id="ffus" class="far fa-user"></i>
+    			</a>
+				<a href="#" id="cdcart">
+					<i class="far fa-shopping-cart" id="ffsc"></i>
+					<span class="badge-item-cart">1</span>
+				</a>
+			</div>
+		</div>
+		<div id="search-box" class="search-box">
+			<div class="container">
+				<div class="searching-box">
+					<i id="ffct" class="fal fa-times"></i>
+					<input type="text" placeholder="Search">
+					<button><i class="far fa-search"></i></button>
+				</div>	
+			</div>
+		</div>
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		    <div class="modal-dialog" role="document">
+		        <div class="modal-content">
+		        	<div class="modal-header">
+		        		<h4>Login to La_Imperial</h4>
+		        	</div>
+		        	<form class="form-login" id="form-login">
+			        	<div class="modal-body">
+							<div class="login user">
+								<input type="text" name="login-user" required>
+								<i class="fa fa-user"></i>
+								<label>Email or Username</label>					
+							</div>
+							<div class="login password">
+								<input type="text" name="login-password" required>
+								<i class="fa fa-lock"></i>
+								<label>Password</label>
+							</div>
+						<div class="remember-box">
+							<input type="checkbox" name="rememberme" id="rememberme" class="rememberme" value="Remember me">
+							<label for="rememberme">Remember me</label>	
+							<a href="Register.html">Create new account</a>
+						</div>
+			        	</div>
+				        <div class="modal-footer">
+				        	<a href="#">Forget password</a>
+					        <button type="button" class="btn btn-secondary" id="close_modal" data-dismiss="modal">Close</button>
+					        <button type="button" class="btn btn-primary">Login</button>
+				        </div>
+					</form>
+		        </div>
+		    </div>
+		</div>
+		<div class="cart-navigation">
+			<div class="quick-cart-item-count">
+				<p>You have 6 items</p>
+			</div>
+			<div class="quick-cart-item-product">
+				<ul>
+					<li class="card-quick-cart">
+						<img src="images/ghe 4.png">
+						<div class="info-quick-cart">
+							<p>Test item quick cart</p>
+							<span>100$</span>
+						</div>
+						<a><i class="fal fa-times"></i></a>
+					</li>
+				</ul>
+			</div>
+			<div class="quick-cart-item-cart">
+				<a href="View_Cart.html">View cart</a>
+			</div>
+		</div>
+	</header>
+	<section class="col-lg-12 detail-product">
+		<div class="container">
+			<div class="col-lg-6 single-img-product">
+				<div id="slideshow-img-product" class="owl-carousel owl-theme">
+					<div class="item">
+						<img src="https://cdn.pico.vn/Product/35763/big_300378_gr-b247jds.jpg">
+					</div>
+					<div class="item">
+						<img src="https://cdn.pico.vn/Product/36626/big_278046_may_giat_say_electrolux_eww12853_-_giat_8.0_kg_say_5.0_kg.jpg">
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6 single-info-product">
+				<div class="name-detail-product">
+					<h1>Test 1</h1>
+				</div>
+				<div class="info-detail-product">
+					<div class="manufacturer-detail-product">
+						<span>Manufacture</span>	
+					</div>
+					<div class="price-detail-product">
+						<p>100$</p>
+					</div>
+				</div>
+				<div class="promotion-detail-product">
+					<span>PROMOTION</span>
+					<ul>
+						<li>Free ship</li>
+						<li>1 year warranty</li>
+					</ul>
+				</div>
+				<div class="single-action-product">
+					<button>Add to cart</button>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="col-lg-12 section-review">
+		<div class="container">
+			<div class="top-review">
+				<h1>Write a review</h1>
+			</div>
+			<div class="content-review">
+				<div class="form-review-name">
+					<label>Name</label>
+					<input type="text" placeholder="Enter your name">
+				</div>
+				<div class="form-review-mail">
+					<label>Email</label>
+					<input type="email" placeholder="email123@example.com">
+				</div>
+				<div class="form-review-rate">
+					<label>Rating</label>
+				    <div class="star-rating">
+				    	<input class="star-rate star-rate-1" id="star-rate-1" type="radio" name="star-rate"/>
+					    <label class="star-rate star-rate-1" for="star-rate-1"></label>
+					    <input class="star-rate star-rate-2" id="star-rate-2" type="radio" name="star-rate"/>
+					    <label class="star-rate star-rate-2" for="star-rate-2"></label>
+					    <input class="star-rate star-rate-3" id="star-rate-3" type="radio" name="star-rate"/>
+					    <label class="star-rate star-rate-3" for="star-rate-3"></label>
+					    <input class="star-rate star-rate-4" id="star-rate-4" type="radio" name="star-rate"/>
+					    <label class="star-rate star-rate-4" for="star-rate-4"></label>
+						<input class="star-rate star-rate-5" id="star-rate-5" type="radio" name="star-rate"/>
+					    <label class="star-rate star-rate-5" for="star-rate-5"></label>
+				    </div>
+				</div>
+				<div class="form-review-title">
+					<label>Review Title</label>
+					<input type="text" placeholder="Give your review a title">
+				</div>
+				<div class="form-review-body">
+					<label>Body of Review</label>
+					<textarea rows="10" placeholder="Write your comments here"></textarea>
+				</div>
+				<div class="form-review-submit">
+					<button>SUBMIT REVIEW</button>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer class="col-lg-12">
+		<div class="col-lg-12 footer-top">
+			<div class="container">
+				<div class="col-lg-3 logo-footer">
+					<span class="logo-text">
+						L a _ I m p e r i a l
+					</span>
+					<span><b>A &ensp;</b> Số 7 Tôn Thất Thuyết, Mỹ Đình, Hà Nội</span>
+					<span><b>T &ensp;</b> +84 123 456 789</span>
+					<span><b>M &ensp;</b> 123456@fpt.edu.vn</span>
+				</div>
+				<div class="col-lg-6 list-footer-top">
+					<div class="col-lg-4 lft-left">
+							<div><ul><li><a href="#">Shipping</a></li></ul></div>
+							<div><ul><li><a href="#">Time Working</a></li></ul></div>
+							<div><ul><li><a href="#">Payment Method</a></li></ul></div>
+					</div>
+					<div class="col-lg-4 lft-center">
+							<div><ul><li><a href="#">Credit Cards</a></li></ul></div>
+							<div><ul><li><a href="#">Returns</a></li></ul></div>
+							<div><ul><li><a href="#">Product List</a></li></ul></div>
+					</div>
+					<div class="col-lg-4 lft-right">
+							<div><ul><li><a href="#">Terms</a></li></ul></div>
+							<div><ul><li><a href="#">Report Problem</a></li></ul></div>
+							<div><ul><li><a href="#">Find Store</a></li></ul></div>
+					</div>
+				</div>
+				<div class="col-lg-3 payment-method">
+					<span>Payment Method</span>
+					<i class="fab fa-cc-mastercard"></i>
+					<i class="fab fa-cc-visa"></i>
+					<i class="fab fa-cc-amazon-pay"></i>
+					<i class="fab fa-cc-stripe"></i>
+					<i class="fab fa-cc-paypal"></i>
+					<i class="fab fa-cc-jcb"></i>
+					<i class="fab fa-cc-discover"></i>
+					<i class="fab fa-cc-diners-club"></i>
+					<i class="fab fa-cc-apple-pay"></i>
+					<i class="fab fa-cc-amex"></i>
+					<i class="fab fa-cc-amazon-pay"></i>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-12 footer-bottom">
+			<div class="container">
+				<div class="col-lg-6 coppyright">
+					<span>Coppyright © 2018 Farost</span>
+				</div>
+				<div class="col-lg-6 page-store">
+					<a href="#"><i class="fab fa-facebook-f"></i></a>
+					<a href="#"><i class="fab fa-twitter"></i></a>
+					<a href="#"><i class="fab fa-google-plus-g"></i></a>
+					<a href="#"><i class="fab fa-instagram"></i></a>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<script type="text/javascript">
+		var slideshow = $('#slideshow-img-product');
+			slideshow.owlCarousel({
+				items:1,
+				nav:true,
+				dots:false,
+				loop:true,
+			    autoplay:true,
+			    autoplayTimeout:5000,
+			    autoplayHoverPause:false
+			});
+	</script>
+</body>
+</html>

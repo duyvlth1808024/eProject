@@ -170,16 +170,16 @@
 					</ul>
 				</div>
 				<div class="box-select price">
-					<h4>Price</h4>
-					<p>
-						<label for="amount1">From:</label>
-					    <input type="text" id="amount1" readonly>
-					    <label for="amount2">To:</label>
-					    <input type="text" id="amount2" readonly>
-					</p>
-					<div id="slider-range"></div>
-					<button onclick="search_product_price()">Submit</button>
-				</div>
+						<h4>Price</h4>
+							<input type="range" min="100" max="1000" value="100" class="rangeprice" id="myRange">
+							<p>
+								From: <span>10$</span>
+							  	To: <span id="priceto"></span>$
+							</p>
+							<div class="submit-filter">
+								<button onclick="search_product_price()">Filter</button>
+							</div>
+					</div>
 				<div class="box-select sort-product">
 					<h4>Sort</h4>
 					<select>
@@ -189,9 +189,7 @@
 						<option>Price, low to high</option>
 					</select>
 				</div>
-				<div class="submit-filter">
-					<button>Filter</button>
-				</div>
+				
 			</div>
 			<div class="col-lg-9">
 				<div class="row" id="san_pham">
@@ -287,13 +285,13 @@
 	 //    });
 
 	   var slider = document.getElementById("myRange");
-		var output = document.getElementById("demo");
+		var output = document.getElementById("priceto");
 		output.innerHTML = slider.value;
 
 		slider.oninput = function() {
 		  output.innerHTML = this.value;
 		}
-		console.log(document.getElementById("demo"));
+		console.log(document.getElementById("priceto"));
 	    function list_product_all(){
     	jQuery.ajax({
         url: '/list_product',
