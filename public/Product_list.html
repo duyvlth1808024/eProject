@@ -43,8 +43,8 @@
                 </a>
             </div>
             <div class="col-lg-8 navigation-center">
-                <a href="home.html" class="active-navigation">Home</a>
-                <a href="product_list.html">Product List</a>
+                <a href="home.html">Home</a>
+                <a href="product_list.html" class="active-navigation">Product List</a>
                 <a href="contact.html">Contact</a>
                 <a href="#">Support</a>
                 <a href="location_store.html"></i> Store Location</a>
@@ -331,10 +331,10 @@
 			y+='				<div class="bottom-card">';
 			y+='					<div class="info-card-product">';
 			y+='						<a href="/chi_tiet_san_pham.html?id='+result.data[i]._id+'"><h3>'+result.data[i].pr_name+'</h3></a>';
-			y+='						<p>'+result.data[i].pr_price+'</p>';
+			y+='						<p>'+result.data[i].pr_price+'$</p>';
 			y+='					</div>';
 			y+='					<div class="action-card">';
-			y +='   <a data_id="'+result.data[i]._id+'" class="btn so_sanh" id="so_sanh" onclick="so_sanh(this)">so sanh</a>';
+			y +='   <a data_id="'+result.data[i]._id+'" class="btn so_sanh" id="so_sanh" onclick="so_sanh(this)">Compare</a>';
 			y+='						<button>ADD TO CART</button>';
 			y+='					</div>';
 			y+='				</div>';
