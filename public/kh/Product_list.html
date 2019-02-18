@@ -116,7 +116,7 @@
 			                <input id="regulator"type="radio" name="cate" value="regulator">
 			                <label for="regulator" data-id="regulator" onclick="filter_product(this)">Regulator</label>
 			                <input id="microwave" type="radio" name="cate" value="microwave">
-			                <label for="microwave" data-id="washing_machine" onclick="filter_product(this)">Microwave</label>
+			                <label for="microwave" data-id="microwave" onclick="filter_product(this)">Microwave</label>
 			                <input id="washing_machine" type="radio" name="cate" value="washing_machine">
 			                <label for="washing_machine" data-id="washing machine" onclick="filter_product(this)">Washing Machine</label>
 						</li>
@@ -133,7 +133,7 @@
 							<input id="hitachi" type="radio" name="manu" value="hitachi">
 			                <label for="hitachi" data-id="hitachi" onclick="filter_product_manufacturer(this)">Hitachi</label>
 							<input id="lge" type="radio" name="manu" value="lge">
-			                <label for="lge" data-id="lge" onclick="filter_product_manufacturer(this)">LG</label>
+			                <label for="lge" data-id="lg" onclick="filter_product_manufacturer(this)">LG</label>
 							<input id="panasonic" type="radio" name="manu" value="panasonic">
 			                <label for="panasonic" data-id="panasonic" onclick="filter_product_manufacturer(this)">Panasonic</label>
 							<input id="philips" type="radio" name="manu" value="philips">
@@ -149,7 +149,7 @@
 				</div>
 				<div class="box-select price">
 						<h4>Price</h4>
-							<input type="range" min="100" max="1000" value="100" class="rangeprice" id="myRange">
+							<input type="range" min="100" max="1000" value="100" class="rangeprice" id="myRange" oninput="myFunction(this.value)">
 							<p>
 								From: <span>10$</span>
 							  	To: <span id="priceto"></span>$
@@ -289,29 +289,10 @@
 	</footer>
 	<script>
 		list_product_all();
-		// $( function() {
-	 //    	$( "#slider-range" ).slider({
-		//     	range: true,
-		//     	min: 0,
-		//     	max: 500,
-		//     	values: [ 50, 450 ],
-		//     	slide: function( event, ui ) {
-		//     		$( "#amount1" ).val( "$" + ui.values[ 0 ]);
-		//     		$( "#amount2" ).val( "$" + ui.values[ 1 ] );
-	 //        }
-	 //    	});
-	 //    var amount1 = $( "#amount1" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ));
-	 //    var amount2 =  $( "#amount2" ).val( "$" + $( "#slider-range" ).slider( "values", 1 ) );
-	 //    });
 
-	   var slider = document.getElementById("myRange");
-		var output = document.getElementById("priceto");
-		output.innerHTML = slider.value;
 
-		slider.oninput = function() {
-		  output.innerHTML = this.value;
-		}
-		console.log(document.getElementById("priceto"));
+	 
+		
 	    function list_product_all(){
     	jQuery.ajax({
         url: '/list_product',
@@ -446,12 +427,17 @@
         }
     });
     }
+    var price = 0;
+    function myFunction(val) {
+  	document.getElementById("priceto").innerHTML = val; 
+  	price = val;
+	}
 
     function search_product_price(element){
     	jQuery.ajax({
         url: '/search_product_price',
         method: "GET",
-        data: {pr_price: slider.value},
+        data: {pr_price: price},
         success: function(result, element){
             var y = '';
             for (var i = 0; i < result.data.length; i++){

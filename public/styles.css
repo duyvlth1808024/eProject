@@ -1283,6 +1283,10 @@ div.box-select label {
   margin-right: 10px;
 }
 
+.box-select.price  {
+	font-size: 16px;
+}
+
 
 input.rangeprice {
   -webkit-appearance: none;
