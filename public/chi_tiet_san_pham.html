@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <title>Home</title>
+    <title>Detail product</title>
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
@@ -11,13 +11,14 @@
     <link href="https://fonts.googleapis.com/css?family=Charm" rel="stylesheet">
     <!-- icons -->
     <link rel="stylesheet" type="text/css" href="FontAwesome/css/all.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <!-- styles -->
     <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="vendor/owlcarousel2/owl.carousel.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="vendor/owlcarousel2/owl.theme.default.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <link rel="stylesheet" type="text/css" href="vendor/style-detail.css">
+    <!-- <link rel="stylesheet" type="text/css" href="vendor/style-detail.css"> -->
     <!-- javascript -->
     <script type="text/javascript" src="vendor/jquery/jquery.js"></script>
     <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.js"></script>
@@ -25,7 +26,7 @@
     <script type="text/javascript" src="javascript.js"></script>
 </head>
 <body>
-	 <header class="col-lg-12">
+	<header class="col-lg-12">
         <div class="navigation">
             <div class="col-lg-2 navigation-left">
                 <a href="#" class="logo-header">
@@ -43,11 +44,11 @@
                 </a>
             </div>
             <div class="col-lg-8 navigation-center">
-                <a href="home.html" class="active-navigation">Home</a>
-                <a href="product_list.html">Product List</a>
-                <a href="contact.html">Contact</a>
+                <a href="Home.html">Home</a>
+                <a href="Product_list.html">Product List</a>
+                <a href="Contact.html">Contact</a>
                 <a href="#">Support</a>
-                <a href="location_store.html"></i> Store Location</a>
+                <a href="Location_store.html"></i> Store Location</a>
             </div>
             <div class="col-lg-2 navigation-right">
                 <a href="#" id="cdsearch"><i id="ffst" class="far fa-search"></i></a>
@@ -90,7 +91,7 @@
                         <div class="remember-box">
                             <input type="checkbox" name="rememberme" id="rememberme" class="rememberme" value="Remember me">
                             <label for="rememberme">Remember me</label> 
-                            <a href="signup.html">Create new account</a>
+                            <a href="Register.html">Create new account</a>
                         </div>
                         </div>
                         <div class="modal-footer">
@@ -109,17 +110,17 @@
             <div class="quick-cart-item-product">
                 <ul>
                     <li class="card-quick-cart">
-                        <img src="images/ghe 4.png">
+                        <img src="https://cdn.pico.vn/Product/36657/big_278790_lo_vi_song_electrolux_emm2022gw.jpg">
                         <div class="info-quick-cart">
-                            <p>Test item quick cart</p>
-                            <span>100$</span>
+                            <p>Lò Vi Sóng Electrolux EMM2022GW</p>
+                            <span>60$</span>
                         </div>
                         <a><i class="fal fa-times"></i></a>
                     </li>
                 </ul>
             </div>
             <div class="quick-cart-item-cart">
-                <a href="gio_hang.html">View cart</a>
+                <a href="View_Cart.html">View cart</a>
             </div>
         </div>
     </header>
@@ -130,6 +131,51 @@
             </div>
         </div>      
     </section>
+    <section class="col-lg-12 section-review">
+        <div class="container">
+            <div class="col-lg-8">
+                <div class="top-review">
+                    <h1>Write a review</h1>
+                </div>
+                <div class="content-review">
+                    <div class="form-review-name">
+                        <label>Name</label>
+                        <input type="text" placeholder="Enter your name">
+                    </div>
+                    <div class="form-review-mail">
+                        <label>Email</label>
+                        <input type="email" placeholder="email123@example.com">
+                    </div>
+                    <div class="form-review-rate">
+                        <label>Rating</label>
+                        <div class="star-rating">
+                            <input class="star-rate star-rate-1" id="star-rate-1" type="radio" name="star-rate"/>
+                            <label class="star-rate star-rate-1" for="star-rate-1"></label>
+                            <input class="star-rate star-rate-2" id="star-rate-2" type="radio" name="star-rate"/>
+                            <label class="star-rate star-rate-2" for="star-rate-2"></label>
+                            <input class="star-rate star-rate-3" id="star-rate-3" type="radio" name="star-rate"/>
+                            <label class="star-rate star-rate-3" for="star-rate-3"></label>
+                            <input class="star-rate star-rate-4" id="star-rate-4" type="radio" name="star-rate"/>
+                            <label class="star-rate star-rate-4" for="star-rate-4"></label>
+                            <input class="star-rate star-rate-5" id="star-rate-5" type="radio" name="star-rate"/>
+                            <label class="star-rate star-rate-5" for="star-rate-5"></label>
+                        </div>
+                    </div>
+                    <div class="form-review-title">
+                        <label>Review Title</label>
+                        <input type="text" placeholder="Give your review a title">
+                    </div>
+                    <div class="form-review-body">
+                        <label>Body of Review</label>
+                        <textarea rows="10" placeholder="Write your comments here"></textarea>
+                    </div>
+                    <div class="form-review-submit">
+                        <button>SUBMIT REVIEW</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <footer class="col-lg-12">
         <div class="col-lg-12 footer-top">
             <div class="container">
@@ -137,12 +183,26 @@
                     <span class="logo-text">
                         L a _ I m p e r i a l
                     </span>
-                    <span><b>A &ensp;</b> Số 7 Tôn Thất Thuyết, Mỹ Đình, Hà Nội</span>
+                    <span><b>A &ensp;</b> Số 8 Tôn Thất Thuyết, Mỹ Đình, Hà Nội</span>
                     <span><b>T &ensp;</b> +84 123 456 789</span>
                     <span><b>M &ensp;</b> 123456@fpt.edu.vn</span>
                 </div>
-                <div class="col-lg-6">
-                    
+                <div class="col-lg-6 list-footer-top">
+                    <div class="col-lg-4 lft-left">
+                            <div><ul><li><a href="#">Shipping</a></li></ul></div>
+                            <div><ul><li><a href="#">Time Working</a></li></ul></div>
+                            <div><ul><li><a href="#">Payment Method</a></li></ul></div>
+                    </div>
+                    <div class="col-lg-4 lft-center">
+                            <div><ul><li><a href="#">Credit Cards</a></li></ul></div>
+                            <div><ul><li><a href="#">Returns</a></li></ul></div>
+                            <div><ul><li><a href="Product_list.html">Product List</a></li></ul></div>
+                    </div>
+                    <div class="col-lg-4 lft-right">
+                            <div><ul><li><a href="#">Terms</a></li></ul></div>
+                            <div><ul><li><a href="#">Report Problem</a></li></ul></div>
+                            <div><ul><li><a href="Location_store.html">Find Store</a></li></ul></div>
+                    </div>
                 </div>
                 <div class="col-lg-3 payment-method">
                     <span>Payment Method</span>
@@ -188,7 +248,7 @@
                 y= '<div class="card"> ';
               y+= '<div class="container-fliud"> ';
               y+= '<div class="wrapper row"> ';
-              y+= '<div class="preview col-md-6"> ';
+              y+= '<div class="col-lg-6 preview"> ';
               y+= '<div class="preview-pic tab-content"> ';
               y+= '<div class="tab-pane active" id="pic-1"><img src='+result.data.pr_images1+'>';
               y+= '</div> ';
@@ -212,21 +272,20 @@
               y+= '</div> ';
               y+= '</div> ';
               
-              y+= '<div class="details col-md-6"> ';
+              y+= '<div class="col-lg-6 details"> ';
               y+= '<h3 class="product-title">'+result.data.pr_name+'</h3> ';
-              y+= '<div class="rating"> ';
-              y+= '<div class="stars"> <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star"></span> <span class="fa fa-star"></span> ';
-              y+= '</div> <span class="review-no">123 đánh giá</span> ';
-              y+= '</div> ';
+              y+= '<span class="manufacturer">Manufacturer: '+result.data.pr_manufacturer+'</span> ';
               y+= '<p class="product-description">'+result.data.pr_detail+'</p> ';
-              y+= '<h4 class="price">Giá bán: '+result.data.pr_price+'đ</h4> ';
-              y+= '<p class="vote"><strong>91%</strong> of người mua hài lòng với sản phẩm này <strong>(87 bình chọn)</strong>'
-              y+= '</p> ';
-              y+= '<h5 class="sizes">Kích cỡ: <span class="size" data-toggle="tooltip" title="small">s</span> <span class="size" data-toggle="tooltip" title="medium">m</span> <span class="size" data-toggle="tooltip" title="large">l</span> <span class="size" data-toggle="tooltip" title="xtra large">xl</span>' ;
-              y+= '</h5>' ;
-              y+= '<h5 class="colors">Màu: <span class="color orange not-available" data-toggle="tooltip" title="Not In store"></span> <span class="color green"></span> <span class="color blue"></span>' ;
-              y+= '</h5>';
-              y+= '<div class="action"> <a href="/gio_hang.html" target="_blank">            <button class="add-to-cart btn btn-default" type="button">MUA NGAY</button>            </a> <a href="#" target="_blank">            <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button></a>' ;
+              y+= '<h4 class="price">PRICE: <span>'+result.data.pr_price+'$</span></h4> ';
+
+              y+='  <div class="promotion-detail-product">';
+               y+='      <span>PROMOTION</span>';
+                y+='     <ul>';
+                 y+='        <li>Free ship</li>';
+                  y+='       <li>1 year warranty</li>';
+                  y+='   </ul>';
+                y+=' </div>';
+              y+= '<div class="action"> <a href="/gio_hang.html" target="_blank">            <button class="add-to-cart btn btn-default" type="button">Add to cart</button>            </a> <a href="#" target="_blank">            <span class="far fa-heart"></span>' ;
               y+= '</div>'; 
               y+= '</div>'; 
               y+= '</div>'; 

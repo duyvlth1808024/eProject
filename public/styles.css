@@ -1703,19 +1703,70 @@ div.isp:nth-child(5) {
   padding: 100px 0;
 }
 
-.single-img-product {
-  /*height: 500px;*/
+.card {
+  background-color: #fff;
 }
 
-#slideshow-img-product {
-  height: 100%;
+.preview {  
+display: -webkit-box;   
+display: -webkit-flex;  
+display: -ms-flexbox;   
+display: flex;  
+-webkit-box-orient: vertical;   
+-webkit-box-direction: normal;  
+-webkit-flex-direction: column; 
+-ms-flex-direction: column; 
+flex-direction: column;
 }
 
-#slideshow-img-product .item img {
-  max-width: 100%;
-  max-height: 100%;
-  display: block;
-  margin: auto;
+.preview-thumbnail.nav-tabs {   
+border: none;   
+margin-top: 15px;
+}
+ 
+.preview-thumbnail.nav-tabs li {    
+width: 18%; 
+margin-right: 2.5%;
+width: 100px;
+height: 100px;
+}
+
+.preview-thumbnail.nav-tabs li:hover {
+  border-color: #eee #eee #ddd;
+}
+ 
+.preview-thumbnail.nav-tabs li img {    
+max-width: 100%;    
+display: block;
+}
+ 
+.preview-thumbnail.nav-tabs li a {  
+padding: 0; 
+margin: 0;  
+cursor:pointer;
+}
+ 
+.preview-thumbnail.nav-tabs li:last-of-type {   
+margin-right: 0;
+}
+ 
+.tab-content {  
+overflow: hidden;
+}
+ 
+.tab-content img {  
+width: 100%;    
+-webkit-animation-name: opacity;    
+animation-name: opacity; 
+-webkit-animation-duration: .3s; 
+animation-duration: .3s;
+}
+
+.preview-pic {  
+-webkit-box-flex: 1;    
+-webkit-flex-grow: 1;   
+-ms-flex-positive: 1;   
+flex-grow: 1;
 }
 
 .single-info-product {
@@ -1727,14 +1778,31 @@ div.isp:nth-child(5) {
   font-size: 42px;
 }
 
-.manufacturer-detail-product span {
-  font-size: 20px;
+h3.product-title {
+  font-weight: 600;
+  text-transform: uppercase;
+}   
+
+.price {
+  font-weight: 600;
+  font-weight: bolder;
+  font-size: 25px;
+  margin: 15px 0;
 }
 
-.price-detail-product p {
-  font-size: 25px;
-  font-weight: bolder;
+.price span {
   color: #f1553b;
+}
+
+span.manufacturer {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+p.product-description {
+  margin-top: 5px;
+  font-size: 15px;
+  margin-top: 15px;
 }
 
 .promotion-detail-product {
@@ -1762,11 +1830,11 @@ div.isp:nth-child(5) {
   margin-top: 10px;
 }
 
-.single-action-product {
+.action {
   margin-top: 20px;
 }
 
-.single-action-product button {
+.action button {
   color: #fff;
   background-color: #f1553b;
   border: none;
@@ -1778,9 +1846,14 @@ div.isp:nth-child(5) {
   outline: none;
 }
 
-.single-action-product button:hover {
+.action button:hover {
   background-color: #e84226;
   transition: 0.5s;
+}
+
+.action a {
+  color: #242424;
+  margin-left: 15px;
 }
 
 .section-review {
