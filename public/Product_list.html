@@ -216,14 +216,14 @@
 	</section>
 	<section class="col-lg-12"> <!-- so sanh -->
 		<div class="container">
-			<span> so sánh sản phẩm</span>
-			<button type="button" class="btn1" id="btn1" value="Ẩn">ẩn</button>
-        	<button type="button" class="btn2" id="btn2" value="Hiển Thị">hiển thị</button>
+			<span>Table compare</span>
+			<button type="button" class="btn1" id="btn1" value="Ẩn">Hidden</button>
+        	<button type="button" class="btn2" id="btn2" value="Hiển Thị">Display</button>
         	<div class="col-lg-12 so_sanh" id="so_sanh_product">
         	<button class="btn btn-sm btn-success" id="button_clear">Clear</button>
         	<div class="col-lg-12">
         		 <div class="container-fluid">
-            <h4>So Sánh</h4>
+            <!-- <h4>So Sánh</h4> -->
             <div class="wrapper-compare">
                 <div class="wrapper-head-compare">
                     <div class="wrapper-condition-head fleft col-lg-2">
@@ -509,7 +509,7 @@ var price = 0;
                     y+='   <div>'+ result.data.pr_name + '</div>';
                     y+='    <div>'+ result.data.pr_price +'</div>';
                     y+='   <div>'+ result.data.pr_manufacturer + '</div>';
-                    y+='    <div>'+ result.data.pr_guarantee +'<div>';
+                    y+='    <div>'+ result.data.pr_guarantee +'</ div>';
                     }
           	if (chose === true) {
                     $('.wrapper-product-first').html(y);
