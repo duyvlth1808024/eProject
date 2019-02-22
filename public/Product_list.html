@@ -13,6 +13,7 @@
 	<!-- icons -->
 	<link rel="stylesheet" type="text/css" href="FontAwesome/css/all.css">
 	<!-- styles -->
+	<link rel="stylesheet" type="text/css" href="vendor/jquery-pagination/css/pagination.css">
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="vendor/jquery-ui/jquery-ui.css">
@@ -20,6 +21,8 @@
 	<link rel="stylesheet" type="text/css" href="styles2.css">
 	<!-- javascipt -->
 	<script type="text/javascript" src="vendor/jquery/jquery.js"></script>
+	<script type="text/javascript" src="vendor/jquery/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="vendor/jquery-pagination/js/pagination.js"></script>
 	<script type="text/javascript" src="vendor/bootstrap/js/bootstrap.js"></script>
 	<script type="text/javascript" src="vendor/jquery-ui/jquery-ui.js"></script>
 	<script type="text/javascript" src="javascript.js"></script>
@@ -197,10 +200,10 @@
 				
 			</div>
 			<div class="col-lg-9">
-				<div class="row" id="san_pham">
+				<div class="row san_pham" id="san_pham">
 					 <span></span>
 				</div>
-				<div class="row">
+				<!-- <div class="row">
 					<div class="col-lg-9">
 						<div class="paginate">
 							<ul>
@@ -210,7 +213,7 @@
 							</ul>
 						</div>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</section>
@@ -324,7 +327,7 @@
             var y = '';
             
             for (var i = 0; i < result.data.length; i++){
-            y+='<div class="col-lg-4">';
+            y+='<div class="col-lg-4 test_card">';
 			y+='			<div class="card-product">';
 			y+='				<div class="top-card">';
 			y+='					<div class="img-card-product">';
@@ -357,7 +360,7 @@
         success: function(result, element){
             var y = '';
             for (var i = 0; i < result.data.length; i++){
-            y+='<div class="col-lg-4">';
+            y+='<div class="col-lg-4 test_card">';
 			y+='			<div class="card-product">';
 			y+='				<div class="top-card">';
 			y+='					<div class="img-card-product">';
@@ -390,7 +393,7 @@
         success: function(result, element){
             var y = '';
             for (var i = 0; i < result.data.length; i++){
-            y+='<div class="col-lg-4">';
+            y+='<div class="col-lg-4 test_card">';
 			y+='			<div class="card-product">';
 			y+='				<div class="top-card">';
 			y+='					<div class="img-card-product">';
@@ -426,7 +429,7 @@
         success: function(result, element){
             var y = '';
             for (var i = 0; i < result.data.length; i++){
-            y+='<div class="col-lg-4">';
+            y+='<div class="col-lg-4 test_card">';
 			y+='			<div class="card-product">';
 			y+='				<div class="top-card">';
 			y+='					<div class="img-card-product">';
@@ -465,7 +468,7 @@ var price = 0;
         success: function(result, element){
             var y = '';
             for (var i = 0; i < result.data.length; i++){
-            y+='<div class="col-lg-4">';
+            y+='<div class="col-lg-4 test_card">';
 			y+='			<div class="card-product">';
 			y+='				<div class="top-card">';
 			y+='					<div class="img-card-product">';
@@ -530,5 +533,16 @@ var price = 0;
                 
             });
   </script>
+  <script>
+		$(document).ready(function(){
+		   $(".col-lg-4.test_card").pagination({
+		   items: 3,
+		   contents: 'san_pham',
+		   previous: 'Previous',
+		   next: 'Next',
+		   position: 'bottom',
+		   });
+		});
+	</script>
 </body>
 </html>
