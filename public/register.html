@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="nanobar.js - Very very lightweight progress bars">
+	<meta charset="utf-8">
+	<title>Sign Up</title>
+	<!-- Font -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<!-- Icon -->
+	<link rel="stylesheet" type="text/css" href="FontAwesome/css/all.css">
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.css">
+	<!-- Cascading Style Sheets -->
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<!-- Javascript -->
+	<script type="text/javascript" src="vendor/jquery/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="vendor/nanobar/nanobar.js"></script>
+	<script type="text/javascript" src="js/javascript.js"></script>
+</head>
+<body>
+	<div class="preloader"></div>
+	<section class="col-md-12 section-register">
+		<div class="center-register">
+			<div class="title-form">
+				<h2>Sign Up</h2>
+			</div>
+			<form class="form-register" method="post" action="/register" enctype="mltipart/from-data">
+				<div class="input-register">
+					<input class="place-input" type="text" name="firstname" required>
+					<label class="title-input">First name</label>
+					<p></p>
+				</div>
+				<div class="input-register">
+					<input class="place-input" type="text" name="lastname" required>
+					<label class="title-input">Last name</label>
+					<p></p>
+				</div>
+				<div class="input-register">
+					<input class="place-input" type="email" name="email" required>
+					<label class="title-input">Email</label>
+					<p></p>
+				</div>
+				<div class="input-register">
+					<input class="place-input" type="password" name="password" required>
+					<label class="title-input">Password</label>
+					<p></p>
+				</div>
+				<div class="input-register">
+					<input class="place-input" type="password" name="confirmpassword" required>
+					<label class="title-input">Confirm</label>
+					<p></p>
+				</div>
+				<div class="select-checkbox">
+					<input type="checkbox" id="accept-register">
+					<label for="accept-register">Agree to La_Imperial's <a href="#">Terms, Data Policy and Cookie Policy</a></label>
+				</div>
+				<div class="button-register">
+					<a href="#">Back</a>
+					<button>Create</button>
+				</div>
+			</form>
+		</div>
+	</section>
+</body>
+</html>
