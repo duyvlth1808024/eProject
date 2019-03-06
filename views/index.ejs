@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="nanobar.js - Very very lightweight progress bars">
+	<meta charset="utf-8">
+	<title>Home</title>
+	<!-- Font -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<!-- Icon -->
+	<link rel="stylesheet" type="text/css" href="FontAwesome/css/all.css">
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.css">
+	<!-- Cascading Style Sheets -->
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<!-- Javascript -->
+	<script type="text/javascript" src="vendor/jquery/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="vendor/nanobar/nanobar.js"></script>
+	<script type="text/javascript" src="js/javascript.js"></script>
+</head>
+<body>
+	<div class="preloader"></div>
+	<header class="col-md-12 navbar" id="navbar">
+		<div class="container">
+			<div class="col-md-2 navbar-left">
+				<a href="#"><span><i class="fal fa-code"></i> Logo</span></a>
+			</div>
+			<div class="col-md-7 navbar-center">
+				<a href="#">Home</a>
+				<a href="#">Product List</a>
+				<a href="#">Contact</a>
+				<a href="#">Support</a>
+				<a href="#">Find Store</a>
+			</div>
+			<div class="col-md-3 navbar-right">
+				<a><i class="far fa-search"></i></a>
+				<a href="/register"><i class="far fa-user"></i></a>
+				<a><i class="far fa-shopping-cart"></i></a>
+			</div>
+		</div>
+	</header>
+	<section class="col-md-12" style="height: 800px;">
+		<div class="container">
+			
+		</div>
+	</section>
+	<footer class="col-lg-12">
+		<div class="container">
+			<div class="footer-top">
+				
+			</div>
+			<div class="footer-bottom">
+				
+			</div>
+		</div>
+	</footer>
+	<script type="text/javascript">
+		var prevScrollpos = window.pageYOffset;
+		window.onscroll = function() {
+		var currentScrollPos = window.pageYOffset;
+		  if (prevScrollpos > currentScrollPos) {
+		    document.getElementById("navbar").style.top = "0";
+		  } else {
+		    document.getElementById("navbar").style.top = "-50px";
+		  }
+		  prevScrollpos = currentScrollPos;
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, 
+p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, 
+font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, 
+dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, 
+thead, tr, th, td {
+	font-family: 'Roboto', sans-serif;
+	color: #242424;
+}
+
+input, button {
+	outline: none;
+}
+
+a {
+	color: #242424;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #f1553b;
+	text-decoration: none;
+}
+
+.bar {
+	background-color: #f1553b;
+}

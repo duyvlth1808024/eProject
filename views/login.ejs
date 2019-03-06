@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="nanobar.js - Very very lightweight progress bars">
+	<meta charset="utf-8">
+	<title>Sign In</title>
+	<!-- Font -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<!-- Icon -->
+	<link rel="stylesheet" type="text/css" href="FontAwesome/css/all.css">
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.css">
+	<!-- Cascading Style Sheets -->
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<!-- Javascript -->
+	<script type="text/javascript" src="vendor/jquery/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="vendor/nanobar/nanobar.js"></script>
+	<script type="text/javascript" src="js/javascript.js"></script>
+</head>
+<body>
+	<div class="preloader"></div>
+	<section class="col-md-12 section-register">
+		<div class="center-register">
+			<div class="title-form">
+				<h2>Sign In</h2>
+			</div>
+			<form class="form-register" method="post" action="/login" enctype="mltipart/from-data">
+				<div class="input-register">
+					<input class="place-input" type="email" name="email" required>
+					<label class="title-input">Email</label>
+					<p></p>
+				</div>
+				<div class="input-register">
+					<input class="place-input" type="password" name="password" required>
+					<label class="title-input">Password</label>
+					<p></p>
+				</div>
+				<div class="button-register">
+					<a href="/index">Back</a>
+					<button>Create</button>
+				</div>
+			</form>
+		</div>
+	</section>
+</body>
+</html>

@@ -1,0 +1,199 @@
+/*Header navbar*/
+
+.navbar {
+	background-color: #fff;
+	margin: 0;
+	border: 0;
+	border-bottom: 1px solid #d3d3d3;
+	position: fixed;
+	z-index: 9;
+	top: 0;
+  	transition: top 0.2s;
+}
+
+.navbar a {
+	font-size: 18px;
+	/*display: inline-block;*/
+	position: relative;
+	font-weight: 400;
+}
+
+.navbar-left, .navbar-center, .navbar-right {
+	align-items: center;
+}
+
+.navbar-center a {
+	margin-right: 25px;
+	text-decoration: none;
+}
+
+.navbar-center a::after {
+	content: '';
+	width: 0;
+	height: 2px;
+	background-color: #f1553b;
+	position: absolute;
+	left: 0;
+	top: 27px;
+	transition: 0.35s;
+}
+
+.navbar-center a:hover::after {
+	width: 100%;
+}
+
+.navbar-right {
+	text-align: right;
+}
+
+.navbar-right a {
+	margin-left: 25px;
+}
+
+/*input-register, input-login*/
+
+input.place-input {
+	width: 100%;
+    padding: 8px 17px;
+    border: 1px solid #d3d3d3;
+    border-radius: 3px;
+}
+
+input.place-input:focus {
+	border-color: #f1553b;
+	transition: all 0.35s;
+}
+
+label.title-input {
+	font-family: 'Roboto', sans-serif;
+    color: #757575;
+    margin-bottom: 0;
+    position: relative;
+    pointer-events: none;
+    font-size: 13px;
+    left: 18px;
+    top: -28px;
+    transition: 0.2s ease all;
+    user-select: none;
+}
+
+input.place-input:focus ~ .title-input ,input.place-input:valid ~ .title-input {
+	background-color: #fff;
+	color: #f1553b;
+	font-size: 11px;
+	padding: 0 5px;
+	left: 0;
+	top: -48px;
+}
+
+
+/*Register*/
+
+.section-register {
+	background: url('https://cdn.homedy.com/store/images/2018/11/09/anh-noi-that-de-636773838481837246.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+}
+
+.center-register {
+	margin: 50px auto;
+    width: 500px;
+    background: white;
+    border-radius: 3px;
+    padding: 40px 50px;
+}
+
+.title-form {
+	margin: 20px 0;
+}
+
+.title-form h2 {
+	text-align: center;
+	margin: 0;
+}
+
+.input-register {
+	display: inline-block;
+	width: 100%;
+	height: 70px;
+}
+
+.input-register:nth-child(1), .input-register:nth-child(2) {
+	width: 48%;
+}
+
+.input-register:nth-child(1) {
+	margin-right: 12px;
+}
+
+.input-register p {
+	line-height: 0;
+    font-size: 12px;
+    font-style: italic;
+    color: red;
+    margin: 0;
+}
+
+.select-checkbox input {
+	display: none;
+}
+
+.select-checkbox label {
+	font-weight: 400;
+    font-size: 12px;
+}
+
+.select-checkbox input[type=checkbox] + label {
+	cursor: pointer;
+	user-select: none;
+}
+
+.select-checkbox input[type=checkbox] + label::before {
+	content: "\2714";
+    border: 1px solid #d3d3d3;
+    border-radius: 2px;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    padding-left: 2px;
+    padding-bottom: 2px;
+    margin-right: 5px;
+    margin-bottom: 3px;
+    vertical-align: bottom;
+    color: transparent;
+    transition: .2s;
+}
+
+.select-checkbox input[type=checkbox] + label:active::before {
+	transform: scale(0);
+}
+
+.select-checkbox input[type=checkbox]:checked + label::before {
+    background-color: #f1553b;
+    border-color: #f1553b;
+    color: #fff;
+}
+
+.select-checkbox input[type=checkbox]:disabled + label::before {
+	transform: scale(1);
+	border-color: #aaa;
+}
+
+.select-checkbox input[type=checkbox]:checked:disabled + label::before {
+	transform: scale(1);
+  	background-color: #bfb;
+	border-color: #bfb;
+}
+
+.select-checkbox a {
+	color: #337ab7
+}
+
+.select-checkbox a:hover {
+	text-decoration: underline;
+}
+
