@@ -14,10 +14,41 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<!-- Javascript -->
-	<script type="text/javascript" src="vendor/bootstrap/js/bootstrap.js"></script>
+	<script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="vendor/jquery/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="vendor/nanobar/nanobar.js"></script>
 	<script type="text/javascript" src="js/javascript.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			$( ".form-register" ).submit(function(event) {
+				event.preventDefault();
+
+				$.ajax({
+					type: 'POST',
+					url: '/register',
+					data: $('.form-register').serialize(),
+					dataType: "json",
+					success: function(response){
+						//alert("a");
+						//console.log(response.Success);
+						$('.form-register')[0].reset();
+
+						document.getElementById("check").innerHTML=response.Success;
+         					//ADD THIS CODE
+         					setTimeout(function(){
+         						document.getElementById("check").innerHTML="";
+         					},3000);
+         					if (response.Success=="You are regestered,You can login now.") {
+         						document.getElementById("ctlogin").click();
+         					};
+         				},
+         				error: function() {
+         				}
+         			})
+			});
+		});
+	</script>
 </head>
 <body>
 	<div class="preloader"></div>
@@ -61,6 +92,14 @@
 					<button>Create</button>
 				</div>
 			</form>
+			<div class="mssg bg-danger">
+			<span id="check"></span>
+		</div>
+		<div>
+			<a href="/login">Login</a>
+		</div>
+		<div id="LangTable"><a href="/login" id="ctlogin"></a>
+		</div>
 		</div>
 	</section>
 </body>
